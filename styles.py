@@ -292,7 +292,7 @@ main.deck-stage {
 }
 
 .slide-title {
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 800;
   color: var(--navy-dark);
   letter-spacing: -0.5px;
@@ -300,7 +300,7 @@ main.deck-stage {
 }
 
 .slide-subtitle {
-  font-size: 13.5px;
+  font-size: 14px;
   color: var(--slate-600);
   margin-top: 4px;
   font-weight: 400;
@@ -588,33 +588,72 @@ footer.deck-footer {
 
 .card {
   background: var(--pure-white);
-  border: 1px solid var(--slate-200);
+  border: 1.5px solid var(--slate-200);
   border-radius: var(--radius-md);
-  padding: 18px;
-  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
   max-width: 100%;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
 .card-tinted {
-  background: var(--slate-50);
-  border: 1px solid var(--slate-200);
+  background: #F8FAFC;
+  border: 1.5px solid var(--slate-200);
 }
 
 .card-blue {
-  background: var(--naukri-blue-light);
-  border: 1px solid var(--naukri-blue-border);
+  background: var(--pure-white);
+  border: 1.5px solid #BFDBFE;
+  border-top: 4px solid var(--naukri-blue);
+  box-shadow: 0 4px 14px rgba(24, 86, 234, 0.08);
 }
 
-.card-amber {
-  background: var(--amber-light);
-  border: 1px solid var(--amber-border);
+.card-indigo {
+  background: var(--pure-white);
+  border: 1.5px solid #C7D2FE;
+  border-top: 4px solid #4F46E5;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.08);
+}
+
+.card-purple {
+  background: var(--pure-white);
+  border: 1.5px solid #DDD6FE;
+  border-top: 4px solid #7C3AED;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.08);
 }
 
 .card-teal {
-  background: var(--teal-light);
-  border: 1px solid var(--teal-border);
+  background: var(--pure-white);
+  border: 1.5px solid #99F6E4;
+  border-top: 4px solid var(--teal-accent);
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.08);
+}
+
+.card-emerald {
+  background: var(--pure-white);
+  border: 1.5px solid #A7F3D0;
+  border-top: 4px solid var(--emerald-accent);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.08);
+}
+
+.card-amber {
+  background: var(--pure-white);
+  border: 1.5px solid #FDE68A;
+  border-top: 4px solid var(--amber-accent);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);
+}
+
+.card-rose {
+  background: var(--pure-white);
+  border: 1.5px solid #FECDD3;
+  border-top: 4px solid var(--rose-accent);
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.08);
 }
 
 .card-header-sm {

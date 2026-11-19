@@ -1,407 +1,456 @@
-# slides_solution.py - Slides 13 to 17 (Alternatives, Solution Pillars, Workflow/Logic, UX & Prototype, PRD & MVP)
+# slides_solution.py - Slides 09 to 12 (Alternatives, Solution Pillars, Workflow/Logic, UX & Interactive Prototype)
 
 SLIDES_SOLUTION = [
-    # SLIDE 13: OPPORTUNITY ASSESSMENT AND ALTERNATIVES
+    # SLIDE 09: STRATEGIC ALTERNATIVES & OPPORTUNITY ASSESSMENT
     {
-        "id": "slide-13",
-        "number": "13",
+        "id": "slide-9",
+        "number": "09",
         "stage": "Assess",
         "tag": "Strategic Alternatives",
         "evidenceType": "Proposed Solution",
         "title": "Which Product Approach Best Addresses the Problem?",
         "subtitle": "Qualitative evaluation of five product options across candidate control, reusability, and feasibility",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- 5 Options Comparison Table -->
-          <div class="card" style="padding: 0; overflow: hidden; flex: 1;">
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
+          <!-- 5 Options Qualitative Comparison Table -->
+          <div class="card" style="padding: 0; overflow: hidden; flex: 1; border: 1.5px solid var(--slate-200);">
             <div class="table-scroll-wrap">
-              <table class="deck-table" style="font-size: 10.5px;">
+              <table class="deck-table" style="font-size: 11.5px; width: 100%;">
                 <thead>
-                  <tr>
-                    <th style="width: 18%;">Strategic Option</th>
-                    <th style="width: 16%;">Candidate Control</th>
-                    <th style="width: 16%;">Reusability</th>
-                    <th style="width: 18%;">Application Convenience</th>
-                    <th style="width: 16%;">Data Protection</th>
-                    <th style="width: 16%;">Feasibility / Risk</th>
+                  <tr style="background: var(--navy-dark); color: white;">
+                    <th style="width: 20%; padding: 10px 14px;">Strategic Option</th>
+                    <th style="width: 16%; padding: 10px 12px;">Candidate Control</th>
+                    <th style="width: 16%; padding: 10px 12px;">Reusability</th>
+                    <th style="width: 16%; padding: 10px 12px;">Application Speed</th>
+                    <th style="width: 16%; padding: 10px 12px;">Data Safety</th>
+                    <th style="width: 16%; padding: 10px 12px;">Feasibility / Risk</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><strong>Option A: Status Quo</strong><br><span style="font-size:9.5px; color:var(--slate-500);">Rely on profile CV</span></td>
-                    <td>Low (profile replacement needed)</td>
-                    <td>Low (1 active CV)</td>
-                    <td>Low (requires leaving active flow)</td>
-                    <td>High risk of overwriting active CV</td>
-                    <td>High feasibility (no development)</td>
+                  <tr style="border-bottom: 1px solid var(--slate-100);">
+                    <td style="padding: 10px 14px;">
+                      <strong>Option A: Status Quo</strong><br>
+                      <span style="font-size: 10px; color: var(--slate-500);">Single profile-attached CV</span>
+                    </td>
+                    <td style="color: #9F1239; font-weight: 600;">Low (profile swap needed)</td>
+                    <td style="color: var(--slate-600);">Low (1 active CV)</td>
+                    <td style="color: #9F1239; font-weight: 600;">Low (must leave flow)</td>
+                    <td style="color: #9F1239;">High overwrite risk</td>
+                    <td style="color: #166534; font-weight: 600;">Immediate (no build)</td>
                   </tr>
-                  <tr>
-                    <td><strong>Option B: Separate Profiles</strong><br><span style="font-size:9.5px; color:var(--slate-500);">Multiple accounts/profiles</span></td>
-                    <td>Medium (must switch profiles)</td>
-                    <td>Medium (profile-bound)</td>
-                    <td>Low (high context-switching overhead)</td>
-                    <td>Isolated documents</td>
-                    <td>Complex profile synchronization</td>
+
+                  <tr style="border-bottom: 1px solid var(--slate-100);">
+                    <td style="padding: 10px 14px;">
+                      <strong>Option B: Multiple Profiles</strong><br>
+                      <span style="font-size: 10px; color: var(--slate-500);">Separate logins/profiles</span>
+                    </td>
+                    <td style="color: #B45309;">Medium (account hopping)</td>
+                    <td style="color: #B45309;">Medium (profile-bound)</td>
+                    <td style="color: #9F1239;">Low (high login friction)</td>
+                    <td style="color: var(--slate-700);">Separate records</td>
+                    <td style="color: #9F1239;">High complexity & fragmentation</td>
                   </tr>
-                  <tr>
-                    <td><strong>Option C: In-Flow Upload Only</strong><br><span style="font-size:9.5px; color:var(--slate-500);">Upload fresh file every time</span></td>
-                    <td>High (upload any file)</td>
-                    <td>Zero (not saved to account)</td>
-                    <td>Medium (must re-upload file repeatedly)</td>
-                    <td>No profile overwriting</td>
-                    <td>Moderate development effort</td>
+
+                  <tr style="border-bottom: 1px solid var(--slate-100);">
+                    <td style="padding: 10px 14px;">
+                      <strong>Option C: In-Flow Upload Only</strong><br>
+                      <span style="font-size: 10px; color: var(--slate-500);">Upload fresh file every time</span>
+                    </td>
+                    <td style="color: #166534; font-weight: 600;">High (upload any file)</td>
+                    <td style="color: #9F1239; font-weight: 600;">Zero (not saved to account)</td>
+                    <td style="color: #B45309;">Medium (repetitive uploads)</td>
+                    <td style="color: #166534;">Safe (no overwrite)</td>
+                    <td style="color: #166534; font-weight: 600;">Moderate engineering</td>
                   </tr>
-                  <tr style="background: #EFF6FF; border: 1.5px solid var(--naukri-blue);">
-                    <td><strong>Option D: Resume Library</strong><br><span style="font-size:9.5px; color:var(--naukri-blue); font-weight:700;">★ RECOMMENDED</span></td>
-                    <td><strong>Highest</strong> (candidate chooses)</td>
-                    <td><strong>Highest</strong> (persistent named CVs)</td>
-                    <td><strong>Highest</strong> (1-click select in flow)</td>
-                    <td><strong>Non-destructive</strong> independent entries</td>
-                    <td>Balanced (manageable MVP scope)</td>
+
+                  <tr style="background: #EFF6FF; border: 2px solid var(--naukri-blue);">
+                    <td style="padding: 10px 14px;">
+                      <strong style="color: #1E3A8A; font-size: 12.5px;">Option D: Resume Library</strong><br>
+                      <span class="badge badge-blue" style="font-size: 9.5px; margin-top: 2px;">★ PROPOSED CONCEPT</span>
+                    </td>
+                    <td style="color: #166534; font-weight: 800;">Highest (candidate choice)</td>
+                    <td style="color: #166534; font-weight: 800;">Highest (persistent CVs)</td>
+                    <td style="color: #166534; font-weight: 800;">Highest (1-click selector)</td>
+                    <td style="color: #166534; font-weight: 800;">Non-destructive storage</td>
+                    <td style="color: #1E3A8A; font-weight: 700;">Balanced MVP scope</td>
                   </tr>
+
                   <tr>
-                    <td><strong>Option E: AI Auto-Matching</strong><br><span style="font-size:9.5px; color:var(--slate-500);">AI auto-picks/rewrites CV</span></td>
-                    <td>Low (algorithmic decision)</td>
-                    <td>Variable (auto-generated)</td>
-                    <td>Variable (opaque candidate review)</td>
-                    <td>Unintended modification risk</td>
-                    <td>High technical & privacy risk</td>
+                    <td style="padding: 10px 14px;">
+                      <strong>Option E: AI Auto-Matching</strong><br>
+                      <span style="font-size: 10px; color: var(--slate-500);">AI auto-selects or rewrites</span>
+                    </td>
+                    <td style="color: #9F1239; font-weight: 600;">Low (black-box algorithmic)</td>
+                    <td style="color: var(--slate-600);">Variable (synthetic output)</td>
+                    <td style="color: #166534; font-weight: 600;">High (fully automated)</td>
+                    <td style="color: #9F1239;">Risk of hallucinations</td>
+                    <td style="color: #9F1239; font-weight: 600;">High technical & legal risk</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           
-          <!-- Justification Box for Option D -->
-          <div class="card card-blue" style="padding: 10px 14px;">
-            <div style="font-weight: 700; font-size: 11.5px; color: var(--navy-dark); margin-bottom: 2px;">
-              Why Option D (Persistent Resume Library) is the Optimal Choice
+          <!-- Bottom Decision Justification Banner -->
+          <div style="display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 14px;">
+            <div class="card card-blue" style="padding: 12px 16px;">
+              <div style="font-weight: 800; font-size: 13px; color: var(--navy-dark); margin-bottom: 3px;">
+                Why Option D (Resume Library) is the Optimal Product Solution
+              </div>
+              <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                Option D provides a persistent home for role-specific documents within the candidate's existing single profile. It eliminates repeated uploading (Option C), avoids account fragmentation (Option B), and avoids candidate distrust of black-box AI algorithms (Option E).
+              </div>
             </div>
-            <div style="font-size: 11px; color: var(--slate-700); line-height: 1.45;">
-              Option D solves the root cause by providing a dedicated, persistent home for role-specific documents within the candidate's master profile. It eliminates repeated file uploading (Option C), avoids the fragmentation of multiple profiles (Option B), and avoids the opacity and candidate mistrust associated with algorithmic AI selection (Option E).
+
+            <div class="card card-amber" style="padding: 12px 14px;">
+              <div style="font-weight: 800; font-size: 12px; color: #92400E; margin-bottom: 2px;">
+                Out of Scope: AI Auto-Matching
+              </div>
+              <div style="font-size: 11.5px; color: #78350F; line-height: 1.4;">
+                AI-based document matching is not required to solve the immediate file management problem and introduces candidate agency concerns. Excluded from MVP.
+              </div>
             </div>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 13 — Strategic Alternatives Evaluation</h4>
-        <p>Before committing to a product design, a strong PM examines multiple alternatives:</p>
+        <h4>Slide 09 — Strategic Alternatives (Suggested Duration: ~60 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "To assess the opportunity objectively, we evaluated five distinct architectural approaches:</p>
         <ul>
-          <li><strong>Option A (Status Quo):</strong> Low engineering cost, but leaves candidate friction unresolved.</li>
-          <li><strong>Option B (Multiple Profiles):</strong> Maintaining separate profiles fragments search history, causes duplicate candidate records, and creates high maintenance overhead.</li>
-          <li><strong>Option C (One-Off Uploads):</strong> Uploading every time offers flexibility, but provides zero reusability, forcing candidates to repeatedly re-upload files on their phones or laptops.</li>
-          <li><strong>Option D (Resume Library - Recommended):</strong> Offers the best combination of candidate control, persistent organization, and non-destructive saving within a single profile.</li>
-          <li><strong>Option E (AI Auto-Matching):</strong> Premature for MVP. Candidates want full agency over what recruiters receive; automated selection introduces mistrust and error risk.</li>
+          <li><strong>Option A (Status Quo):</strong> Retains friction and forces candidates to navigate away to change CVs.</li>
+          <li><strong>Option B (Multiple Profiles):</strong> Fragments candidate identities, creates duplicate records, and introduces heavy context-switching.</li>
+          <li><strong>Option C (Upload-Only):</strong> Easy to implement, but provides zero reusability, forcing candidates to repeatedly re-upload files on their phones or laptops.</li>
+          <li><strong>Option D (Resume Library - Proposed):</strong> The sweet spot. Delivers persistent candidate control, 1-click apply-time selection, and non-destructive storage within one unified master profile.</li>
+          <li><strong>Option E (AI Auto-Matching):</strong> Premature for MVP. Candidates insist on explicit agency over what recruiters see, and automated selection introduces hallucination and trust issues.</li>
         </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's look at the three building blocks of our recommended Resume Library solution.</div>
+        <p>We deliberately choose Option D for our product proposal."</p>
+        <div class='cue-box'><strong>Transition:</strong> Let's look at the three architectural pillars and design principles of the Resume Library.</div>
         """
     },
 
-    # SLIDE 14: THE RECOMMENDED SOLUTION
+    # SLIDE 10: PROPOSED SOLUTION
     {
-        "id": "slide-14",
-        "number": "14",
+        "id": "slide-10",
+        "number": "10",
         "stage": "Design",
-        "tag": "Product Solution",
+        "tag": "Proposed Solution",
         "evidenceType": "Proposed Solution",
         "title": "A Resume Library Built Around Candidate Choice",
-        "subtitle": "Architecting a candidate-controlled ecosystem for multiple role opportunities",
+        "subtitle": "Three core pillars and five foundational design principles for candidate control",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- Three Pillars Grid -->
-          <div class="grid-3" style="flex: 1; gap: 14px;">
-            <!-- Pillar 1 -->
-            <div class="card" style="border-top: 4px solid var(--navy-dark); display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span>Pillar 01</span>
-                <span class="badge badge-gray">Master Record</span>
-              </div>
-              <div class="card-title-lg">One Comprehensive Profile</div>
-              <p class="card-text" style="font-size: 11.5px; margin-bottom: 8px;">
-                The candidate maintains a single structured profile containing complete career details:
-              </p>
-              <ul style="font-size: 11px; color: var(--slate-700); padding-left: 14px; line-height: 1.4; margin-bottom: 10px;">
-                <li>Personal & contact information</li>
-                <li>Education, degrees & certifications</li>
-                <li>Work experience & internships</li>
-                <li>Comprehensive skill inventory</li>
-              </ul>
-              <div style="margin-top: auto; background: var(--slate-50); padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: var(--slate-600);">
-                <strong>Role:</strong> Keeps structured candidate credentials intact and separate from specific resume documents.
-              </div>
-            </div>
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
+          <!-- Top: The Three Core Architectural Pillars -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
             
-            <!-- Pillar 2 -->
-            <div class="card" style="border-top: 4px solid var(--naukri-blue); display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span>Pillar 02</span>
-                <span class="badge badge-blue">Document Vault</span>
+            <!-- Pillar 1: Single Profile -->
+            <div class="card card-blue" style="padding: 16px 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="badge badge-blue">Pillar 1</span>
+                <span style="font-size: 20px;">👤</span>
               </div>
-              <div class="card-title-lg">Dedicated Resume Library</div>
-              <p class="card-text" style="font-size: 11.5px; margin-bottom: 8px;">
-                Candidates upload and independently organize multiple versioned resume documents:
-              </p>
-              <div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px;">
-                <div style="font-size: 10.5px; background: #F8FAFC; border: 1px solid var(--slate-200); padding: 4px 8px; border-radius: 4px; display: flex; justify-content: space-between;">
-                  <span>💼 <strong>Product Management CV</strong></span>
-                  <span style="color: var(--naukri-blue); font-size: 9.5px;">Default</span>
-                </div>
-                <div style="font-size: 10.5px; background: #F8FAFC; border: 1px solid var(--slate-200); padding: 4px 8px; border-radius: 4px; display: flex; justify-content: space-between;">
-                  <span>📊 <strong>Consulting CV</strong></span>
-                  <span style="color: var(--slate-400); font-size: 9.5px;">Sep 28</span>
-                </div>
-                <div style="font-size: 10.5px; background: #F8FAFC; border: 1px solid var(--slate-200); padding: 4px 8px; border-radius: 4px; display: flex; justify-content: space-between;">
-                  <span>⚙️ <strong>Operations CV</strong></span>
-                  <span style="color: var(--slate-400); font-size: 9.5px;">Aug 15</span>
-                </div>
-                <div style="font-size: 10.5px; background: #F8FAFC; border: 1px solid var(--slate-200); padding: 4px 8px; border-radius: 4px; display: flex; justify-content: space-between;">
-                  <span>💻 <strong>Core Engineering CV</strong></span>
-                  <span style="color: var(--slate-400); font-size: 9.5px;">Jul 04</span>
-                </div>
+              <div style="font-size: 16px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">
+                One Comprehensive Profile
               </div>
-              <div style="margin-top: auto; background: var(--slate-50); padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: var(--slate-600);">
-                <strong>Role:</strong> Custom names; independent entries with zero accidental overwriting.
+              <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                Single source of truth. Master education, verified skills, employment history, and contact details remain unified. No duplicate accounts or fragmented job histories.
               </div>
             </div>
-            
-            <!-- Pillar 3 -->
-            <div class="card" style="border-top: 4px solid var(--emerald-accent); display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span>Pillar 03</span>
-                <span class="badge badge-teal">Application Flow</span>
+
+            <!-- Pillar 2: Dedicated Library -->
+            <div class="card card-indigo" style="padding: 16px 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="badge" style="background:#EDE9FE; color:#4F46E5;">Pillar 2</span>
+                <span style="font-size: 20px;">📁</span>
               </div>
-              <div class="card-title-lg">Application-Time Selection</div>
-              <p class="card-text" style="font-size: 11.5px; margin-bottom: 8px;">
-                At the moment of applying, candidates choose the exact resume to attach:
-              </p>
-              <ul style="font-size: 11px; color: var(--slate-700); padding-left: 14px; line-height: 1.4; margin-bottom: 10px;">
-                <li>Preselects designated default for convenience</li>
-                <li>Or select an alternate saved resume with 1 click</li>
-                <li>Or upload a fresh document directly from device</li>
-                <li><strong>Conditional Save Gate:</strong> Checkbox appears only post-upload</li>
-                <li>Explicit review screen before final submission</li>
-              </ul>
-              <div style="margin-top: auto; background: var(--slate-50); padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: var(--slate-600);">
-                <strong>Role:</strong> Complete candidate agency; zero forced context-switching.
+              <div style="font-size: 16px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">
+                Dedicated Resume Library
+              </div>
+              <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                Dedicated workspace storing up to 5 role-specific resumes. Each document receives a custom label (e.g. <em>PM CV, Consulting CV, Ops CV</em>) and independent version management.
               </div>
             </div>
+
+            <!-- Pillar 3: Apply-Time Selection -->
+            <div class="card card-emerald" style="padding: 16px 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="badge badge-teal">Pillar 3</span>
+                <span style="font-size: 20px;">⚡</span>
+              </div>
+              <div style="font-size: 16px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">
+                Application-Time Selection
+              </div>
+              <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                Select from stored resumes directly inside the job application modal. Candidates can also upload a fresh resume with optional conditional saving to the library.
+              </div>
+            </div>
+
           </div>
-          
-          <!-- 5 Design Principles Footer -->
-          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;">
-            <div class="card card-tinted" style="padding: 7px 10px; text-align: center;">
-              <div style="font-weight: 700; font-size: 10.5px; color: var(--navy-dark);">Candidate Control</div>
-              <div style="font-size: 9.5px; color: var(--slate-600); margin-top: 2px;">User makes final choice</div>
+
+          <!-- Bottom: 5 Foundational Product Principles -->
+          <div class="card" style="padding: 14px 18px; border: 1.5px solid var(--slate-200);">
+            <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--navy-dark); letter-spacing: 0.6px; margin-bottom: 10px;">
+              Five Foundational Design Principles
             </div>
-            <div class="card card-tinted" style="padding: 7px 10px; text-align: center;">
-              <div style="font-weight: 700; font-size: 10.5px; color: var(--navy-dark);">Privacy by Default</div>
-              <div style="font-size: 9.5px; color: var(--slate-600); margin-top: 2px;">Other CVs remain hidden</div>
-            </div>
-            <div class="card card-tinted" style="padding: 7px 10px; text-align: center;">
-              <div style="font-weight: 700; font-size: 10.5px; color: var(--navy-dark);">Independent Files</div>
-              <div style="font-size: 9.5px; color: var(--slate-600); margin-top: 2px;">No coupled records</div>
-            </div>
-            <div class="card card-tinted" style="padding: 7px 10px; text-align: center;">
-              <div style="font-weight: 700; font-size: 10.5px; color: var(--navy-dark);">No Overwriting</div>
-              <div style="font-size: 9.5px; color: var(--slate-600); margin-top: 2px;">New files save separately</div>
-            </div>
-            <div class="card card-tinted" style="padding: 7px 10px; text-align: center;">
-              <div style="font-weight: 700; font-size: 10.5px; color: var(--navy-dark);">Document History</div>
-              <div style="font-size: 9.5px; color: var(--slate-600); margin-top: 2px;">Snapshot retained in log</div>
+            
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
+              
+              <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 10px 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--naukri-blue); margin-bottom: 3px;">1. Candidate Control</div>
+                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
+                  The system never silently auto-submits a document without explicit candidate confirmation.
+                </div>
+              </div>
+
+              <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 10px 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: #4F46E5; margin-bottom: 3px;">2. Privacy by Default</div>
+                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
+                  Library resumes remain private. Only the specific resume attached to an application is shared.
+                </div>
+              </div>
+
+              <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 10px 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: #0D9488; margin-bottom: 3px;">3. Independent Files</div>
+                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
+                  Uploading, editing, or deleting one resume has zero destructive impact on any other stored resume.
+                </div>
+              </div>
+
+              <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 10px 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: #D97706; margin-bottom: 3px;">4. No Silent Overwrite</div>
+                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
+                  Uploads default to application-only unless the candidate explicitly checks to save as a new file.
+                </div>
+              </div>
+
+              <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 10px 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: #059669; margin-bottom: 3px;">5. Transparent History</div>
+                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
+                  Application history preserves an exact immutable snapshot of the document submitted to each employer.
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 14 — The Three Core Solution Pillars</h4>
-        <p>The proposed Resume Library consists of three complementary pillars:</p>
+        <h4>Slide 10 — Proposed Solution Pillars (Suggested Duration: ~60 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "Our proposed feature, <strong>Resume Library</strong>, rests on three clear product pillars:</p>
         <ul>
-          <li><strong>Pillar 1: One Comprehensive Profile:</strong> We maintain a single structured master record for candidate credentials. We do not make premature claims about internal recruiter search algorithms, but keep structured profile data conceptually separate from resume files.</li>
-          <li><strong>Pillar 2: Dedicated Resume Library:</strong> A persistent document vault where resumes are stored as independent entries with custom names. Editing or deleting one file never affects others.</li>
-          <li><strong>Pillar 3: Application-Time Selection:</strong> Job seekers can preselect a default resume for convenience, choose an alternate saved document, or upload a fresh file.</li>
-          <li><strong>Core Principles:</strong> Privacy by default (recruiters see only the attached document), zero silent overwriting, and immutable application history tracking.</li>
+          <li><strong>1. One Comprehensive Profile:</strong> A single source of truth for the candidate's career data—education, skills, work history. No secondary accounts.</li>
+          <li><strong>2. Dedicated Resume Library:</strong> A clean management area for up to 5 role-specific resumes, with custom names like 'Product Management CV' or 'Consulting CV'.</li>
+          <li><strong>3. Application-Time Selection:</strong> An interactive selector inside the apply modal, allowing candidates to pick an existing resume or upload a new one.</li>
         </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's examine the detailed 11-step end-to-end workflow and its decision logic.</div>
+        <p>This is guided by five foundational principles: candidate control, privacy by default (unselected resumes are never exposed to recruiters), independent files, zero silent overwriting, and immutable application history logs."</p>
+        <div class='cue-box'><strong>Transition:</strong> How does this workflow function step-by-step, especially when uploading a new document? Let's trace the decision logic.</div>
         """
     },
 
-    # SLIDE 15: FUTURE-STATE WORKFLOW AND DECISION LOGIC
+    # SLIDE 11: FUTURE WORKFLOW & DECISION LOGIC
     {
-        "id": "slide-15",
-        "number": "15",
+        "id": "slide-11",
+        "number": "11",
         "stage": "Design",
-        "tag": "System Logic",
+        "tag": "Future Workflow & Logic",
         "evidenceType": "Proposed Solution",
         "title": "How the Proposed Experience Would Work",
-        "subtitle": "11-step end-to-end sequence governing selection, conditional save logic, and history tracking",
+        "subtitle": "End-to-end candidate journey with prominent conditional save logic",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- 11-Step Sequential Pipeline Flow -->
-          <div class="card" style="padding: 10px 12px;">
-            <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--slate-500); margin-bottom: 5px;">The 11-Step Product Pipeline</div>
-            <div style="display: flex; align-items: center; justify-content: space-between; position: relative;">
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--navy-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">1</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--navy-dark); margin-top: 2px;">Profile</div>
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 10px;">
+          <!-- Top: 11-Step Linear Workflow Pipeline -->
+          <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 10px 14px;">
+            <div style="font-size: 10.5px; font-weight: 800; text-transform: uppercase; color: var(--slate-500); letter-spacing: 0.6px; margin-bottom: 8px;">
+              End-to-End Application Pipeline (11 Steps)
+            </div>
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; overflow-x: auto; gap: 4px;">
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--navy-dark); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--navy-dark); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">1</div>
+                <div>Profile</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--navy-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">2</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--navy-dark); margin-top: 2px;">Library</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--navy-dark); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--navy-dark); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">2</div>
+                <div>Library</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--navy-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">3</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--navy-dark); margin-top: 2px;">Find Job</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--navy-dark); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--navy-dark); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">3</div>
+                <div>Find Job</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--navy-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">4</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--navy-dark); margin-top: 2px;">Apply</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--naukri-blue); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--naukri-blue); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">4</div>
+                <div>Apply</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--naukri-blue); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">5</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--naukri-blue); margin-top: 2px;">Choose CV</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--naukri-blue); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--naukri-blue); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">5</div>
+                <div>Select CV</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--naukri-blue); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">6</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--naukri-blue); margin-top: 2px;">Upload</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--naukri-blue); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--naukri-blue); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">6</div>
+                <div>Upload</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--amber-accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">7</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--amber-accent); margin-top: 2px;">Save Gate</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 800; color: var(--amber-accent); min-width: 75px; background: #FFFBEB; border: 1.5px solid #FCD34D; border-radius: 5px; padding: 2px 4px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--amber-accent); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">7</div>
+                <div>Save Gate</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--navy-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">8</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--navy-dark); margin-top: 2px;">Review</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--navy-dark); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--navy-dark); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">8</div>
+                <div>Decision</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--emerald-accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">9</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--emerald-accent); margin-top: 2px;">Submit</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--navy-dark); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--navy-dark); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">9</div>
+                <div>Review</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--navy-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">10</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--navy-dark); margin-top: 2px;">History</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--emerald-accent); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--emerald-accent); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">10</div>
+                <div>Confirm</div>
               </div>
-              <span class="stage-arrow">→</span>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 8%;">
-                <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--navy-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700;">11</div>
-                <div style="font-size: 9.5px; font-weight: 700; color: var(--navy-dark); margin-top: 2px;">Manage</div>
+              <span style="color: var(--slate-400); font-size: 10px;">→</span>
+
+              <div style="text-align: center; font-size: 10px; font-weight: 700; color: var(--emerald-accent); min-width: 65px;">
+                <div style="width: 18px; height: 18px; border-radius: 50%; background: var(--emerald-accent); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; margin-bottom: 2px;">11</div>
+                <div>History</div>
               </div>
             </div>
           </div>
-          
-          <!-- Detailed Decision Architecture -->
-          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 14px; flex: 1;">
-            <!-- Left: Step 5 & 7 Decision Logic -->
-            <div class="card card-tinted" style="border-left: 4px solid var(--amber-accent); padding: 12px 14px;">
-              <div class="card-header-sm">
-                <span style="color: #B45309; font-weight: 800;">Step 5 & 7: Conditional Save Gate & Selection Rules</span>
-                <span class="badge badge-amber">Core Logic</span>
-              </div>
-              
-              <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px;">
-                <div style="background: white; border: 1px solid var(--slate-200); border-radius: 5px; padding: 6px 10px;">
-                  <div style="font-size: 11px; font-weight: 700; color: var(--navy-dark);">Scenario 1: Candidate has 1 Saved Resume (Quick-Apply)</div>
-                  <div style="font-size: 10.5px; color: var(--slate-600); margin-top: 2px;">
-                    Pre-attach the single resume to preserve quick-apply speed. Provide inline "Change Resume" and "+ Upload New Resume" options.
-                  </div>
-                </div>
-                
-                <div style="background: white; border: 1px solid var(--slate-200); border-radius: 5px; padding: 6px 10px;">
-                  <div style="font-size: 11px; font-weight: 700; color: var(--rose-accent);">Conditional Gate: Upload Success Required</div>
-                  <div style="font-size: 10.5px; color: var(--slate-600); margin-top: 2px;">
-                    The <code>Save to Resume Library</code> checkbox is <strong>strictly hidden</strong> until the document finishes uploading successfully.
-                  </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                  <div style="background: white; border: 1.5px solid var(--slate-300); border-radius: 5px; padding: 6px 8px;">
-                    <div style="font-size: 10.5px; font-weight: 700; color: var(--slate-700);">Case A: Unchecked</div>
-                    <div style="font-size: 10px; color: var(--slate-600); margin-top: 2px;">
-                      • Used for <em>this job only</em><br>
-                      • Not added to library<br>
-                      • Zero impact on saved files
-                    </div>
-                  </div>
-                  
-                  <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 5px; padding: 6px 8px;">
-                    <div style="font-size: 10.5px; font-weight: 700; color: #166534;">Case B: Checked</div>
-                    <div style="font-size: 10px; color: #14532D; margin-top: 2px;">
-                      • Enforce custom name<br>
-                      • Saved as new independent CV<br>
-                      • <strong>Never overwrites</strong> older files
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          <!-- Middle: Prominent Conditional Save Logic Gate -->
+          <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px; flex: 1;">
             
-            <!-- Right: Edge Cases & Data Integrity Rules -->
-            <div class="card" style="padding: 12px 14px;">
-              <div class="card-header-sm">Edge Cases & Data Integrity Rules</div>
-              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 10.5px; color: var(--slate-700);">
-                <div style="padding-bottom: 4px; border-bottom: 1px solid var(--slate-100);">
-                  <strong>Default-Resume Behaviour:</strong> Designated default is preselected for convenience, but <em>never silently submitted</em>. If no default is designated, selection is required.
+            <!-- Left: Conditional Save Logic Diagram -->
+            <div class="card card-amber" style="padding: 12px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: #92400E; letter-spacing: 0.5px;">
+                    Step 7: The Conditional Save Gate
+                  </span>
+                  <span class="badge badge-amber">Core Safety Rule</span>
                 </div>
-                <div style="padding-bottom: 4px; border-bottom: 1px solid var(--slate-100);">
-                  <strong>Duplicate Filenames:</strong> Two files named <code>Resume.pdf</code> receive distinct internal UUIDs. Duplicate names never trigger silent overwrites.
+                
+                <div style="background: white; border: 1.5px solid #FDE68A; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px;">
+                  <div style="font-size: 11px; font-weight: 700; color: #B45309; text-transform: uppercase; margin-bottom: 2px;">
+                    Condition: Appears ONLY After Upload Success
+                  </div>
+                  <div style="font-size: 13px; font-weight: 700; color: var(--navy-dark);">
+                    [ &nbsp; ] Save this resume to my Resume Library
+                  </div>
+                  <div style="font-size: 11px; color: var(--slate-500); margin-top: 2px;">
+                    Checkbox is hidden while uploading. Appears exclusively when file upload reaches 100%.
+                  </div>
                 </div>
-                <div style="padding-bottom: 4px; border-bottom: 1px solid var(--slate-100);">
-                  <strong>Library Deletions Post-Apply:</strong> Deleting a resume from the library removes it from future apply flows, but <em>preserves historical application references intact</em>.
-                </div>
-                <div>
-                  <strong>Third-Party Applications:</strong> For jobs redirecting to external ATS platforms, transparently inform candidates that document handling depends on the employer site.
+
+                <!-- Two Branch Outcomes -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div style="background: white; border: 1.5px solid var(--slate-300); border-radius: 6px; padding: 8px 10px;">
+                    <div style="font-size: 11.5px; font-weight: 700; color: var(--slate-700);">Case A: Unchecked (Default)</div>
+                    <div style="font-size: 11px; color: var(--slate-600); margin-top: 3px; line-height: 1.4;">
+                      • Submitted to <strong>this job only</strong><br>
+                      • Not added to library<br>
+                      • Existing 4 resumes untouched
+                    </div>
+                  </div>
+
+                  <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 6px; padding: 8px 10px;">
+                    <div style="font-size: 11.5px; font-weight: 700; color: #166534;">Case B: Checked by User</div>
+                    <div style="font-size: 11px; color: #14532D; margin-top: 3px; line-height: 1.4;">
+                      • Mandatory custom label required<br>
+                      • Saved as <strong>5th independent file</strong><br>
+                      • Never overwrites older files
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <div style="font-size: 10.5px; color: #92400E; margin-top: 6px; font-weight: 600;">
+                Protects candidates against accidental profile loss while supporting one-off tailored CVs.
+              </div>
             </div>
+
+            <!-- Right: Flow Safeguards & Fast Paths -->
+            <div class="card" style="padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; border: 1.5px solid var(--slate-200);">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--navy-dark); letter-spacing: 0.5px; margin-bottom: 6px;">
+                  Flow Safeguards & Quick Paths
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; color: var(--slate-700);">
+                  <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 5px; padding: 6px 10px;">
+                    <strong>Single-Resume Quick Apply:</strong> If candidate has only 1 resume, it is pre-attached to preserve 1-click speed, with clear "Change" and "Upload" links.
+                  </div>
+
+                  <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 5px; padding: 6px 10px;">
+                    <strong>Default Preselection:</strong> User-designated default is preselected, but <em>never auto-submitted</em> without candidate clicking submit.
+                  </div>
+
+                  <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 5px; padding: 6px 10px;">
+                    <strong>Duplicate Filenames:</strong> Two files named <code>Resume.pdf</code> receive separate UUIDs; identical filenames never overwrite each other.
+                  </div>
+
+                  <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 5px; padding: 6px 10px;">
+                    <strong>External ATS Boundary:</strong> External redirect listings display an informative note explaining that document handling is on the external portal.
+                  </div>
+                </div>
+              </div>
+
+              <div style="font-size: 10.5px; color: var(--slate-500); margin-top: 6px;">
+                Detailed edge cases and acceptance criteria documented in Appendix C.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom: Status Banner -->
+          <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 8px 16px; font-size: 11.5px; color: var(--slate-700);">
+            <strong style="color: var(--navy-dark);">Data Integrity Guarantee:</strong> Historical application records store an immutable snapshot ID of the exact document version submitted, ensuring complete legal and audit transparency.
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 15 — End-to-End Workflow & Edge Cases</h4>
-        <p>This 11-step sequence governs the complete candidate journey:</p>
+        <h4>Slide 11 — Future Workflow & Logic (Suggested Duration: ~75 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "Here is how the proposed experience works end-to-end across an 11-step pipeline.</p>
+        <p>The linchpin is <strong>Step 7: The Conditional Save Gate</strong>:</p>
         <ul>
-          <li><strong>Quick-Apply:</strong> If a candidate has only 1 resume, we preserve existing speed by pre-attaching it with clear Change and Upload links.</li>
-          <li><strong>Default Preselection:</strong> If a candidate sets a default resume, it is preselected for convenience, but never silently submitted—explicit candidate confirmation is strictly required.</li>
-          <li><strong>The Conditional Save Gate:</strong> Notice step 7: the save checkbox is completely hidden until upload succeeds. If left unchecked, it is application-only. If checked, a custom name is mandatory and it saves as a new independent file.</li>
-          <li><strong>Data Integrity:</strong> Identical filenames receive distinct internal UUIDs and never overwrite each other. Deleting a resume later from the library does not alter past application audit records.</li>
+          <li>When a candidate uploads a new document, the 'Save to Resume Library' checkbox is strictly hidden until the file upload reaches 100% success.</li>
+          <li><strong>If left unchecked (Case A):</strong> The resume is used for this specific job application only. It is not saved to the library, and existing files remain untouched.</li>
+          <li><strong>If checked (Case B):</strong> The system mandates a custom name, and saves it as a new independent resume entry. It never overwrites previous files.</li>
         </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's test these interactions live in our interactive candidate simulator.</div>
+        <p>We also preserve single-resume quick apply speed, honor default preselection with explicit confirmation, isolate duplicate filenames via UUIDs, and preserve immutable application history."</p>
+        <div class='cue-box'><strong>Transition:</strong> Now let's see how these interactions look and feel in our interactive candidate prototype.</div>
         """
     },
 
-    # SLIDE 16: UX DESIGN AND INTERACTIVE PROTOTYPE
+    # SLIDE 12: UX DESIGN & INTERACTIVE PROTOTYPE
     {
-        "id": "slide-16",
-        "number": "16",
+        "id": "slide-12",
+        "number": "12",
         "stage": "Design",
         "tag": "Interactive Prototype",
         "evidenceType": "Proposed Solution",
-        "title": "Turning the Product Concept into a Candidate Experience",
-        "subtitle": "Interactive candidate simulator: test single-resume quick-apply, selector, upload, and conditional save",
+        "title": "From Product Concept to Candidate Experience",
+        "subtitle": "Six conceptual desktop UI screens and a fully interactive candidate simulator",
         "content": """
         <div style="display: flex; flex-direction: column; height: 100%; gap: 10px;">
           <!-- Top Prototype Scenario Trigger Bar -->
           <div class="proto-scenario-bar" style="border-radius: var(--radius-sm);">
             <div style="display: flex; align-items: center; gap: 6px;">
-              <span style="font-weight: 700; color: #93C5FD; font-size: 11px;">TEST SCENARIOS:</span>
+              <span style="font-weight: 800; color: #93C5FD; font-size: 11px;">TEST SCENARIOS:</span>
             </div>
             
             <div class="proto-scenario-buttons">
@@ -448,190 +497,38 @@ SLIDES_SOLUTION = [
                 💼 Job Opening: PM Intern
               </div>
               <div class="proto-tab" id="tab-apply" onclick="switchProtoView('apply', event)">
-                📝 Active Application
+                ⚡ Apply Modal <span class="proto-tab-count" id="proto-apply-step-indicator">Step 1</span>
               </div>
               <div class="proto-tab" id="tab-history" onclick="switchProtoView('history', event)">
-                🕒 Application History <span class="proto-tab-count" id="proto-history-count">1</span>
+                📜 Application History <span class="proto-tab-count" id="proto-history-count">1</span>
               </div>
             </div>
             
-            <!-- Dynamic Prototype Body Viewport -->
+            <!-- Dynamic Prototype Viewport Body -->
             <div class="proto-body" id="proto-body-viewport">
-              <!-- Content rendered dynamically via scripts_js.py -->
+              <!-- Dynamically populated by scripts_js.py -->
             </div>
           </div>
           
-          <div style="font-size: 10px; color: var(--slate-500); display: flex; justify-content: space-between; align-items: center; padding: 0 4px; flex-wrap: wrap; gap: 4px;">
-            <span>ℹ️ <em>Simulation Notice: Client-side simulated prototype running locally. No real Naukri backend, recruiter account or application submission is connected. Document history is simulated metadata.</em></span>
-            <span style="color: var(--naukri-blue); font-weight: 600;">Candidate Agency Preserved</span>
+          <!-- Prototype Footer Clarification Note -->
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--slate-500); padding: 0 4px;">
+            <span>*Client-side simulated interactive prototype. Implements dynamic default preselection, conditional save gates, mandatory custom naming, and immutable audit logs.</span>
+            <span style="color: var(--naukri-blue); font-weight: 600;">Full UX Specifications in Appendix C →</span>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 16 — Live Interactive Prototype Demonstration</h4>
-        <p>This is a live, interactive simulator running entirely in-browser. Here is how you can test each workflow:</p>
-        <ol>
-          <li><strong>Single-Resume Quick Apply:</strong> Click '1. Single-Resume Quick Apply'. If a candidate has only 1 saved resume, the interface preserves the simple quick-apply flow with a clear 'Change Resume' option, avoiding unnecessary choice friction.</li>
-          <li><strong>Multi-Resume Selection:</strong> Click '2. Multi-Resume Selector'. When multiple resumes exist, the candidate chooses between their Product Management, Consulting, Operations, or Engineering CVs. The designated default is preselected for convenience.</li>
-          <li><strong>Scenario A (Upload & Don't Save):</strong> Click '3. Scenario A'. The candidate simulates uploading a new resume. Notice the progress bar: the save checkbox is completely hidden until upload completes! When left unchecked, it is used for this application only. Checking the library afterwards confirms exactly 4 resumes remain.</li>
-          <li><strong>Scenario B (Upload & Save):</strong> Click '4. Scenario B'. Upload succeeds, the candidate checks the save box, which requires a custom name (try erasing it—validation will prevent continuing). Upon submit, inspect the library: it now holds 5 resumes, with all older documents untouched!</li>
-          <li><strong>Set Default Action:</strong> In the library view, click '⭐ Set as Default' on any card to test the default preference interaction.</li>
-        </ol>
-        <div class='cue-box'><strong>Transition:</strong> Let's formalize these specifications into a prioritized PRD and MVP scope.</div>
-        """
-    },
-
-    # SLIDE 17: PRD AND MVP DEFINITION
-    {
-        "id": "slide-17",
-        "number": "17",
-        "stage": "Specify",
-        "tag": "Product Requirements",
-        "evidenceType": "Proposed Solution",
-        "title": "Defining What Should Be Built First",
-        "subtitle": "MoSCoW prioritized specifications, testable acceptance criteria, and technical scope",
-        "content": """
-        <div style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 16px; height: 100%;">
-          <!-- Left: MoSCoW Requirements Matrix -->
-          <div class="card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="padding: 8px 12px; background: var(--slate-100); border-bottom: 1px solid var(--slate-200); display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-weight: 700; font-size: 11px; color: var(--navy-dark); text-transform: uppercase;">Functional Requirements Specification</span>
-              <span class="badge badge-blue">MoSCoW Prioritized</span>
-            </div>
-            
-            <div class="table-scroll-wrap" style="flex: 1;">
-              <table class="deck-table" style="font-size: 10.5px;">
-                <thead>
-                  <tr>
-                    <th style="width: 12%;">ID</th>
-                    <th style="width: 60%;">Requirement Description</th>
-                    <th style="width: 14%;">Priority</th>
-                    <th style="width: 14%;">Scope</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>FR01</strong></td>
-                    <td>Support multiple independently stored resume files within one account</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR02</strong></td>
-                    <td>Allow custom user-defined names for saved resumes</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR03</strong></td>
-                    <td>Allow selection of an existing saved resume during supported applications</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR04</strong></td>
-                    <td>Allow uploading a new resume during the application flow</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR05</strong></td>
-                    <td>Display optional save checkbox only after successful upload</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR06</strong></td>
-                    <td>Save checked upload as an independent library entry (no overwriting)</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR07</strong></td>
-                    <td>Preserve unique submitted document reference in application history</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR08</strong></td>
-                    <td>Provide document preview & confirmation before final submission</td>
-                    <td><span class="badge badge-must">Must</span></td>
-                    <td>MVP</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR09</strong></td>
-                    <td>Support rename and delete management actions in library</td>
-                    <td><span class="badge badge-should">Should</span></td>
-                    <td>Phase 2</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR10</strong></td>
-                    <td>Support explicit replacement of existing saved resume with confirmation</td>
-                    <td><span class="badge badge-should">Should</span></td>
-                    <td>Phase 2</td>
-                  </tr>
-                  <tr>
-                    <td><strong>FR11</strong></td>
-                    <td>Offer an optional default-resume preference for quick-apply</td>
-                    <td><span class="badge badge-could">Could</span></td>
-                    <td>Phase 3</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-            <div style="padding: 6px 12px; background: var(--slate-50); border-top: 1px solid var(--slate-200); font-size: 10px; color: var(--slate-600);">
-              <em>Note: FR09, FR10, and FR11 are phased enhancements shown in the prototype demo as a full-vision preview.</em>
-            </div>
-          </div>
-          
-          <!-- Right: Testable Acceptance Criteria & Boundaries -->
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <!-- Testable Acceptance Criteria Box -->
-            <div class="card" style="border-left: 4px solid var(--emerald-accent); background: #F0FDF4; padding: 10px 12px;">
-              <div class="card-header-sm">
-                <span style="color: #065F46; font-weight: 800;">Sample Acceptance Criteria (Given/When/Then)</span>
-                <span class="badge badge-teal">Testable Rules</span>
-              </div>
-              <div style="font-size: 10.5px; color: #064E3B; line-height: 1.4; display: flex; flex-direction: column; gap: 4px; margin-top: 2px;">
-                <div>• <strong>Pre-upload:</strong> Given a file upload has not succeeded, the save checkbox is hidden.</div>
-                <div>• <strong>Post-upload:</strong> Given upload succeeds, the save checkbox becomes visible.</div>
-                <div>• <strong>Unchecked:</strong> Given checkbox is unchecked, no new library record is created.</div>
-                <div>• <strong>Checked:</strong> Given checkbox is checked, mandatory custom name validation is enforced.</div>
-                <div>• <strong>Duplicate Name:</strong> Given identical filenames, store with unique internal UUIDs without overwriting.</div>
-              </div>
-            </div>
-            
-            <!-- Protected Out-of-Scope Box -->
-            <div class="card" style="border-left: 4px solid var(--rose-accent); background: #FFF5F5; padding: 10px 12px; flex: 1;">
-              <div class="card-header-sm">
-                <span style="color: #9F1239; font-weight: 800;">Explicitly Out of Scope for MVP</span>
-                <span class="badge badge-red">Protected Scope</span>
-              </div>
-              <ul style="font-size: 10.5px; color: #4C0519; padding-left: 14px; line-height: 1.35; margin-top: 2px;">
-                <li>❌ <strong>AI automatically choosing a resume:</strong> System does not pick for the candidate.</li>
-                <li>❌ <strong>AI rewriting a resume:</strong> System does not generate or modify resume text.</li>
-                <li>❌ <strong>Automatically merging resumes:</strong> Documents are never consolidated automatically.</li>
-                <li>❌ <strong>Automatic profile modification:</strong> Uploads do not alter structured profile fields.</li>
-                <li>❌ <strong>Silent submission:</strong> Candidate confirmation is strictly required.</li>
-              </ul>
-              <div style="margin-top: 4px; font-size: 10px; color: #881337; font-weight: 600;">
-                Core mandate: The feature remains entirely candidate-controlled.
-              </div>
-            </div>
-          </div>
-        </div>
-        """,
-        "speakerNotes": """
-        <h4>Slide 17 — PRD, Acceptance Criteria & Scope Discipline</h4>
-        <p>In this PRD, we establish clear prioritization and testable acceptance criteria:</p>
+        <h4>Slide 12 — UX Design & Interactive Prototype (Suggested Duration: ~90 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "To make this proposal concrete, I built an interactive prototype simulating the candidate experience across desktop viewports.</p>
+        <p>You can test four primary scenarios using the top preset buttons:</p>
         <ul>
-          <li><strong>Must-Haves (FR01–FR08):</strong> Establishing the core loop of storing multiple files, custom naming, apply-time selection, conditional save checkbox post-upload, non-destructive saving, preview review, and history tracking.</li>
-          <li><strong>Phased Enhancements:</strong> FR09 (rename/delete), FR10 (explicit replace), and FR11 (default preference) are scheduled for Phase 2/3 and previewed in our prototype.</li>
-          <li><strong>Acceptance Criteria:</strong> Structured as testable Given/When/Then statements. For example, the save checkbox MUST NOT appear until upload succeeds.</li>
-          <li><strong>Out of Scope:</strong> We strictly protect scope against AI auto-selection, AI rewriting, automatic merging, and silent submissions.</li>
+          <li><strong>Preset 1 (Single-Resume Quick Apply):</strong> Demonstrates how a candidate with only one resume retains the fast, frictionless experience with pre-attached CV.</li>
+          <li><strong>Preset 2 (Multi-Resume Selector):</strong> Lets a candidate easily choose between their Product Management CV, Consulting CV, or Operations CV. Notice how setting a default updates preselection dynamically.</li>
+          <li><strong>Preset 3 (Scenario A - Apply-Only Upload):</strong> The candidate uploads a fresh file, leaves the save checkbox unchecked, and applies. The existing library remains exactly at 4 resumes.</li>
+          <li><strong>Preset 4 (Scenario B - Upload & Save):</strong> The candidate checks 'Save to Resume Library'. Notice that a custom name becomes mandatory, and upon submission, the library expands to 5 independent files without overwriting any existing resumes.</li>
         </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's see how Naukri could measure the impact of this feature through a controlled experiment.</div>
+        <p>Finally, the 'Application History' tab shows how every submission permanently logs the exact document version submitted."</p>
+        <div class='cue-box'><strong>Transition:</strong> With the solution validated in prototype, how should Naukri prioritize MVP delivery and measure business success? Let's look at Slide 13.</div>
         """
     }
 ]

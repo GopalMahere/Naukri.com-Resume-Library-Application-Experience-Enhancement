@@ -40,6 +40,8 @@ def get_evidence_badge(evidence_type):
     return f'<span class="evidence-tag {cls}">[{evidence_type.upper()}]</span>'
 
 def render_stage_track(current_stage):
+    if current_stage == "Appendix":
+        return '<div class="stage-track"><span class="stage-step active" style="background:#4F46E5; color:white; border-color:#6366F1;">📚 Supporting Appendix</span></div>'
     if current_stage not in STAGES_ORDER:
         return f'<div class="stage-track"><span class="stage-step active">{current_stage}</span></div>'
     
@@ -54,21 +56,26 @@ def render_stage_track(current_stage):
     return f'<div class="stage-track">{" ".join(steps_html)}</div>'
 
 def build_presentation():
-    # 23 Slides: 20 Core Lifecycle Slides + 3 Appendices
+    # 16 Slides: 13 Core Presentation Slides + 3 Detailed Appendices
     all_slides = SLIDES_DISCOVERY + SLIDES_RESEARCH + SLIDES_SOLUTION + SLIDES_STRATEGY
     total_slides = len(all_slides)
     
     # Generate Slide Registry for JavaScript
-    slide_registry = [
-        {
+    slide_registry = []
+    for idx, slide in enumerate(all_slides):
+        if idx < 13:
+            slide_num_str = f"{idx + 1:02d}"
+        else:
+            appx_letter = chr(65 + idx - 13)
+            slide_num_str = f"{idx + 1:02d} (Appx {appx_letter})"
+            
+        slide_registry.append({
             "id": slide["id"],
-            "num": f"{idx + 1:02d}",
+            "num": slide_num_str,
             "stage": slide.get("stage", "Discover"),
             "tag": slide["tag"],
             "title": slide["title"]
-        }
-        for idx, slide in enumerate(all_slides)
-    ]
+        })
     slide_registry_json = json.dumps(slide_registry, indent=2)
     
     # Generate Slides HTML & Grid Cards HTML
@@ -78,16 +85,23 @@ def build_presentation():
     for idx, slide in enumerate(all_slides):
         is_first = (idx == 0)
         active_class = "active" if is_first else ""
-        slide_num = f"{idx + 1:02d}"
         slide_stage = slide.get("stage", "Discover")
         evidence_badge_html = get_evidence_badge(slide.get("evidenceType", ""))
         stage_track_html = render_stage_track(slide_stage)
+        
+        if idx < 13:
+            card_num_display = f"SLIDE {idx + 1:02d}"
+            slide_pill_display = f"Slide {idx + 1:02d} / {total_slides:02d}"
+        else:
+            appx_letter = chr(65 + idx - 13)
+            card_num_display = f"APPENDIX {appx_letter} (SLIDE {idx + 1:02d})"
+            slide_pill_display = f"Slide {idx + 1:02d} / {total_slides:02d} • Appx {appx_letter}"
         
         # Grid Card HTML
         grid_cards_list.append(f"""
           <div class="grid-card {'active' if is_first else ''}" onclick="goToSlide({idx}); closeAllModals();">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span class="grid-card-num">SLIDE {slide_num}</span>
+              <span class="grid-card-num" style="{'color:#A78BFA;' if idx >= 13 else ''}">{card_num_display}</span>
               <span class="grid-card-tag">{slide_stage} • {slide['tag']}</span>
             </div>
             <div class="grid-card-title">{slide['title']}</div>
@@ -108,7 +122,7 @@ def build_presentation():
             </div>
             <div style="display: flex; align-items: center; gap: 8px;">
               {evidence_badge_html}
-              <div class="slide-number-pill">Slide {slide_num} / {total_slides:02d}</div>
+              <div class="slide-number-pill">{slide_pill_display}</div>
             </div>
           </div>
           
@@ -241,7 +255,7 @@ def build_presentation():
     <!-- SLIDE OVERVIEW GRID MODAL -->
     <div id="slide-grid-modal">
       <div class="grid-modal-header">
-        <div class="grid-modal-title">Presentation Slide Index ({total_slides} Slides)</div>
+        <div class="grid-modal-title">Presentation Slide Index ({total_slides} Slides: 13 Core + 3 Appendices)</div>
         <button class="header-btn" onclick="toggleSlideGrid()">Close ✕</button>
       </div>
       <div class="grid-cards-container">
@@ -267,19 +281,19 @@ def build_presentation():
         <div>
           <h4 style="font-size: 12px; text-transform: uppercase; color: #60A5FA; letter-spacing: 0.5px; margin-bottom: 4px;">Investigation Context & Intent</h4>
           <p style="font-size: 12px; line-height: 1.5; color: var(--slate-200);">
-            This project began with a candidate-side problem encountered during job applications. We investigated how candidates manage multiple resume versions, collected exploratory user research, examined platform capabilities, assessed the product opportunity, and developed a practical improvement proposal for Naukri.com.
+            This project began with a candidate-side problem encountered during job applications across multiple role tracks. We investigated how candidates manage multiple resume versions, collected exploratory user research (N=45), examined competitor platform capabilities (Naukri, LinkedIn, Indeed), assessed strategic alternatives, and developed a practical improvement proposal for Naukri.com featuring a candidate-controlled Resume Library.
           </p>
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
           <div style="background: rgba(255,255,255,0.05); padding: 10px 12px; border-radius: 6px; border-left: 3px solid var(--naukri-blue);">
-            <strong style="color: white; font-size: 11.5px;">Deck Structure (23 Slides):</strong>
+            <strong style="color: white; font-size: 11.5px;">Deck Structure (16 Slides):</strong>
             <ul style="font-size: 11px; margin-top: 4px; padding-left: 16px; line-height: 1.4; color: var(--slate-300);">
-              <li>Slides 01–06: Problem Discovery, PM Approach, Origin & Definition</li>
-              <li>Slides 07–12: Survey Evidence (N=45), Journey Map, Validation, Root Causes & Benchmarks</li>
-              <li>Slides 13–17: Alternatives, 3 Pillars, 11-Step Logic, Interactive Prototype & PRD</li>
-              <li>Slides 18–20: A/B Testing, Governance, Roadmap & Final Recommendation</li>
-              <li>Slides 21–23: Appendices A, B & C (Full survey data, citations, glossary)</li>
+              <li>Slides 01–04: Discovery, Origin & Problem Definition (JTBD & Scope)</li>
+              <li>Slides 05–08: Research Findings (N=45), Journey Map, Validation & Benchmarks</li>
+              <li>Slides 09–12: Alternatives, 3 Pillars, 11-Step Logic & Interactive Prototype</li>
+              <li>Slide 13: MVP Prioritization, Experimentation & Final Recommendation</li>
+              <li>Slides 14–16: Appendices A, B & C (Full survey data, citations, PRD glossary)</li>
             </ul>
           </div>
           
@@ -287,7 +301,7 @@ def build_presentation():
             <strong style="color: white; font-size: 11.5px;">Navigation Keyboard Shortcuts:</strong>
             <ul style="font-size: 11px; margin-top: 4px; padding-left: 16px; line-height: 1.4; color: var(--slate-300);">
               <li><kbd class="key-pill">←</kbd> / <kbd class="key-pill">→</kbd> or <kbd class="key-pill">Space</kbd>: Step through slides</li>
-              <li><kbd class="key-pill">N</kbd>: Open Speaker Notes (detailed talking points)</li>
+              <li><kbd class="key-pill">N</kbd>: Open Speaker Notes (detailed talking points & timing)</li>
               <li><kbd class="key-pill">G</kbd>: Slide Overview Grid (jump to any slide)</li>
               <li><kbd class="key-pill">O</kbd> / <kbd class="key-pill">E</kbd>: Toggle this Evaluator Guide</li>
               <li><kbd class="key-pill">F</kbd>: Fullscreen Mode</li>
@@ -318,7 +332,7 @@ const totalSlides = slideRegistry.length;
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(full_html)
     
-    print(f"Successfully compiled presentation to: {output_path} ({len(full_html)} bytes)")
+    print(f"Successfully compiled presentation to: {output_path} ({len(full_html)} bytes, {total_slides} slides)")
 
 if __name__ == "__main__":
     build_presentation()

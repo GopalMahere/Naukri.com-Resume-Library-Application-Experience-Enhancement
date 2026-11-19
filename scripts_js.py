@@ -36,7 +36,7 @@ let protoUploadState = {
 // SLIDE DATA REGISTRY (Dynamically provided by build template)
 if (typeof slideRegistry === 'undefined') {
   window.slideRegistry = [];
-  window.totalSlides = document.querySelectorAll('.slide').length || 23;
+  window.totalSlides = document.querySelectorAll('.slide').length || 16;
 }
 
 // INITIALIZATION

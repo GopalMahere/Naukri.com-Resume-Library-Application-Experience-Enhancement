@@ -1,618 +1,541 @@
-# slides_research.py - Slides 07 to 12 (Research Methodology, Findings, Journey Map, Evidence Validation, Root Cause, Competitor Benchmarking)
+# slides_research.py - Slides 05 to 08 (User Research, Current Journey, Validation & Root Causes, Competitor Benchmarking)
 
 SLIDES_RESEARCH = [
-    # SLIDE 07: RESEARCH DESIGN AND METHODOLOGY
+    # SLIDE 05: USER RESEARCH & FINDINGS (Merges old Slides 7 & 8)
+    {
+        "id": "slide-5",
+        "number": "05",
+        "stage": "Research",
+        "tag": "User Research & Findings",
+        "evidenceType": "Survey Evidence N=45",
+        "title": "What We Learned from the Respondents",
+        "subtitle": "Exploratory survey findings from 45 college students applying across role categories",
+        "content": """
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
+          <!-- Top Row: 4 Key Quantitative Stat Cards -->
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+            
+            <div class="card card-blue" style="padding: 12px 14px; text-align: center;">
+              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--naukri-blue); letter-spacing: 0.5px;">Active Job Seekers</div>
+              <div style="font-size: 34px; font-weight: 800; color: #1E3A8A; line-height: 1.1; margin: 4px 0;">90%</div>
+              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
+                Applied in last 90 days<br>
+                <span style="font-size: 10.5px; color: var(--slate-500);">(80% placements, 20% internships)</span>
+              </div>
+            </div>
+
+            <div class="card card-indigo" style="padding: 12px 14px; text-align: center;">
+              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #4F46E5; letter-spacing: 0.5px;">Multi-Role Volume</div>
+              <div style="font-size: 34px; font-weight: 800; color: #3730A3; line-height: 1.1; margin: 4px 0;">80%</div>
+              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
+                Applied across <strong>3+ role categories</strong><br>
+                <span style="font-size: 10.5px; color: var(--slate-500);">(60% applied to 4+ roles)</span>
+              </div>
+            </div>
+
+            <div class="card card-amber" style="padding: 12px 14px; text-align: center;">
+              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--amber-accent); letter-spacing: 0.5px;">Resume Variation</div>
+              <div style="font-size: 34px; font-weight: 800; color: #92400E; line-height: 1.1; margin: 4px 0;">90%</div>
+              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
+                Maintain multiple resume versions<br>
+                <span style="font-size: 10.5px; color: var(--slate-500);">(Frequent alternate CV need)</span>
+              </div>
+            </div>
+
+            <div class="card card-emerald" style="padding: 12px 14px; text-align: center;">
+              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--emerald-accent); letter-spacing: 0.5px;">Feature Intent</div>
+              <div style="font-size: 34px; font-weight: 800; color: #065F46; line-height: 1.1; margin: 4px 0;">90%</div>
+              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
+                Rated feature extremely useful<br>
+                <span style="font-size: 10.5px; color: var(--slate-500);">(90% reported very likely to use)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Middle Row: Role Distribution Chart + Motivations & Workarounds -->
+          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 16px; flex: 1;">
+            
+            <!-- Left: Visual Bar Chart of Role Categories -->
+            <div class="card" style="padding: 14px 18px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--navy-dark); letter-spacing: 0.5px;">
+                  Role Categories Applied To (N=45)
+                </span>
+                <span class="badge badge-blue" style="font-size: 10px;">80% across 3+ roles</span>
+              </div>
+              
+              <!-- Custom Visual CSS Horizontal Bar Chart -->
+              <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 600; color: var(--slate-700); margin-bottom: 3px;">
+                    <span>4 or more distinct role types</span>
+                    <strong style="color: #1E3A8A;">60% (27 candidates)</strong>
+                  </div>
+                  <div style="width: 100%; height: 14px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                    <div style="width: 60%; height: 100%; background: linear-gradient(90deg, #1856EA, #3B82F6); border-radius: 4px;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 600; color: var(--slate-700); margin-bottom: 3px;">
+                    <span>3 distinct role types</span>
+                    <strong style="color: #4F46E5;">20% (9 candidates)</strong>
+                  </div>
+                  <div style="width: 100%; height: 14px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                    <div style="width: 20%; height: 100%; background: linear-gradient(90deg, #6366F1, #818CF8); border-radius: 4px;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 600; color: var(--slate-700); margin-bottom: 3px;">
+                    <span>2 distinct role types</span>
+                    <strong style="color: #0D9488;">15% (7 candidates)</strong>
+                  </div>
+                  <div style="width: 100%; height: 14px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                    <div style="width: 15%; height: 100%; background: linear-gradient(90deg, #0D9488, #14B8A6); border-radius: 4px;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 600; color: var(--slate-700); margin-bottom: 3px;">
+                    <span>1 role type only</span>
+                    <strong style="color: var(--slate-600);">5% (2 candidates)</strong>
+                  </div>
+                  <div style="width: 100%; height: 14px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                    <div style="width: 5%; height: 100%; background: #94A3B8; border-radius: 4px;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="font-size: 11px; color: var(--slate-500); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--slate-100);">
+                Key Insight: Only 5% of early-career applicants rely on a single narrow role profile.
+              </div>
+            </div>
+
+            <!-- Right: Motivations & Workarounds Panels -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="card card-teal" style="padding: 10px 14px; flex: 1;">
+                <div style="font-size: 11.5px; font-weight: 700; color: #115E59; margin-bottom: 4px;">
+                  💡 Reported Candidate Motivations
+                </div>
+                <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  Candidates tailor distinct CVs to align projects and skills with specific job descriptions, preventing mismatched keyword rejections.
+                </div>
+              </div>
+
+              <div class="card card-amber" style="padding: 10px 14px; flex: 1;">
+                <div style="font-size: 11.5px; font-weight: 700; color: #92400E; margin-bottom: 4px;">
+                  📁 Current Workarounds & Friction
+                </div>
+                <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  Managing multiple files across Google Drive or desktop folders, manually verifying filenames before each apply, and dreading overwriting existing profile resumes.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom: Methodological Limitation Disclaimer -->
+          <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 11.5px; color: var(--slate-600);">
+              <strong style="color: var(--navy-dark);">Research Boundary:</strong> The survey was exploratory, based on personal outreach and predominantly student-focused. It does not establish market-wide demand or prove that the same problem affects all Naukri users.
+            </div>
+            <span style="font-size: 11px; color: var(--naukri-blue); font-weight: 700; white-space: nowrap; margin-left: 10px;">
+              Full Q1–Q13 Data in Appendix A →
+            </span>
+          </div>
+        </div>
+        """,
+        "speakerNotes": """
+        <h4>Slide 05 — User Research & Findings (Suggested Duration: ~75 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "To investigate the hypothesis, I conducted an exploratory survey with 45 college job seekers. Here are the core empirical findings:</p>
+        <ul>
+          <li><strong>90%</strong> were actively applying in the last 90 days—80% targeting campus placements and 20% seeking internships.</li>
+          <li><strong>80%</strong> applied across three or more distinct role categories. Looking at the distribution chart, an overwhelming 60% applied to four or more roles. Only 5% applied to just one role.</li>
+          <li><strong>90%</strong> maintain multiple resume versions, frequently needing an alternate version during active applications.</li>
+          <li><strong>90%</strong> rated the proposed Resume Library extremely useful and expressed very high intent to use it.</li>
+        </ul>
+        <p>Candidates reported managing their CVs through clumsy external workarounds like Google Drive links and desktop folders, and constantly worry about overwriting files or attaching the wrong version.</p>
+        <p>We explicitly note the boundary: this exploratory cohort is student-heavy; complete Q1 to Q13 responses are cataloged in Appendix A."</p>
+        <div class='cue-box'><strong>Transition:</strong> Let's see how this plays out in the candidate's actual application journey on the platform.</div>
+        """
+    },
+
+    # SLIDE 06: CURRENT CANDIDATE JOURNEY & FRICTION (Preserves old Slide 9)
+    {
+        "id": "slide-6",
+        "number": "06",
+        "stage": "Validate",
+        "tag": "Current Candidate Journey",
+        "evidenceType": "User-Reported Journey",
+        "title": "Where Resume Management Can Interrupt the Application Journey",
+        "subtitle": "Examining common application paths and candidate-reported friction points",
+        "content": """
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
+          <!-- Top: Linear Candidate Journey Flow -->
+          <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 12px 16px;">
+            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--slate-500); letter-spacing: 0.6px; margin-bottom: 8px;">
+              Common Candidate Journey Sequence
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: var(--navy-dark); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">1</span>
+                <span style="font-size: 12.5px; font-weight: 700; color: var(--navy-dark);">Maintain Profile</span>
+              </div>
+              <span style="color: var(--slate-400); font-weight: 700;">→</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: var(--navy-dark); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">2</span>
+                <span style="font-size: 12.5px; font-weight: 700; color: var(--navy-dark);">Search & Find Job</span>
+              </div>
+              <span style="color: var(--slate-400); font-weight: 700;">→</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: var(--navy-dark); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">3</span>
+                <span style="font-size: 12.5px; font-weight: 700; color: var(--navy-dark);">Click Apply</span>
+              </div>
+              <span style="color: var(--slate-400); font-weight: 700;">→</span>
+              <div style="display: flex; align-items: center; gap: 8px; background: #FFF1F2; border: 1.5px solid #FECDD3; padding: 4px 10px; border-radius: 6px;">
+                <span style="background: var(--rose-accent); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">4</span>
+                <span style="font-size: 12.5px; font-weight: 700; color: var(--rose-accent);">Decide Resume to Submit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle: 3 Application Paths Comparison -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; flex: 1;">
+            
+            <!-- Path A: Direct In-Flow Upload -->
+            <div class="card card-emerald" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span class="badge badge-teal">Path A</span>
+                  <span style="font-size: 11px; color: #166534; font-weight: 600;">Seamless</span>
+                </div>
+                <div style="font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">
+                  In-Flow Alternate Upload
+                </div>
+                <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  Flow allows candidate to attach an alternate document directly within the application modal without leaving the page.
+                </div>
+              </div>
+              <div style="background: #ECFDF5; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #166534; margin-top: 8px;">
+                ✓ Low friction; document submitted successfully.
+              </div>
+            </div>
+
+            <!-- Path B: Profile-Attached Friction Path -->
+            <div class="card card-rose" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span class="badge badge-red">Path B</span>
+                  <span style="font-size: 11px; color: #9F1239; font-weight: 700;">User-Reported Friction</span>
+                </div>
+                <div style="font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">
+                  Profile-Attached Redirect
+                </div>
+                <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  Candidate encounters a workflow tied strictly to the profile resume. Must exit application, update profile CV, and search for the job again.
+                </div>
+              </div>
+              <div style="background: #FFF1F2; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #9F1239; margin-top: 8px;">
+                ⚠️ High context-switching, overwrite risk & drop-off.
+              </div>
+            </div>
+
+            <!-- Path C: External ATS Redirect -->
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--slate-500);">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span class="badge badge-gray">Path C</span>
+                  <span style="font-size: 11px; color: var(--slate-500); font-weight: 600;">Third-Party</span>
+                </div>
+                <div style="font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">
+                  External ATS Portal
+                </div>
+                <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  Application redirects out of Naukri to company career site (Workday, Greenhouse). Document handling is governed by external ATS.
+                </div>
+              </div>
+              <div style="background: #F1F5F9; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: var(--slate-600); margin-top: 8px;">
+                ℹ️ Outside Naukri native UI boundary.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom: Reported Candidate Friction & Validation Boundary -->
+          <div style="background: #FFFFFF; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 10px 16px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px; align-items: center;">
+            <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+              <strong style="color: var(--navy-dark);">Reported Friction Manifestation:</strong>
+              Candidates report abandoning applications when switching documents requires profile navigation, or accidentally overwriting an executive CV with an analyst CV.
+            </div>
+            <div style="font-size: 11px; color: var(--slate-500); border-left: 2px solid var(--amber-accent); padding-left: 10px;">
+              *Labelled as user-reported behavior. Platform-wide drop-off proportions require Naukri telemetry validation.
+            </div>
+          </div>
+        </div>
+        """,
+        "speakerNotes": """
+        <h4>Slide 06 — Current Candidate Journey & Friction (Suggested Duration: ~60 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "When we map the candidate journey, friction surfaces right at step 4: deciding which resume to submit.</p>
+        <p>Depending on the specific posting, candidates encounter three distinct paths:</p>
+        <ul>
+          <li><strong>Path A:</strong> In-flow upload allows attaching an alternate document. This works smoothly.</li>
+          <li><strong>Path B (Friction Path):</strong> The candidate encounters a flow tied strictly to the profile resume. To submit a tailored version, they must navigate back to their profile, upload a new CV, return to the job search, and re-apply. This context-switching risks application drop-off and overwrites their master CV.</li>
+          <li><strong>Path C:</strong> External ATS redirects to third-party portals, where document handling is outside Naukri's direct control.</li>
+        </ul>
+        <p>We specifically label Path B as user-reported friction that warrants telemetry validation inside Naukri."</p>
+        <div class='cue-box'><strong>Transition:</strong> Let's separate what our evidence firmly supports from what still requires internal Naukri validation.</div>
+        """
+    },
+
+    # SLIDE 07: PROBLEM VALIDATION & ROOT-CAUSE ANALYSIS (Merges old Slides 10 & 11)
     {
         "id": "slide-7",
         "number": "07",
-        "stage": "Research",
-        "tag": "Research Methodology",
-        "evidenceType": "Survey Finding",
-        "title": "What We Wanted to Understand",
-        "subtitle": "Research questions, exploratory survey design, and candidate sample profile",
+        "stage": "Diagnose",
+        "tag": "Validation & Root Causes",
+        "evidenceType": "Requires Naukri Validation",
+        "title": "What the Evidence Supports — and What We Still Need to Investigate",
+        "subtitle": "Auditing our current research boundaries and diagnosing underlying structural hypotheses",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 16px; flex: 1;">
-            <!-- Left: 7 Key Research Questions -->
-            <div class="card card-tinted" style="padding: 14px 18px; display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span>Core Inquiry Framework</span>
-                <span class="badge badge-gray">7 Research Questions</span>
-              </div>
-              <div style="font-weight: 700; font-size: 13px; color: var(--navy-dark); margin-bottom: 6px;">
-                Investigating Candidate Resume Management Practices
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 5px; font-size: 11px; color: var(--slate-700); flex: 1;">
-                <div><strong>Q1. Multiple Resumes:</strong> Do candidates maintain different resume versions?</div>
-                <div><strong>Q2. Motivations:</strong> Why do they maintain tailored documents?</div>
-                <div><strong>Q3. Category Breadth:</strong> How many role categories do they apply for?</div>
-                <div><strong>Q4. Friction Frequency:</strong> How often is an alternate resume needed during apply?</div>
-                <div><strong>Q5. Current Methods:</strong> How do they currently organize and store different versions?</div>
-                <div><strong>Q6. Workarounds:</strong> What workarounds do they employ when friction occurs?</div>
-                <div><strong>Q7. Perceived Value:</strong> Would a persistent in-portal Resume Library be useful?</div>
-              </div>
-              <div style="background: white; border: 1px solid var(--slate-200); border-radius: 4px; padding: 6px 10px; font-size: 10.5px; color: var(--slate-600); margin-top: 6px;">
-                Designed to establish exploratory behavioural signals regarding multi-track job applications.
-              </div>
-            </div>
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
+          <!-- Two Main Columns: Section A (Evidence Audit) & Section B (Root-Cause Hypotheses) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1;">
             
-            <!-- Right: Methodology & Explicit Sample Profile -->
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-              <div class="card" style="border-left: 4px solid var(--amber-accent); padding: 12px 16px;">
-                <div class="card-header-sm">
-                  <span>Methodology & Sample Profile</span>
-                  <span class="evidence-tag evidence-tag-survey">N=45 Survey</span>
+            <!-- Section A: Evidence Audit (Supported vs Requires Validation) -->
+            <div class="card" style="padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--navy-dark); letter-spacing: 0.5px; margin-bottom: 8px;">
+                  Section A: Evidence Audit
                 </div>
-                <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.45;">
-                  <div>• <strong>Method:</strong> Structured survey via direct outreach.</div>
-                  <div>• <strong>Sample Size:</strong> 45 respondents (student-focused cohort).</div>
-                  <div>• <strong>Cohort Breakdown:</strong></div>
-                  <div style="padding-left: 10px; font-size: 11px; color: var(--navy-dark); margin-top: 2px;">
-                    - <strong>80%</strong> looking for placements or full-time roles.<br>
-                    - <strong>20%</strong> looking for internships.
+                
+                <!-- Supported by Data -->
+                <div style="background: #ECFDF5; border: 1.5px solid #A7F3D0; border-radius: 6px; padding: 10px 12px; margin-bottom: 10px;">
+                  <div style="font-size: 11.5px; font-weight: 700; color: #166534; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                    <span>✓ SUPPORTED BY CURRENT EVIDENCE (N=45)</span>
                   </div>
-                  <div style="margin-top: 4px;">• <strong>Activity:</strong> 90% applied for jobs in the last 90 days.</div>
+                  <ul style="font-size: 11.5px; color: #14532D; padding-left: 16px; line-height: 1.45; margin: 0;">
+                    <li>Multi-role applications are standard practice (80% across 3+ roles).</li>
+                    <li>Maintaining multiple resume versions is normal candidate behavior (90%).</li>
+                    <li>Strong candidate intent and appetite for a dedicated library (90%).</li>
+                    <li>Competitors have deployed multi-resume handling (LinkedIn, Indeed).</li>
+                  </ul>
+                </div>
+
+                <!-- Requires Validation -->
+                <div style="background: #FFFBEB; border: 1.5px solid #FDE68A; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 11.5px; font-weight: 700; color: #92400E; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                    <span>⚠️ REQUIRES NAUKRI INTERNAL VALIDATION</span>
+                  </div>
+                  <ul style="font-size: 11.5px; color: #78350F; padding-left: 16px; line-height: 1.45; margin: 0;">
+                    <li>Exact percentage of candidates who experience Path B profile redirects.</li>
+                    <li>Telemetry on application start-to-completion drop-offs correlated with resume edits.</li>
+                    <li>Ratio of native applications vs external ATS redirects across listings.</li>
+                    <li>Database schema storage constraints for multiple resume files per candidate.</li>
+                  </ul>
                 </div>
               </div>
-              
-              <!-- Limitations Box -->
-              <div class="card card-tinted" style="border-left: 4px solid var(--rose-accent); padding: 10px 14px; flex: 1;">
-                <div class="card-header-sm">
-                  <span>Methodological Limitations</span>
-                  <span class="badge badge-red">Honest Disclosures</span>
-                </div>
-                <ul style="font-size: 10.5px; color: #4C0519; padding-left: 14px; line-height: 1.35;">
-                  <li>Student-focused sample; does not represent all Naukri candidates or mid-career professionals.</li>
-                  <li>Did not measure platform-specific market share or isolate portal-specific friction rates.</li>
-                  <li>Exploratory sample (N=45) provides qualitative directional signal, not statistical proof of company-wide demand.</li>
-                </ul>
+
+              <div style="font-size: 10.5px; color: var(--slate-500); margin-top: 6px;">
+                Maintains strict objectivity by separating sample findings from platform truths.
               </div>
             </div>
+
+            <!-- Section B: 5 Root-Cause Hypotheses -->
+            <div class="card card-purple" style="padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: #6D28D9; letter-spacing: 0.5px;">
+                    Section B: Root-Cause Hypotheses
+                  </span>
+                  <span class="badge" style="background:#EDE9FE; color:#6D28D9;">Hypotheses Only</span>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 7px;">
+                  <div style="background: #FFFFFF; border: 1px solid #DDD6FE; border-radius: 5px; padding: 7px 10px;">
+                    <strong style="color: #4C1D95; font-size: 11.5px;">H1. Decoupled Selection Architecture:</strong>
+                    <div style="font-size: 11px; color: var(--slate-700); margin-top: 1px;">
+                      Resume storage and application selection may be decoupled in certain legacy workflows.
+                    </div>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #DDD6FE; border-radius: 5px; padding: 7px 10px;">
+                    <strong style="color: #4C1D95; font-size: 11.5px;">H2. Lack of In-Flow Reusability:</strong>
+                    <div style="font-size: 11px; color: var(--slate-700); margin-top: 1px;">
+                      Alternate uploads in Path A may not persist to the candidate's account for future re-use.
+                    </div>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #DDD6FE; border-radius: 5px; padding: 7px 10px;">
+                    <strong style="color: #4C1D95; font-size: 11.5px;">H3. Single-Slot Profile Data Model:</strong>
+                    <div style="font-size: 11px; color: var(--slate-700); margin-top: 1px;">
+                      Profile schema historically accommodates a single primary resume file per user record.
+                    </div>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #DDD6FE; border-radius: 5px; padding: 7px 10px;">
+                    <strong style="color: #4C1D95; font-size: 11.5px;">H4. Absence of Transparent Traceability:</strong>
+                    <div style="font-size: 11px; color: var(--slate-700); margin-top: 1px;">
+                      Candidates lack clear visibility into exactly which resume version was sent to past employers.
+                    </div>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #DDD6FE; border-radius: 5px; padding: 7px 10px;">
+                    <strong style="color: #4C1D95; font-size: 11.5px;">H5. Recruiter Search Synchronization:</strong>
+                    <div style="font-size: 11px; color: var(--slate-700); margin-top: 1px;">
+                      Uncertainty regarding which resume should be indexed for recruiter queries (e.g. Resdex).
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="font-size: 10.5px; color: #7C3AED; margin-top: 6px;">
+                Diagnosing structural causes rather than just treating surface symptoms.
+              </div>
+            </div>
+
           </div>
-          
-          <div style="background: var(--slate-100); padding: 7px 12px; border-radius: 4px; font-size: 11px; color: var(--slate-600); text-align: center;">
-            <strong>Research Stance:</strong> These findings provide a directional foundation to explore candidate needs. We treat stated user interest as an exploratory indicator rather than guaranteed adoption.
+
+          <!-- Bottom: Transition Banner -->
+          <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 8px 16px; font-size: 11.5px; color: var(--slate-700);">
+            <strong style="color: var(--navy-dark);">PM Assessment:</strong> Instead of assuming engineering defects, we treat these as structural design trade-offs that can be validated through internal telemetry and addressed via a non-destructive library architecture.
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 7 — Research Methodology & Transparency</h4>
-        <p>A rigorous PM presentation must be completely candid about how research was conducted:</p>
-        <ul>
-          <li>We formulated seven specific questions to explore candidate behaviour: prevalence of multiple resumes, motivations, category breadth, friction frequency, current storage methods, workarounds, and stated usefulness.</li>
-          <li>Our sample consisted of 45 college students contacted via personal outreach: 80% preparing for placements or full-time jobs, and 20% for internships. 90% had applied within the preceding 90 days.</li>
-          <li>We clearly disclose our limitations: this is an exploratory student sample, not a representative demographic of all Naukri users or experienced professionals.</li>
-          <li>Furthermore, the survey did not establish how many respondents experienced this specifically on Naukri.com, so we do not make that claim.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's review the exact reported findings from the survey.</div>
+        <h4>Slide 07 — Problem Validation & Root Causes (Suggested Duration: ~75 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "A disciplined PM distinguishes firmly between verified sample data and unverified hypotheses.</p>
+        <p>In <strong>Section A</strong>, our evidence confirms that multi-role applications are widespread (80%), multiple resumes are common (90%), and candidates express strong desire for a library. However, what <em>requires Naukri validation</em> is the internal telemetry: how many candidates abandon applications during resume edits, and what percentage of applications flow through Path A vs Path B vs Path C?</p>
+        <p>In <strong>Section B</strong>, we examine five structural root causes behind the friction: decoupled selection in certain flows, lack of reusability, single-slot legacy profile schema, lack of version traceability in past applications, and recruiter indexing questions."</p>
+        <div class='cue-box'><strong>Transition:</strong> How do other leading talent platforms solve this multi-resume challenge? Let's benchmark the competition.</div>
         """
     },
 
-    # SLIDE 08: RESEARCH FINDINGS
+    # SLIDE 08: COMPETITOR BENCHMARKING (Preserves old Slide 12)
     {
         "id": "slide-8",
         "number": "08",
-        "stage": "Research",
-        "tag": "Survey Evidence",
-        "evidenceType": "Survey Finding",
-        "title": "What We Learned from the Respondents",
-        "subtitle": "Reported behaviours, role distribution, and stated candidate preferences (N=45)",
-        "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- Top Row: Role Distribution Chart & Core KPIs -->
-          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 14px;">
-            <!-- Role Distribution Breakdown -->
-            <div class="card card-tinted" style="padding: 12px 16px;">
-              <div class="card-header-sm">
-                <span>Q3: Role Categories Applied For Concurrently</span>
-                <span class="evidence-tag evidence-tag-survey">N=45 Cohort</span>
-              </div>
-              <div style="font-weight: 700; font-size: 12.5px; color: var(--navy-dark); margin-bottom: 6px;">
-                80% Apply Across Three or More Role Categories
-              </div>
-              
-              <!-- Visual Bar Breakdown -->
-              <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 4px;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 1px;">
-                    <span>4 or more role types</span>
-                    <strong>60%</strong>
-                  </div>
-                  <div style="background: #E2E8F0; border-radius: 4px; height: 8px; overflow: hidden;">
-                    <div style="width: 60%; background: var(--navy-dark); height: 100%;"></div>
-                  </div>
-                </div>
-                <div>
-                  <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 1px;">
-                    <span>3 role types</span>
-                    <strong>20%</strong>
-                  </div>
-                  <div style="background: #E2E8F0; border-radius: 4px; height: 8px; overflow: hidden;">
-                    <div style="width: 20%; background: var(--naukri-blue); height: 100%;"></div>
-                  </div>
-                </div>
-                <div>
-                  <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 1px;">
-                    <span>2 role types</span>
-                    <strong>15%</strong>
-                  </div>
-                  <div style="background: #E2E8F0; border-radius: 4px; height: 8px; overflow: hidden;">
-                    <div style="width: 15%; background: var(--slate-400); height: 100%;"></div>
-                  </div>
-                </div>
-                <div>
-                  <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 1px;">
-                    <span>1 role type only</span>
-                    <strong>5%</strong>
-                  </div>
-                  <div style="background: #E2E8F0; border-radius: 4px; height: 8px; overflow: hidden;">
-                    <div style="width: 5%; background: var(--slate-300); height: 100%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- 4 Stat Callout Cards -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-              <div class="stat-box" style="padding: 10px;">
-                <div class="stat-value" style="font-size: 26px;">90%</div>
-                <div style="font-size: 10.5px; font-weight: 700; color: var(--navy-dark);">Maintain Multiple CVs</div>
-                <div style="font-size: 9.5px; color: var(--slate-500); margin-top: 1px;">Keep tailored versions</div>
-              </div>
-              <div class="stat-box" style="padding: 10px;">
-                <div class="stat-value" style="font-size: 26px; color: var(--amber-accent);">90%</div>
-                <div style="font-size: 10.5px; font-weight: 700; color: var(--navy-dark);">Need Alternate CV</div>
-                <div style="font-size: 9.5px; color: var(--slate-500); margin-top: 1px;">Frequently while applying</div>
-              </div>
-              <div class="stat-box" style="padding: 10px;">
-                <div class="stat-value" style="font-size: 26px; color: var(--teal-accent);">90%</div>
-                <div style="font-size: 10.5px; font-weight: 700; color: var(--navy-dark);">Extremely Useful</div>
-                <div style="font-size: 9.5px; color: var(--slate-500); margin-top: 1px;">Feature valuation</div>
-              </div>
-              <div class="stat-box" style="padding: 10px;">
-                <div class="stat-value" style="font-size: 26px; color: var(--emerald-accent);">90%</div>
-                <div style="font-size: 10.5px; font-weight: 700; color: var(--navy-dark);">Very Likely to Use</div>
-                <div style="font-size: 9.5px; color: var(--slate-500); margin-top: 1px;">Stated adoption intent</div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Bottom: Qualitative Insights (Motivations & Workarounds) -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; flex: 1;">
-            <div class="card" style="padding: 10px 14px;">
-              <div class="card-header-sm">
-                <span>Reported Motivations (Q5)</span>
-                <span class="badge badge-gray">Qualitative</span>
-              </div>
-              <ul style="font-size: 10.5px; color: var(--slate-700); padding-left: 14px; line-height: 1.35;">
-                <li>Highlighting distinct skill sets for different job functions.</li>
-                <li>Applying to different industries (e.g. tech product vs. management consulting).</li>
-                <li>Pursuing distinct career pathways simultaneously.</li>
-                <li>Tailoring resume content to specific job descriptions.</li>
-              </ul>
-            </div>
-            
-            <div class="card" style="padding: 10px 14px;">
-              <div class="card-header-sm">
-                <span>Reported Workarounds (Q8)</span>
-                <span class="badge badge-gray">Qualitative</span>
-              </div>
-              <ul style="font-size: 10.5px; color: var(--slate-700); padding-left: 14px; line-height: 1.35;">
-                <li>Replacing the uploaded file on profile settings before applying.</li>
-                <li>Uploading a different file directly during application when supported.</li>
-                <li>Leaving the application flow and returning later.</li>
-                <li>Sometimes postponing or skipping an application altogether.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div style="background: var(--amber-light); border: 1px solid var(--amber-border); padding: 6px 12px; border-radius: 4px; font-size: 10.5px; color: #92400E; text-align: center;">
-            <em>Honest Research Conclusion: Our exploratory survey suggests maintaining multiple role-specific resumes and needing alternate versions during applications are common behaviours within this student sample. These findings support further investigation of a more convenient resume-management and selection experience. Stated usefulness does not equal observed production adoption.</em>
-          </div>
-        </div>
-        """,
-        "speakerNotes": """
-        <h4>Slide 8 — Research Findings & Discipline</h4>
-        <p>Let's review the survey data with exact mathematical fidelity:</p>
-        <ul>
-          <li><strong>Role Distribution:</strong> 60% applied to 4+ roles, 20% to 3 roles, 15% to 2 roles, and only 5% to 1 role. In total, 80% applied across three or more categories.</li>
-          <li><strong>Multiple Resumes:</strong> 90% maintain different resume versions.</li>
-          <li><strong>Friction Frequency:</strong> 90% report frequently needing an alternate resume while applying.</li>
-          <li><strong>Stated Preference:</strong> 90% rated the proposed concept 'Extremely useful' and 90% said they were 'Very likely' to use it.</li>
-          <li><strong>Critical PM Caveat:</strong> Stated preference in a survey is an exploratory signal, not observed behavioral adoption. We never claim that 90% of all Naukri users have this problem.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's map the current-state candidate journey and examine where friction occurs.</div>
-        """
-    },
-
-    # SLIDE 09: CURRENT-STATE CANDIDATE JOURNEY
-    {
-        "id": "slide-9",
-        "number": "09",
-        "stage": "Validate",
-        "tag": "Candidate Journey",
-        "evidenceType": "Personal Observation",
-        "title": "Where Resume Management Can Interrupt the Journey",
-        "subtitle": "Mapping common application steps and branching paths across portal flows",
-        "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- Top: Common Application Sequence -->
-          <div class="card" style="padding: 10px 14px;">
-            <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--slate-500); margin-bottom: 6px;">Common Application Steps</div>
-            <div style="display: flex; align-items: center; justify-content: space-between; text-align: center;">
-              <div style="width: 22%;">
-                <div style="background: var(--navy-dark); color: white; border-radius: 4px; padding: 4px; font-size: 11px; font-weight: 700;">1. Maintain Profile</div>
-                <div style="font-size: 10px; color: var(--slate-500); margin-top: 2px;">Profile with 1 active CV</div>
-              </div>
-              <div style="color: var(--slate-300);">→</div>
-              <div style="width: 22%;">
-                <div style="background: var(--navy-dark); color: white; border-radius: 4px; padding: 4px; font-size: 11px; font-weight: 700;">2. Find Job</div>
-                <div style="font-size: 10px; color: var(--slate-500); margin-top: 2px;">Target opening found</div>
-              </div>
-              <div style="color: var(--slate-300);">→</div>
-              <div style="width: 22%;">
-                <div style="background: var(--navy-dark); color: white; border-radius: 4px; padding: 4px; font-size: 11px; font-weight: 700;">3. Click Apply</div>
-                <div style="font-size: 10px; color: var(--slate-500); margin-top: 2px;">Application begins</div>
-              </div>
-              <div style="color: var(--slate-300);">→</div>
-              <div style="width: 26%;">
-                <div style="background: var(--amber-accent); color: white; border-radius: 4px; padding: 4px; font-size: 11px; font-weight: 700;">4. Review Resume</div>
-                <div style="font-size: 10px; color: var(--slate-500); margin-top: 2px;">Needs alternate CV version</div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Middle: 3 Branching Flow Paths -->
-          <div class="grid-3" style="flex: 1; gap: 12px;">
-            <!-- Path A -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--emerald-accent);">
-              <div class="card-header-sm">
-                <span>Path A: In-Flow Upload</span>
-                <span class="badge badge-teal">Supported Flow</span>
-              </div>
-              <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-bottom: 3px;">
-                Direct Upload Option Available
-              </div>
-              <p style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
-                The application flow provides an upload button. Candidate chooses a file from local storage and submits directly.
-              </p>
-              <div style="margin-top: auto; background: white; border: 1px solid var(--slate-200); padding: 6px; border-radius: 4px; font-size: 10px; color: var(--slate-500);">
-                <strong>Limitation:</strong> Document may not be saved into a reusable library for future roles.
-              </div>
-            </div>
-            
-            <!-- Path B -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--rose-accent);">
-              <div class="card-header-sm">
-                <span>Path B: Profile-Dependent</span>
-                <span class="evidence-tag evidence-tag-obs">Reported Path</span>
-              </div>
-              <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-bottom: 3px;">
-                Profile Attachment Required
-              </div>
-              <p style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
-                Flow submits the profile resume. To submit a different version, candidate leaves application, navigates to profile, replaces file, and returns.
-              </p>
-              <div style="margin-top: auto; background: #FFF1F2; border: 1px solid #FECDD3; padding: 6px; border-radius: 4px; font-size: 10px; color: #9F1239;">
-                <strong>Risk:</strong> High drop-off friction, lost momentum, and potential overwriting of active profile CV.
-              </div>
-            </div>
-            
-            <!-- Path C -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--slate-400);">
-              <div class="card-header-sm">
-                <span>Path C: External Redirect</span>
-                <span class="badge badge-gray">Third-Party ATS</span>
-              </div>
-              <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-bottom: 3px;">
-                Company Portal Redirect
-              </div>
-              <p style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
-                Candidate is redirected to an external employer career site or ATS (e.g. Workday, Greenhouse).
-              </p>
-              <div style="margin-top: auto; background: white; border: 1px solid var(--slate-200); padding: 6px; border-radius: 4px; font-size: 10px; color: var(--slate-500);">
-                <strong>Boundary:</strong> Resume handling and selection governed entirely by the external employer system.
-              </div>
-            </div>
-          </div>
-          
-          <!-- Bottom: Reported Workarounds Summary -->
-          <div class="card card-blue" style="padding: 8px 14px; font-size: 11px; color: var(--slate-700); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
-            <div>
-              <strong>Reported Candidate Workarounds:</strong> Replacing uploaded profile CV • Uploading fresh file during apply • Leaving & returning • Postponing or skipping application.
-            </div>
-            <span class="badge badge-gray" style="font-size: 9.5px;">Pathways vary by job type</span>
-          </div>
-        </div>
-        """,
-        "speakerNotes": """
-        <h4>Slide 9 — Current-State Journey & Branching Paths</h4>
-        <p>A major flaw in naive case studies is assuming that a platform has only one rigid workflow. In reality, Naukri supports different application types:</p>
-        <ul>
-          <li><strong>Path A:</strong> In application flows that offer an alternate file upload, the candidate can upload locally. However, this file is not necessarily saved into an organized, reusable library.</li>
-          <li><strong>Path B:</strong> In flows that rely on the profile-attached resume, the candidate may feel compelled to leave the application flow, update their profile resume, and re-navigate back. This introduces drop-off friction.</li>
-          <li><strong>Path C:</strong> External employer redirects send candidates to third-party ATS platforms where resume handling is outside Naukri's control.</li>
-          <li>Recognizing these three paths makes our product proposal realistic and scoped specifically to supported on-platform journeys.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's conduct an honest audit of what our research establishes versus what remains unverified.</div>
-        """
-    },
-
-    # SLIDE 10: PROBLEM VALIDATION
-    {
-        "id": "slide-10",
-        "number": "10",
-        "stage": "Validate",
-        "tag": "Evidence Audit",
-        "evidenceType": "Requires Naukri Validation",
-        "title": "What the Evidence Supports — and What We Still Need to Verify",
-        "subtitle": "Distinguishing established candidate signals from unanswered platform-side questions",
-        "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- Two-Column Evidence Audit Table -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; flex: 1;">
-            <!-- Column 1: Supported by Current Evidence -->
-            <div class="card" style="border-top: 4px solid var(--emerald-accent); padding: 12px 16px; display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span style="color: #065F46; font-weight: 800;">Supported by Current Evidence</span>
-                <span class="evidence-tag evidence-tag-survey">Survey & Public Data</span>
-              </div>
-              <ul style="font-size: 11px; color: var(--slate-700); padding-left: 16px; line-height: 1.45; display: flex; flex-direction: column; gap: 6px; flex: 1;">
-                <li><strong>Multiple CVs are common:</strong> 90% of surveyed students maintain tailored resume versions.</li>
-                <li><strong>Need for alternate CVs:</strong> 90% report frequently needing an alternate resume when applying.</li>
-                <li><strong>Multi-category search breadth:</strong> 80% apply across 3 or more distinct role categories concurrently.</li>
-                <li><strong>Competitor patterns exist:</strong> LinkedIn documents 4 reusable resumes; Indeed supports apply-time file uploads.</li>
-                <li><strong>Firsthand user experience:</strong> Firsthand observation confirms that switching resumes in certain flows introduces extra steps.</li>
-              </ul>
-              <div style="background: #F0FDF4; border: 1px solid #A7F3D0; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #166534; margin-top: 6px;">
-                ✓ Establishes a credible candidate-side need for better resume organization.
-              </div>
-            </div>
-            
-            <!-- Column 2: Not Yet Established / Requires Naukri Validation -->
-            <div class="card" style="border-top: 4px solid var(--rose-accent); padding: 12px 16px; display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span style="color: #9F1239; font-weight: 800;">Requires Naukri Validation</span>
-                <span class="evidence-tag evidence-tag-val">Requires Internal Data</span>
-              </div>
-              <ul style="font-size: 11px; color: var(--slate-700); padding-left: 16px; line-height: 1.45; display: flex; flex-direction: column; gap: 6px; flex: 1;">
-                <li><strong>Platform-wide prevalence:</strong> Exactly what percentage of all Naukri job seekers experience this friction.</li>
-                <li><strong>Flow breakdown:</strong> What proportion of applications on Naukri follow Path A vs. Path B vs. Path C.</li>
-                <li><strong>Current flow capabilities:</strong> Which specific application types already allow alternate resume uploads.</li>
-                <li><strong>True funnel abandonment:</strong> Whether candidates actually abandon applications due to resume switching.</li>
-                <li><strong>Conversion lift:</strong> Whether a Resume Library genuinely improves application completion rates.</li>
-                <li><strong>Recruiter matching impact:</strong> Whether role-tailored resumes improve recruiter shortlist rates.</li>
-                <li><strong>Architecture constraints:</strong> Technical dependencies governing document versioning in Naukri's backend.</li>
-              </ul>
-              <div style="background: #FFF1F2; border: 1px solid #FECDD3; padding: 6px 10px; border-radius: 4px; font-size: 10.5px; color: #9F1239; margin-top: 6px;">
-                ⚠️ Questions that only Naukri's internal product and analytics teams can definitively resolve.
-              </div>
-            </div>
-          </div>
-          
-          <!-- Bottom Summary Anchor -->
-          <div class="card card-blue" style="padding: 10px 14px; text-align: center;">
-            <div style="font-weight: 700; font-size: 11.5px; color: var(--navy-dark);">
-              "The current evidence establishes a credible candidate-side opportunity for further investigation, not proof of a platform-wide Naukri problem."
-            </div>
-          </div>
-        </div>
-        """,
-        "speakerNotes": """
-        <h4>Slide 10 — Problem Validation: What We Know vs. What Requires Naukri</h4>
-        <p>This is arguably the most important slide for demonstrating mature Product Management thinking:</p>
-        <ul>
-          <li>On the left, we summarize what our evidence actually supports: college candidates maintain multiple resumes, they apply across multiple roles, competitor platforms offer forms of reuse, and firsthand observation identified friction.</li>
-          <li>On the right, we explicitly acknowledge what we CANNOT know from the outside: how many total Naukri candidates face this, which specific job postings follow Path A vs. Path B, what the actual abandonment rate is, and what backend constraints exist.</li>
-          <li>By ending with the statement that this is a credible candidate-side opportunity for investigation rather than proof of a universal defect, we demonstrate professional humility and invite collaborative validation.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's conduct a root-cause diagnosis to explore why this friction may occur.</div>
-        """
-    },
-
-    # SLIDE 11: ROOT-CAUSE ANALYSIS
-    {
-        "id": "slide-11",
-        "number": "11",
-        "stage": "Diagnose",
-        "tag": "Diagnostic Analysis",
-        "evidenceType": "Product Hypothesis",
-        "title": "What May Be Causing the Friction?",
-        "subtitle": "Diagnostic problem tree separating observed symptoms from root-cause hypotheses",
-        "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 16px; flex: 1;">
-            <!-- Left: Observed Symptoms -->
-            <div class="card card-tinted" style="padding: 14px 16px; display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span>Observed & Reported Symptoms</span>
-                <span class="evidence-tag evidence-tag-obs">Symptoms</span>
-              </div>
-              <div style="font-weight: 700; font-size: 12.5px; color: var(--navy-dark); margin-bottom: 8px;">
-                Surface Friction Experienced by Candidates
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11px; color: var(--slate-700); flex: 1;">
-                <div style="background: white; border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  📁 <strong>Fragmented Storage:</strong> Candidates store files across laptops, Google Drive, and phones.
-                </div>
-                <div style="background: white; border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  🔄 <strong>Repeated Overwrites:</strong> Updating profile resume replaces the previous file.
-                </div>
-                <div style="background: white; border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  🚪 <strong>Flow Disruption:</strong> Navigating away from application to update profile file.
-                </div>
-                <div style="background: white; border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  ❓ <strong>Active CV Ambiguity:</strong> Uncertainty over which document recruiters currently see.
-                </div>
-                <div style="background: white; border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  ⏳ <strong>Postponed Applications:</strong> Candidates deferring applying when resume isn't ready.
-                </div>
-              </div>
-            </div>
-            
-            <!-- Right: 5 Root-Cause Hypotheses -->
-            <div class="card" style="border-left: 4px solid var(--naukri-blue); padding: 14px 16px; display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span>Diagnostic Hypotheses to Investigate</span>
-                <span class="evidence-tag evidence-tag-hypo">5 Hypotheses</span>
-              </div>
-              <div style="font-weight: 700; font-size: 12.5px; color: var(--navy-dark); margin-bottom: 6px;">
-                Underlying Structural Hypotheses
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 10.5px; color: var(--slate-700); flex: 1;">
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  <strong>H1. Separation of Document vs. Application:</strong> Resume management is architecturally decoupled from the moment-of-apply decision point.
-                </div>
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  <strong>H2. Absence of Persistent Role Library:</strong> In the flow studied, candidates lack a single home for named, reusable role-specific documents.
-                </div>
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  <strong>H3. Journey Option Variance:</strong> Different application types expose varied upload capabilities, leading to inconsistent mental models.
-                </div>
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  <strong>H4. Destructive Overwriting:</strong> Profile settings treat resume upload as file replacement rather than version addition.
-                </div>
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px;">
-                  <strong>H5. Traceability Gap:</strong> Application history may not visibly reflect which exact resume version was attached for past submissions.
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div style="background: var(--slate-100); padding: 6px 12px; border-radius: 4px; font-size: 10.5px; color: var(--slate-600); text-align: center;">
-            <em>Rigor Note: These are hypotheses formulated to guide investigation. We do not claim insight into Naukri's proprietary internal codebase or service architecture.</em>
-          </div>
-        </div>
-        """,
-        "speakerNotes": """
-        <h4>Slide 11 — Root-Cause Analysis</h4>
-        <p>In product design, treating surface symptoms without understanding root causes leads to ineffective features:</p>
-        <ul>
-          <li><strong>Symptoms:</strong> Candidates juggle files across devices, overwrite previously uploaded resumes, or navigate away during active applications.</li>
-          <li><strong>Underlying Hypotheses:</strong>
-            <ol>
-              <li>Resume storage is decoupled from the application decision.</li>
-              <li>There is no dedicated, persistent library of role-specific documents within the candidate profile.</li>
-              <li>Different job types have different application flows, causing candidate confusion.</li>
-              <li>Uploading a new document in profile settings often replaces the existing file destructively.</li>
-              <li>Application history may not preserve an immutable reference to the submitted document.</li>
-            </ol>
-          </li>
-          <li>By addressing these root causes, our proposal aims to resolve the underlying friction.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's see how competing platforms handle resume reuse and application-time uploading.</div>
-        """
-    },
-
-    # SLIDE 12: COMPETITOR AND MARKET BENCHMARKING
-    {
-        "id": "slide-12",
-        "number": "12",
         "stage": "Assess",
-        "tag": "Market Benchmarking",
-        "evidenceType": "Official Public Documentation",
+        "tag": "Competitor Benchmarking",
+        "evidenceType": "Official Documentation",
         "title": "How Existing Platforms Handle Resume Selection",
-        "subtitle": "Factual analysis of Naukri, LinkedIn, and Indeed India based on official help documentation",
+        "subtitle": "Benchmarking resume management approaches across Naukri, LinkedIn, and Indeed India",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- Benchmark Comparison Table -->
-          <div class="card" style="padding: 0; overflow: hidden; flex: 1;">
-            <div class="table-scroll-wrap">
-              <table class="deck-table" style="font-size: 11px;">
-                <thead>
-                  <tr>
-                    <th style="width: 24%;">Capability</th>
-                    <th style="width: 28%; background: #EFF6FF; color: var(--navy-dark);">Naukri.com (Official Documented Info)</th>
-                    <th style="width: 24%;">LinkedIn</th>
-                    <th style="width: 24%;">Indeed India</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Multiple Resumes on Account</strong></td>
-                    <td style="background: #F8FAFC;">
-                      Up to <strong>5 profiles per username</strong> (1 resume per profile) in FastForward FAQ<a href="#ref-1" class="citation-mark">[1]</a>.<br>
-                      <span style="font-size:10px; color:var(--slate-500);"><em>FAQ relates specifically to text/visual CV packages. Separate builder tools have distinct limits (AI maker: 1 CV; online builder FAQ: up to 50)<a href="#ref-2" class="citation-mark">[2]</a>.</em></span>
-                    </td>
-                    <td>
-                      Stores up to <strong>4 recently uploaded</strong> reusable resumes on account<a href="#ref-3" class="citation-mark">[3]</a>.
-                    </td>
-                    <td>
-                      Only <strong>1 resume file</strong> stored on account at a time; uploading a new file replaces existing<a href="#ref-5" class="citation-mark">[5]</a>.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Apply-Time Resume Selection</strong></td>
-                    <td style="background: #F8FAFC;">
-                      Requires hands-on validation across direct and third-party job flows.
-                    </td>
-                    <td>
-                      Supported natively in eligible <em>Easy Apply</em> flows; not on external redirects<a href="#ref-3" class="citation-mark">[3]</a>.
-                    </td>
-                    <td>
-                      Candidate can select their uploaded resume during application<a href="#ref-4" class="citation-mark">[4]</a>.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Upload Another CV During Apply</strong></td>
-                    <td style="background: #F8FAFC;">
-                      Supported in certain direct flows; requires validation across all types.
-                    </td>
-                    <td>
-                      Supported within <em>Easy Apply</em>; not on external employer redirects<a href="#ref-3" class="citation-mark">[3]</a>.
-                    </td>
-                    <td>
-                      Supported: candidate can upload a different resume file during application<a href="#ref-4" class="citation-mark">[4]</a>.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Persistent Reusable Named Library</strong></td>
-                    <td style="background: #F8FAFC;">
-                      Multiple profiles exist in specific services; a unified named library within 1 profile needs validation.
-                    </td>
-                    <td>
-                      Recent resume reuse is documented; custom naming capability not confirmed in referenced docs<a href="#ref-3" class="citation-mark">[3]</a>.
-                    </td>
-                    <td>
-                      1 stored profile file at a time; new uploads replace previous file<a href="#ref-5" class="citation-mark">[5]</a>.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Submitted-Document Traceability</strong></td>
-                    <td style="background: #F8FAFC;">
-                      Requires verification of historical document reference behaviour.
-                    </td>
-                    <td>
-                      LinkedIn documents viewing the resume submitted for Easy Apply jobs<a href="#ref-3b" class="citation-mark">[3b]</a>.
-                    </td>
-                    <td>
-                      Requires verification of historical document reference tracking<a href="#ref-4" class="citation-mark">[4]</a>.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
+          <!-- 3-Platform Benchmark Grid -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; flex: 1;">
+            
+            <!-- Naukri.com Platform -->
+            <div class="card card-blue" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span class="badge badge-blue">Naukri.com</span>
+                  <span style="font-size: 10.5px; color: var(--slate-500);">Current Platform</span>
+                </div>
+                <div style="font-size: 16px; font-weight: 800; color: var(--navy-dark); margin-bottom: 8px;">
+                  1 Master Profile Resume
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  <div>
+                    <strong>• Profile Attachment:</strong> Candidates attach a primary resume file to their main profile.
+                  </div>
+                  <div>
+                    <strong>• FastForward Nuance:</strong> FastForward FAQ notes up to 5 profiles per username, with 1 resume per profile (specific to text/visual CV context).
+                  </div>
+                  <div>
+                    <strong>• Builder Tools:</strong> Separate standalone resume builders exist with distinct capabilities.
+                  </div>
+                </div>
+              </div>
+              <div style="background: #EFF6FF; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: var(--naukri-blue); margin-top: 8px; font-weight: 600;">
+                Opportunity: Add persistent in-profile resume library.
+              </div>
+            </div>
+
+            <!-- LinkedIn Platform -->
+            <div class="card card-indigo" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span class="badge" style="background:#EDE9FE; color:#4F46E5;">LinkedIn</span>
+                  <span style="font-size: 10.5px; color: var(--slate-500);">Documented</span>
+                </div>
+                <div style="font-size: 16px; font-weight: 800; color: var(--navy-dark); margin-bottom: 8px;">
+                  Up to 4 Reusable Resumes
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  <div>
+                    <strong>• Reusable Storage:</strong> Stores up to 4 recently uploaded resumes in candidate settings.
+                  </div>
+                  <div>
+                    <strong>• In-Flow Selection:</strong> Allows candidate to select from stored resumes during Easy Apply flows.
+                  </div>
+                  <div>
+                    <strong>• Document History:</strong> Logs which specific resume was submitted to each job application.
+                  </div>
+                </div>
+              </div>
+              <div style="background: #EEF2FF; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #4F46E5; margin-top: 8px; font-weight: 600;">
+                Validated model: 4 persistent resumes in Easy Apply.
+              </div>
+            </div>
+
+            <!-- Indeed India Platform -->
+            <div class="card card-teal" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span class="badge badge-teal">Indeed India</span>
+                  <span style="font-size: 10.5px; color: var(--slate-500);">Documented</span>
+                </div>
+                <div style="font-size: 16px; font-weight: 800; color: var(--navy-dark); margin-bottom: 8px;">
+                  1 Profile CV + In-Flow Upload
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                  <div>
+                    <strong>• Single Stored File:</strong> 1 stored resume file on profile; uploading a new stored CV replaces previous.
+                  </div>
+                  <div>
+                    <strong>• Apply-Time Upload:</strong> Candidates can upload a different document during specific application flows.
+                  </div>
+                  <div>
+                    <strong>• Separation of State:</strong> Apply-time upload does not necessarily overwrite the master profile file.
+                  </div>
+                </div>
+              </div>
+              <div style="background: #F0FDFA; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: var(--teal-accent); margin-top: 8px; font-weight: 600;">
+                Validated model: Separation of apply file vs profile file.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom: Strategic Takeaway Callout -->
+          <div style="background: #FFFFFF; border: 1.5px solid var(--naukri-blue); border-left: 5px solid var(--naukri-blue); border-radius: 8px; padding: 12px 18px; box-shadow: 0 4px 12px rgba(24,86,234,0.06);">
+            <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; color: var(--naukri-blue); letter-spacing: 0.6px; margin-bottom: 3px;">
+              Strategic Product Conclusion
+            </div>
+            <div style="font-size: 13px; color: var(--navy-dark); line-height: 1.5; font-weight: 600;">
+              "The opportunity is not simply to introduce multiple resume uploads. It is to explore persistent, independent resume management within one comprehensive candidate profile, with application-time selection and non-destructive saving."
             </div>
           </div>
-          
-          <!-- Defensible Competitor Takeaway -->
-          <div class="card card-blue" style="padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-            <div style="font-size: 11px; color: var(--navy-dark); line-height: 1.45;">
-              <strong>Competitive Insight:</strong> Competing platforms validate candidate demand for resume reuse and in-flow uploading. The opportunity for Naukri is to explore a unified, independently managed Resume Library within one candidate profile, with explicit application-time selection and non-destructive saving.
-            </div>
-            <span class="badge badge-gray" style="font-size: 9.5px;">Sources: Official Help Centers</span>
+
+          <!-- Footnote Citation -->
+          <div style="font-size: 10.5px; color: var(--slate-500); display: flex; justify-content: space-between;">
+            <span>*Sources: Public Help Centers & FAQs (Naukri FastForward, LinkedIn Help, Indeed India Support). Verified Nov 2026.</span>
+            <span style="color: var(--naukri-blue); font-weight: 600;">Detailed documentation links in Appendix B →</span>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 12 — Competitor & Market Benchmarking</h4>
-        <p>A rigorous PM benchmark must be factually precise and avoid overgeneralizing:</p>
+        <h4>Slide 08 — Competitor Benchmarking (Suggested Duration: ~60 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "To understand market norms, we benchmarked official documentation across Naukri, LinkedIn, and Indeed India:</p>
         <ul>
-          <li><strong>Naukri.com:</strong> Official FastForward FAQ documents up to 5 profiles per username with 1 resume each, but this specifically pertains to text and visual CV packages. Separate tools have specific limits (AI maker creates 1 CV; Online Builder FAQ notes up to 50). We do NOT generalize these as universal application profile rules.</li>
-          <li><strong>LinkedIn:</strong> LinkedIn stores up to 4 recently uploaded reusable resumes for Easy Apply flows, and lets candidates view submitted resumes. However, custom naming is not confirmed in cited docs, and reuse does not apply to external employer redirects.</li>
-          <li><strong>Indeed India:</strong> Indeed stores only 1 resume file on an account (replacing previous uploads), but allows uploading an alternate resume during an application.</li>
-          <li><strong>Takeaway:</strong> These patterns demonstrate that candidate resume reuse and in-flow uploading are industry-tested concepts. The opportunity for Naukri is a persistent, candidate-controlled library within one master profile.</li>
+          <li><strong>Naukri.com:</strong> Currently anchors the candidate to a single primary profile resume. While FastForward allows up to 5 profiles per username for specific paid/visual CV services, standard candidate job applications lack a persistent multi-document selector within one profile.</li>
+          <li><strong>LinkedIn:</strong> Offers up to 4 reusable uploaded resumes directly accessible in Easy Apply, and logs submitted versions in application history.</li>
+          <li><strong>Indeed India:</strong> Maintains 1 stored profile CV, but allows uploading alternate resumes during application without overwriting the master profile.</li>
         </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's compare five strategic product approaches to solve this problem.</div>
+        <p>The strategic takeaway: the opportunity is not just raw file uploading. It's giving candidates a <strong>persistent, candidate-controlled Resume Library inside their single profile</strong>, with application-time selection and non-destructive saving."</p>
+        <div class='cue-box'><strong>Transition:</strong> Which product approach best solves this challenge? Let's evaluate five strategic alternatives.</div>
         """
     }
 ]

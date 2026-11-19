@@ -1,4 +1,4 @@
-# slides_discovery.py - Slides 01 to 06 (Discovery, Overview, PM Approach, Origin, Target Users, JTBD/Definition)
+# slides_discovery.py - Slides 01 to 04 (Cover, Executive Summary, Origin & Target Users, Problem Definition & JTBD)
 
 SLIDES_DISCOVERY = [
     # SLIDE 01: INTRODUCTORY COVER
@@ -8,8 +8,8 @@ SLIDES_DISCOVERY = [
         "stage": "Discover",
         "tag": "Product Investigation",
         "evidenceType": "Proposed Solution",
-        "title": "Apply with the Right Resume",
-        "subtitle": "A candidate-controlled Resume Library for a simpler job application experience on Naukri.com",
+        "title": "Naukri.com – Apply with the Right Resume",
+        "subtitle": "A candidate-controlled Resume Library for a simpler job application experience.",
         "content": """
         <div class="cover-layout">
           <!-- Left: Hero Header & Project Metadata -->
@@ -26,579 +26,462 @@ SLIDES_DISCOVERY = [
             </h1>
             
             <p style="font-size: 15px; color: var(--slate-700); line-height: 1.5; font-weight: 500;">
-              A candidate-controlled <strong>Resume Library</strong> that makes it easier to manage role-specific resumes and choose the right document while applying for jobs.
+              A candidate-controlled <strong>Resume Library</strong> that makes it easier to manage role-specific resumes and choose the appropriate document while applying for jobs on Naukri.com.
             </p>
             
-            <div style="background: var(--slate-50); border-left: 3px solid var(--naukri-blue); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 12.5px; color: var(--slate-700); line-height: 1.45;">
-              <em>"Candidates may maintain different resumes for different opportunities. The challenge is having the right version ready when it is time to apply."</em>
+            <div style="background: #EFF6FF; border-left: 4px solid var(--naukri-blue); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13px; color: #1E3A8A; line-height: 1.5;">
+              <em>"Candidates frequently maintain different resumes for different opportunities. The challenge is having the right version ready when it is time to apply, without silently overwriting saved files."</em>
             </div>
             
             <!-- Metadata Grid -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; padding-top: 12px; border-top: 1px solid var(--slate-200); font-size: 11.5px; color: var(--slate-600);">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; padding-top: 14px; border-top: 1.5px solid var(--slate-200); font-size: 12px; color: var(--slate-600);">
               <div>
-                <span style="color: var(--slate-400); display: block; font-size: 10px; text-transform: uppercase; font-weight: 700;">Prepared by</span>
-                <strong style="color: var(--navy-dark); font-size: 12.5px;">Aditya Sharma</strong>
+                <span style="color: var(--slate-400); display: block; font-size: 10.5px; text-transform: uppercase; font-weight: 700;">Prepared by</span>
+                <strong style="color: var(--navy-dark); font-size: 13.5px;">Aditya Sharma</strong>
               </div>
               <div>
-                <span style="color: var(--slate-400); display: block; font-size: 10px; text-transform: uppercase; font-weight: 700;">Project Type</span>
-                <strong style="color: var(--navy-dark);">Independent PM Investigation</strong>
+                <span style="color: var(--slate-400); display: block; font-size: 10.5px; text-transform: uppercase; font-weight: 700;">Project Type</span>
+                <strong style="color: var(--navy-dark); font-size: 12.5px;">Independent PM Investigation</strong>
               </div>
               <div>
-                <span style="color: var(--slate-400); display: block; font-size: 10px; text-transform: uppercase; font-weight: 700;">Platform Context</span>
-                <span>Naukri.com (Candidate Journey)</span>
+                <span style="color: var(--slate-400); display: block; font-size: 10.5px; text-transform: uppercase; font-weight: 700;">Platform Scope</span>
+                <span style="font-weight: 600; color: var(--slate-700);">Naukri.com (Candidate Experience)</span>
               </div>
               <div>
-                <span style="color: var(--slate-400); display: block; font-size: 10px; text-transform: uppercase; font-weight: 700;">Date</span>
-                <span>November 2026</span>
+                <span style="color: var(--slate-400); display: block; font-size: 10.5px; text-transform: uppercase; font-weight: 700;">Date & Status</span>
+                <span style="font-weight: 600; color: var(--slate-700);">November 2026 • Proposal</span>
               </div>
             </div>
             
-            <div style="font-size: 10px; color: var(--slate-500); margin-top: 2px;">
+            <div style="font-size: 11px; color: var(--slate-500); margin-top: 4px;">
               *Independent proposal. Not affiliated with or endorsed by Info Edge / Naukri.com.
             </div>
           </div>
           
-          <!-- Right: Visual Conceptual Product Diagram (Candidate -> Library -> Select -> Apply) -->
-          <div class="cover-illustration-wrap">
-            <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--naukri-blue); margin-bottom: 2px; text-align: center;">
-              Conceptual User Flow
+          <!-- Right: Visual Conceptual Product Diagram (Profile -> Resume Library -> Select Resume -> Apply) -->
+          <div class="cover-illustration-wrap" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%); border: 1.5px solid var(--slate-200); border-radius: var(--radius-lg); padding: 20px;">
+            <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--naukri-blue); margin-bottom: 12px; text-align: center;">
+              Core Product Flow Concept
             </div>
             
-            <!-- Node 1: Candidate Profile -->
-            <div style="background: var(--navy-dark); color: white; padding: 10px 14px; border-radius: 8px; text-align: center; box-shadow: var(--shadow-sm);">
+            <!-- Step 1: Candidate Profile -->
+            <div style="background: var(--navy-dark); color: white; padding: 12px 16px; border-radius: 8px; text-align: center; box-shadow: 0 4px 12px rgba(11,27,61,0.15);">
               <div style="font-size: 10px; text-transform: uppercase; color: #93C5FD; font-weight: 700;">Single Master Record</div>
-              <div style="font-size: 13px; font-weight: 700; margin-top: 2px;">Comprehensive Naukri Profile</div>
-              <div style="font-size: 10.5px; color: var(--slate-300);">Education • Experience • Skills • Personal Details</div>
+              <div style="font-size: 14px; font-weight: 800; margin-top: 2px;">Comprehensive Naukri Profile</div>
+              <div style="font-size: 11px; color: #CBD5E1;">Master Education • Work Experience • Skills • Personal Details</div>
             </div>
             
             <!-- Connector Arrow -->
-            <div style="text-align: center; color: var(--naukri-blue); font-size: 14px; font-weight: 700; margin: -4px 0;">↓</div>
+            <div style="text-align: center; color: var(--naukri-blue); font-size: 18px; font-weight: 800; margin: 4px 0;">↓</div>
             
-            <!-- Node 2: Dedicated Resume Library -->
-            <div style="background: white; border: 1.5px dashed var(--naukri-blue); border-radius: 8px; padding: 10px 12px; box-shadow: var(--shadow-sm);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <span style="font-size: 11px; font-weight: 700; color: var(--navy-dark);">📁 Dedicated Resume Library</span>
-                <span class="badge badge-blue" style="font-size: 9.5px;">Role-Specific Versions</span>
+            <!-- Step 2: Dedicated Resume Library -->
+            <div style="background: white; border: 2px dashed #93C5FD; border-radius: 10px; padding: 12px 14px; box-shadow: 0 4px 14px rgba(24,86,234,0.06);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 12px; font-weight: 800; color: var(--navy-dark); display: flex; align-items: center; gap: 6px;">
+                  📁 Dedicated Resume Library
+                </span>
+                <span class="badge badge-blue" style="font-size: 10px;">Up to 5 Role-Specific Files</span>
               </div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-                <div style="background: var(--naukri-blue-light); border: 1.5px solid var(--naukri-blue); border-radius: 6px; padding: 6px 8px;">
-                  <div style="font-size: 11px; font-weight: 700; color: var(--navy-dark);">🔘 Product Mgmt CV</div>
-                  <div style="font-size: 9.5px; color: var(--naukri-blue); font-weight: 600;">PM_Resume.pdf [Selected]</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <div style="background: #EFF6FF; border: 1.5px solid var(--naukri-blue); border-radius: 6px; padding: 8px 10px;">
+                  <div style="font-size: 11.5px; font-weight: 700; color: #1E3A8A;">🔘 Product Mgmt CV</div>
+                  <div style="font-size: 10px; color: var(--naukri-blue); font-weight: 600;">PM_Resume.pdf [Selected]</div>
                 </div>
-                <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 6px 8px; opacity: 0.85;">
-                  <div style="font-size: 11px; font-weight: 600; color: var(--slate-700);">⚪ Consulting CV</div>
-                  <div style="font-size: 9.5px; color: var(--slate-500);">Consulting.pdf</div>
+                <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 8px 10px;">
+                  <div style="font-size: 11.5px; font-weight: 600; color: var(--slate-700);">⚪ Consulting CV</div>
+                  <div style="font-size: 10px; color: var(--slate-500);">Consulting.pdf</div>
                 </div>
-                <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 6px 8px; opacity: 0.85;">
-                  <div style="font-size: 11px; font-weight: 600; color: var(--slate-700);">⚪ Operations CV</div>
-                  <div style="font-size: 9.5px; color: var(--slate-500);">Ops_Resume.pdf</div>
+                <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 8px 10px;">
+                  <div style="font-size: 11.5px; font-weight: 600; color: var(--slate-700);">⚪ Operations CV</div>
+                  <div style="font-size: 10px; color: var(--slate-500);">Ops_Resume.pdf</div>
                 </div>
-                <div style="background: #F8FAFC; border: 1px dashed var(--slate-300); border-radius: 6px; padding: 6px 8px; text-align: center; display: flex; align-items: center; justify-content: center;">
-                  <span style="font-size: 10px; color: var(--naukri-blue); font-weight: 600;">+ Upload New CV</span>
+                <div style="background: #F8FAFC; border: 1.5px dashed #94A3B8; border-radius: 6px; padding: 8px 10px; text-align: center; display: flex; align-items: center; justify-content: center;">
+                  <span style="font-size: 10.5px; color: var(--naukri-blue); font-weight: 700;">+ Upload New Resume</span>
                 </div>
               </div>
             </div>
             
             <!-- Connector Arrow -->
-            <div style="text-align: center; color: var(--emerald-accent); font-size: 14px; font-weight: 700; margin: -4px 0;">↓</div>
+            <div style="text-align: center; color: var(--emerald-accent); font-size: 18px; font-weight: 800; margin: 4px 0;">↓</div>
             
-            <!-- Node 3: Moment of Apply -->
-            <div style="background: #F0FDF4; border: 1.5px solid var(--emerald-accent); border-radius: 8px; padding: 10px 14px;">
+            <!-- Step 3: Moment of Apply -->
+            <div style="background: #ECFDF5; border: 2px solid var(--emerald-accent); border-radius: 8px; padding: 12px 16px;">
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div>
-                  <div style="font-size: 10px; text-transform: uppercase; color: #166534; font-weight: 700;">Job Application Target</div>
-                  <div style="font-size: 12.5px; font-weight: 700; color: #14532D; margin-top: 2px;">Product Manager Intern</div>
+                  <div style="font-size: 10.5px; text-transform: uppercase; color: #166534; font-weight: 700;">Job Application Target</div>
+                  <div style="font-size: 13.5px; font-weight: 800; color: #14532D; margin-top: 2px;">Product Manager Intern</div>
                 </div>
-                <span class="badge badge-teal" style="font-size: 10px;">Attached: PM CV</span>
+                <span class="badge badge-teal" style="font-size: 11px; padding: 4px 8px;">Attached: PM CV</span>
               </div>
-              <div style="font-size: 10px; color: #15803D; margin-top: 4px;">
-                ✓ Attached without altering other library versions or master profile
+              <div style="font-size: 11px; color: #15803D; margin-top: 6px; font-weight: 500;">
+                ✓ Attached cleanly without altering other library resumes or overwriting the master profile
               </div>
             </div>
             
-            <div style="text-align: center; font-size: 10.5px; color: var(--slate-500); margin-top: 4px;">
+            <div style="text-align: center; font-size: 11px; color: var(--slate-500); margin-top: 10px; font-weight: 600;">
               Candidate Control • Transparent Selection • Non-Destructive Saving
             </div>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 1 — Welcome & Proposal Introduction</h4>
-        <p>Good morning. My name is Aditya Sharma. Today I am sharing an independent Product Management investigation and proposal for Naukri.com titled <strong>'Apply with the Right Resume'</strong>.</p>
-        <p>Job seekers frequently apply across varied roles—such as Product Management, Consulting, Analytics, or Engineering. Tailoring resumes to these distinct opportunities is common practice. However, when it comes to submitting the right document during the job application process, managing and switching between multiple resumes can introduce friction.</p>
-        <p>This proposal explores a candidate-controlled <strong>Resume Library</strong> for Naukri.com, enabling candidates to maintain role-specific resumes in one place and choose the appropriate document when applying.</p>
-        <div class='cue-box'><strong>Transition:</strong> Let's look at the proposal at a glance—its problem signals, research foundation, and proposed scope.</div>
+        <h4>Slide 01 — Introductory Cover (Suggested Duration: ~45 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "Good morning. Today I'm presenting an independent Product Management case study on Naukri.com's candidate experience, titled: <em>Apply with the Right Resume</em>.</p>
+        <p>The core concept is simple and candidate-first: job seekers maintain one comprehensive Naukri profile for their master records, but can upload, manage, and select from a dedicated <strong>Resume Library</strong> when applying for different role categories—such as Product Management, Consulting, Operations, or Engineering.</p>
+        <p>Today's presentation takes you through the discovery process: the problem origin, candidate survey research, competitor benchmarks, strategic choices, product requirements, and an interactive prototype."</p>
+        <div class='cue-box'><strong>Transition:</strong> Let's start with a high-level executive summary of what this investigation covers.</div>
         """
     },
 
-    # SLIDE 02: THE PROPOSAL AT A GLANCE
+    # SLIDE 02: EXECUTIVE SUMMARY
     {
         "id": "slide-2",
         "number": "02",
         "stage": "Discover",
-        "tag": "Executive Briefing",
+        "tag": "Executive Summary",
         "evidenceType": "Proposed Solution",
         "title": "What This Investigation Is About",
-        "subtitle": "Executive summary of problem signals, exploratory research, platform opportunity, and proposed validation",
+        "subtitle": "A six-part executive overview: from candidate friction to a practical product improvement proposal",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- 6 Facet Grid -->
-          <div class="grid-3" style="flex: 1; gap: 12px;">
-            <!-- Facet 1: Problem Signal -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--slate-600);">
-              <div class="card-header-sm">
-                <span>01. Problem Signal</span>
-                <span class="evidence-tag evidence-tag-obs">Personal Obs</span>
-              </div>
-              <div class="card-title-lg">Multi-Track Applications</div>
-              <p class="card-text" style="font-size: 11.5px;">
-                Candidates maintain multiple resume versions tailored to distinct roles. Tailoring documents is normal, but managing them across portal journeys requires effort.
-              </p>
-            </div>
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 14px;">
+          <!-- 6-Part Structured Visual Grid -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; flex: 1;">
             
-            <!-- Facet 2: Candidate Difficulty -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--rose-accent);">
-              <div class="card-header-sm">
-                <span>02. Candidate Friction</span>
-                <span class="evidence-tag evidence-tag-hypo">Hypothesis</span>
+            <!-- 1. Problem Origin -->
+            <div class="card card-blue" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="badge badge-blue">1. Origin</span>
+                  <div style="width: 28px; height: 28px; border-radius: 50%; background: #EFF6FF; color: var(--naukri-blue); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">👤</div>
+                </div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Personal Experience</div>
+                <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                  Began with personal firsthand observation: applying across multiple role categories required different resume versions, creating repetitive file management during applications.
+                </div>
               </div>
-              <div class="card-title-lg">Application Interruption</div>
-              <p class="card-text" style="font-size: 11.5px;">
-                When the resume to be submitted differs from the profile-attached file, candidates may need to leave the apply flow or repeatedly replace their active document.
-              </p>
-            </div>
-            
-            <!-- Facet 3: Research Signal -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--amber-accent);">
-              <div class="card-header-sm">
-                <span>03. User Evidence</span>
-                <span class="evidence-tag evidence-tag-survey">N=45 Survey</span>
+              <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #DBEAFE; font-size: 11px; font-weight: 700; color: var(--naukri-blue);">
+                [Personal Observation Grounding]
               </div>
-              <div class="card-title-lg">Exploratory Signal</div>
-              <p class="card-text" style="font-size: 11.5px;">
-                In an exploratory survey of 45 college students, <strong>90%</strong> maintain multiple resumes, and <strong>90%</strong> frequently need an alternate CV during applications.
-              </p>
             </div>
-            
-            <!-- Facet 4: Product Opportunity -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--naukri-blue);">
-              <div class="card-header-sm">
-                <span>04. Opportunity</span>
-                <span class="evidence-tag evidence-tag-sol">Proposal</span>
+
+            <!-- 2. Candidate Friction -->
+            <div class="card card-rose" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="badge badge-red">2. Candidate Problem</span>
+                  <div style="width: 28px; height: 28px; border-radius: 50%; background: #FFF1F2; color: var(--rose-accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">⚠️</div>
+                </div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Application Friction</div>
+                <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                  When a job requires a resume different from the profile-attached file, candidates may have to navigate away, update their profile resume, and re-enter the flow, risking drop-off.
+                </div>
               </div>
-              <div class="card-title-lg">Persistent Resume Library</div>
-              <p class="card-text" style="font-size: 11.5px;">
-                A unified, candidate-controlled library within one Naukri profile, paired with application-time selection and optional non-destructive saving.
-              </p>
-            </div>
-            
-            <!-- Facet 5: Deliverables Built -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--teal-accent);">
-              <div class="card-header-sm">
-                <span>05. Concrete Output</span>
-                <span class="evidence-tag evidence-tag-sol">Deliverable</span>
+              <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #FECDD3; font-size: 11px; font-weight: 700; color: var(--rose-accent);">
+                [Context-Switching & Overwriting Risk]
               </div>
-              <div class="card-title-lg">PRD & Working Prototype</div>
-              <p class="card-text" style="font-size: 11.5px;">
-                Complete end-to-end decision logic, MoSCoW prioritized requirements, and a client-side simulated candidate journey prototype testing all scenarios.
-              </p>
             </div>
-            
-            <!-- Facet 6: Validation Next Step -->
-            <div class="card card-tinted" style="border-top: 3px solid var(--emerald-accent);">
-              <div class="card-header-sm">
-                <span>06. Proposed Next Step</span>
-                <span class="evidence-tag evidence-tag-val">Naukri Input</span>
+
+            <!-- 3. Research Evidence -->
+            <div class="card card-teal" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="badge badge-teal">3. Research</span>
+                  <div style="width: 28px; height: 28px; border-radius: 50%; background: #F0FDFA; color: var(--teal-accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">📊</div>
+                </div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Exploratory Survey (N=45)</div>
+                <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                  Survey of 45 college job seekers showed 80% applied across 3+ role types, 90% maintain multiple resumes, and 90% expressed high intent to use a resume library.
+                </div>
               </div>
-              <div class="card-title-lg">Internal Flow Validation</div>
-              <p class="card-text" style="font-size: 11.5px;">
-                Invite Naukri Product Leadership to assess candidate drop-off patterns across application types and evaluate feasibility of an on-platform pilot.
-              </p>
+              <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #99F6E4; font-size: 11px; font-weight: 700; color: var(--teal-accent);">
+                [Early-Career & Placement Cohort]
+              </div>
             </div>
+
+            <!-- 4. Validation Boundaries -->
+            <div class="card card-amber" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="badge badge-amber">4. Boundaries</span>
+                  <div style="width: 28px; height: 28px; border-radius: 50%; background: #FFFBEB; color: var(--amber-accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">🔍</div>
+                </div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Validation Limits</div>
+                <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                  Evidence supports deeper investigation, but does not prove a platform-wide defect. Naukri's internal telemetry is required to verify actual drop-off rates and ATS splits.
+                </div>
+              </div>
+              <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #FDE68A; font-size: 11px; font-weight: 700; color: var(--amber-accent);">
+                [Requires Naukri Internal Telemetry]
+              </div>
+            </div>
+
+            <!-- 5. Product Opportunity -->
+            <div class="card card-purple" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="badge" style="background:#EDE9FE; color:#6D28D9;">5. Opportunity</span>
+                  <div style="width: 28px; height: 28px; border-radius: 50%; background: #F5F3FF; color: #7C3AED; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">💡</div>
+                </div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Resume Library</div>
+                <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                  A persistent library of up to 5 role-specific resumes with application-time selection, conditional saving post-upload, and non-destructive version storage.
+                </div>
+              </div>
+              <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #DDD6FE; font-size: 11px; font-weight: 700; color: #7C3AED;">
+                [Simpler Job Application Experience]
+              </div>
+            </div>
+
+            <!-- 6. Recommendation -->
+            <div class="card card-emerald" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="badge badge-teal">6. Next Steps</span>
+                  <div style="width: 28px; height: 28px; border-radius: 50%; background: #ECFDF5; color: var(--emerald-accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">🚀</div>
+                </div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Validate & Pilot</div>
+                <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
+                  Collaborate with Naukri PMs to audit existing application journeys, test usability with multi-role job seekers, and evaluate via a controlled A/B experiment.
+                </div>
+              </div>
+              <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #A7F3D0; font-size: 11px; font-weight: 700; color: var(--emerald-accent);">
+                [A/B Pilot on Direct Apply Flow]
+              </div>
+            </div>
+
           </div>
           
-          <!-- Evidence Rigor Bar -->
-          <div class="card card-blue" style="padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-            <div style="font-size: 11.5px; color: var(--navy-dark); line-height: 1.4;">
-              <strong>Disciplined Product Stance:</strong> This proposal establishes a credible candidate-side opportunity. It does not claim to have proven platform-wide demand, nor does it assert universal technical limitations without access to internal Naukri product data.
+          <!-- Bottom Context Callout -->
+          <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 10px 18px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 12.5px; color: var(--slate-700);">
+              <strong style="color: var(--navy-dark);">Core Product Philosophy:</strong> Give candidates complete agency over which document reaches the recruiter, without silent overwrites or profile disruption.
             </div>
-            <span class="badge badge-gray" style="font-size: 10px;">Independent Investigation</span>
+            <span class="badge badge-blue" style="font-size: 11px;">10–12 Min Presentation Summary</span>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 2 — Executive Briefing: The Proposal at a Glance</h4>
-        <p>This slide provides a high-level summary across six key dimensions of the investigation:</p>
+        <h4>Slide 02 — Executive Summary (Suggested Duration: ~60 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "Here is the entire investigation on a single page, structured across six logical dimensions:</p>
         <ul>
-          <li><strong>Problem Signal:</strong> Job seekers pursuing varied roles routinely tailor resumes.</li>
-          <li><strong>Candidate Friction:</strong> Switching documents during an active application flow can disrupt momentum.</li>
-          <li><strong>Research Signal:</strong> Our exploratory survey of 45 college students showed that 90% maintain multiple resumes and 80% apply across 3 or more role categories.</li>
-          <li><strong>The Opportunity:</strong> A persistent Resume Library with moment-of-apply selection and non-destructive saving.</li>
-          <li><strong>The Proposed Deliverables:</strong> A prioritized PRD, edge-case decision trees, and a working client-side prototype.</li>
-          <li><strong>Next Steps:</strong> We explicitly treat this as a proposal inviting collaboration and validation from Naukri's product team.</li>
+          <li><strong>1. Problem Origin:</strong> The idea originated from personal job-search experience applying across distinct functional roles.</li>
+          <li><strong>2. Candidate Friction:</strong> Switching resume versions in certain application journeys requires manual profile updates or re-uploading, adding cognitive friction and drop-off risk.</li>
+          <li><strong>3. Research:</strong> An exploratory survey with 45 college students confirmed that 80% apply across 3 or more role types and 90% maintain multiple resumes.</li>
+          <li><strong>4. Validation Boundaries:</strong> We acknowledge research boundaries upfront—this survey shows early-career candidate demand, but Naukri's internal telemetry is needed to quantify platform-wide impact.</li>
+          <li><strong>5. Opportunity:</strong> A candidate-controlled Resume Library with conditional saving and application-time selection.</li>
+          <li><strong>6. Recommendation:</strong> Conduct an internal telemetry audit followed by a controlled A/B experiment measuring application completion rates."</li>
         </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's examine the structured Product Management lifecycle that guided this work.</div>
+        <div class='cue-box'><strong>Transition:</strong> Let's look closer at where this idea began and the specific candidates experiencing this friction.</div>
         """
     },
 
-    # SLIDE 03: PRODUCT MANAGEMENT APPROACH
+    # SLIDE 03: PROBLEM ORIGIN & TARGET CANDIDATES (Merges old Slides 4 & 5)
     {
         "id": "slide-3",
         "number": "03",
         "stage": "Discover",
-        "tag": "Product Process",
-        "evidenceType": "Proposed Solution",
-        "title": "From Problem Discovery to Product Recommendation",
-        "subtitle": "A structured, iterative Product Management lifecycle guiding this independent investigation",
+        "tag": "Problem Origin & Target Users",
+        "evidenceType": "Personal Observation",
+        "title": "Where the Idea Started — Understanding the Candidate",
+        "subtitle": "Firsthand job-seeker observation and the multi-role reality for early-career candidates",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <!-- Lifecycle Linear Stage Diagram -->
-          <div class="card" style="padding: 12px 14px;">
-            <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--slate-500); margin-bottom: 8px;">
-              The 9-Stage Product Discovery & Delivery Lifecycle
-            </div>
+        <div style="display: flex; flex-direction: column; height: 100%; gap: 14px;">
+          <!-- Top Row: Personal Experience & Multi-Role Reality -->
+          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 16px; flex: 1;">
             
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
-              <div class="stage-step active" style="font-size: 10.5px; padding: 4px 8px;">1. Discover</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">2. Define</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">3. Research</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">4. Validate</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">5. Diagnose</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">6. Assess</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">7. Design</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">8. Test</div>
-              <span class="stage-arrow">→</span>
-              <div class="stage-step" style="font-size: 10.5px; padding: 4px 8px; background: #E2E8F0; color: #1E293B;">9. Deliver</div>
+            <!-- Left: Firsthand Personal Observation -->
+            <div class="card card-blue" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span class="evidence-tag evidence-tag-obs">[PERSONAL OBSERVATION]</span>
+                  <span class="badge badge-blue">Origin Narrative</span>
+                </div>
+                <div style="font-size: 17px; font-weight: 800; color: var(--navy-dark); margin-bottom: 8px;">
+                  Personal Job-Seeker Experience
+                </div>
+                <div style="background: #FFFFFF; border-left: 3.5px solid var(--naukri-blue); padding: 12px 14px; border-radius: 4px; font-size: 13px; color: var(--slate-700); line-height: 1.55; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+                  <em>"This proposal began with my own experience of applying across different role categories. I maintained different resume versions for different opportunities. When the document I wanted to submit differed from the resume associated with my profile, managing the change could add steps to the application process in the flow I encountered."</em>
+                </div>
+                <div style="font-size: 12.5px; color: var(--slate-600); line-height: 1.5;">
+                  Managing different documents manually across applications created cognitive friction and fear of accidentally submitting the wrong resume or overwriting a previously tailored CV.
+                </div>
+              </div>
+              
+              <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 8px 12px; font-size: 11.5px; color: var(--slate-600);">
+                <strong>Methodological Note:</strong> Personal observation serves as the hypothesis generator. It is tested through candidate research and competitor benchmarking.
+              </div>
             </div>
+
+            <!-- Right: The Multi-Role Candidate Reality -->
+            <div class="card card-indigo" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span class="badge" style="background:#EDE9FE; color:#4F46E5;">Candidate Reality</span>
+                  <span style="font-size: 11px; color: var(--slate-400); font-weight: 600;">1 Candidate • Multiple Profiles</span>
+                </div>
+                <div style="font-size: 17px; font-weight: 800; color: var(--navy-dark); margin-bottom: 8px;">
+                  One Candidate, Diverse Strengths
+                </div>
+                <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.45; margin-bottom: 10px;">
+                  Modern early-career candidates rarely apply to a single narrow job title. They tailor distinct resumes highlighting relevant projects:
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                  <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: 8px 10px;">
+                    <div style="font-size: 12px; font-weight: 700; color: #1E3A8A;">💼 Product Mgmt</div>
+                    <div style="font-size: 10.5px; color: #2563EB;">Wireframing, PRDs, roadmaps</div>
+                  </div>
+                  <div style="background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 6px; padding: 8px 10px;">
+                    <div style="font-size: 12px; font-weight: 700; color: #6D28D9;">📊 Consulting</div>
+                    <div style="font-size: 10.5px; color: #7C3AED;">Case studies, business analysis</div>
+                  </div>
+                  <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 6px; padding: 8px 10px;">
+                    <div style="font-size: 12px; font-weight: 700; color: #B45309;">⚙️ Business Ops</div>
+                    <div style="font-size: 10.5px; color: #D97706;">Logistics, analytics, processes</div>
+                  </div>
+                  <div style="background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 6px; padding: 8px 10px;">
+                    <div style="font-size: 12px; font-weight: 700; color: #166534;">💻 Tech / Eng</div>
+                    <div style="font-size: 10.5px; color: #059669;">Codebases, APIs, SQL, models</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div style="font-size: 11px; color: #4338CA; margin-top: 6px;">
+                Each role emphasizes different evidence from the same candidate's background.
+              </div>
+            </div>
+
           </div>
-          
-          <!-- Lifecycle Stage Breakdown Grid -->
-          <div class="grid-3" style="flex: 1; gap: 10px;">
-            <div class="card card-tinted" style="padding: 10px 12px;">
-              <div style="font-weight: 700; font-size: 11.5px; color: var(--navy-dark); margin-bottom: 2px;">Stage 1–3: Discovery & Research</div>
-              <ul style="font-size: 10.5px; color: var(--slate-600); padding-left: 14px; line-height: 1.4;">
-                <li><strong>Discover:</strong> Identify initial firsthand problem observation.</li>
-                <li><strong>Define:</strong> Articulate user needs, Job-to-be-Done & scope boundaries.</li>
-                <li><strong>Research:</strong> Design survey questions, respondent criteria & methodology.</li>
-              </ul>
+
+          <!-- Bottom: Target User Segmentation -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div style="background: #FFFFFF; border: 1.5px solid #86EFAC; border-left: 4px solid var(--emerald-accent); border-radius: 8px; padding: 10px 14px; box-shadow: 0 2px 6px rgba(5,150,105,0.04);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                <strong style="color: #14532D; font-size: 13.5px;">Primary Target Segment: College Students & Early-Career</strong>
+                <span class="badge badge-teal" style="font-size: 10px;">High Frequency Multi-Role</span>
+              </div>
+              <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                Facing placement seasons, internship cycles, and off-campus drives where students must apply concurrently across analyst, product, software, and consulting roles with tailored resumes.
+              </div>
             </div>
-            
-            <div class="card card-tinted" style="padding: 10px 12px;">
-              <div style="font-weight: 700; font-size: 11.5px; color: var(--navy-dark); margin-bottom: 2px;">Stage 4–6: Validation & Assessment</div>
-              <ul style="font-size: 10.5px; color: var(--slate-600); padding-left: 14px; line-height: 1.4;">
-                <li><strong>Validate:</strong> Separate established signals from unverified questions.</li>
-                <li><strong>Diagnose:</strong> Analyze symptoms vs. 5 root-cause hypotheses.</li>
-                <li><strong>Assess:</strong> Benchmark competitors & compare 5 strategic options.</li>
-              </ul>
+
+            <div style="background: #FFFFFF; border: 1.5px solid #FDE68A; border-left: 4px solid var(--amber-accent); border-radius: 8px; padding: 10px 14px; box-shadow: 0 2px 6px rgba(217,119,6,0.04);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                <strong style="color: #92400E; font-size: 13.5px;">Secondary Segment: Career Changers & Lateral Seekers</strong>
+                <span class="badge badge-amber" style="font-size: 10px;">Requires Naukri Validation</span>
+              </div>
+              <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                Mid-career professionals exploring dual tracks (e.g. IC vs Engineering Manager, or Sales vs Account Management). Stated as a high-potential hypothesis requiring Naukri validation.
+              </div>
             </div>
-            
-            <div class="card card-tinted" style="padding: 10px 12px;">
-              <div style="font-weight: 700; font-size: 11.5px; color: var(--navy-dark); margin-bottom: 2px;">Stage 7–9: Design, Test & Next Steps</div>
-              <ul style="font-size: 10.5px; color: var(--slate-600); padding-left: 14px; line-height: 1.4;">
-                <li><strong>Design:</strong> Formulate 3 pillars, UX flows, decision logic & PRD.</li>
-                <li><strong>Test:</strong> Build client-side simulator & design controlled A/B experiment.</li>
-                <li><strong>Deliver:</strong> Plan rollout, risk mitigations & invite Naukri PM feedback.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div style="background: var(--slate-100); padding: 8px 12px; border-radius: 4px; font-size: 11px; color: var(--slate-600); text-align: center;">
-            <em>Note: Product Discovery and Delivery are inherently iterative. Insights gained during competitor benchmarking and prototyping continuously refined our problem definition and PRD scope.</em>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 3 — The Product Management Lifecycle</h4>
-        <p>Rather than jumping straight to a mockup or a feature pitch, this project adheres to a disciplined Product Management lifecycle:</p>
-        <ul>
-          <li>We start with the initial observation and define the Job-to-be-Done before running user research.</li>
-          <li>Crucially, we include a dedicated validation step to separate what the survey actually establishes from what remains unverified without internal Naukri data.</li>
-          <li>We conduct root-cause diagnosis and evaluate multiple product alternatives before detailing our recommended Resume Library concept.</li>
-          <li>Finally, we define the PRD, testable acceptance criteria, controlled experiment metrics, and risk mitigations.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's examine how this project began with a personal application experience.</div>
+        <h4>Slide 03 — Problem Origin & Target Candidates (Suggested Duration: ~60 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "This proposal began with my personal experience. While applying for jobs across different domains, I maintained separate CVs tailored to Product Management, Consulting, Operations, and Software Engineering.</p>
+        <p>When the resume I wanted to submit for a specific posting differed from the single resume tied to my Naukri profile, managing that swap added friction to the application flow. I'm deliberately labeling this as a <strong>[PERSONAL OBSERVATION]</strong>, not a proven platform-wide defect.</p>
+        <p>This multi-role reality is especially acute for <strong>college students and early-career job seekers</strong> during placement seasons, where candidates apply across multiple tracks simultaneously. A secondary segment includes professionals exploring parallel career trajectories, which we flag for future validation with Naukri's user data."</p>
+        <div class='cue-box'><strong>Transition:</strong> Let's define the precise candidate problem through a structured Job-to-be-Done framework.</div>
         """
     },
 
-    # SLIDE 04: PROBLEM IDENTIFICATION
+    # SLIDE 04: PROBLEM DEFINITION & JOB-TO-BE-DONE
     {
         "id": "slide-4",
         "number": "04",
-        "stage": "Discover",
-        "tag": "Problem Discovery",
-        "evidenceType": "Personal Observation",
-        "title": "Where the Idea Started",
-        "subtitle": "Firsthand observation: applying across multiple role tracks within portal application journeys",
-        "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 14px;">
-          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 16px; flex: 1;">
-            <!-- Left: First-Person Account & Context -->
-            <div class="card card-tinted" style="padding: 16px 20px; display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <div class="card-header-sm">
-                  <span>Firsthand Problem Signal</span>
-                  <span class="evidence-tag evidence-tag-obs">Personal Observation</span>
-                </div>
-                
-                <div style="font-size: 14px; color: var(--navy-dark); font-weight: 600; line-height: 1.5; margin-bottom: 12px;">
-                  "This proposal began with my own experience of applying across different role categories. I maintained different resume versions for different opportunities. When the document I wanted to submit differed from the resume associated with my profile, managing the change could add steps to the application process in the flow I encountered."
-                </div>
-                
-                <p class="card-text" style="font-size: 12px; margin-bottom: 8px;">
-                  Like many candidates exploring campus placements or diverse career tracks, I found myself preparing distinct presentations of my background:
-                </p>
-                <ul style="font-size: 11.5px; color: var(--slate-700); padding-left: 16px; line-height: 1.45;">
-                  <li>A <strong>Product Management CV</strong> highlighting case competitions, wireframes, and metrics.</li>
-                  <li>A <strong>Consulting CV</strong> highlighting market sizing, structured problem solving, and modeling.</li>
-                  <li>An <strong>Operations CV</strong> emphasizing process workflows and logistics.</li>
-                  <li>A <strong>Core Tech CV</strong> emphasizing software development and data structures.</li>
-                </ul>
-              </div>
-              
-              <div style="background: white; border: 1px solid var(--slate-200); border-radius: 6px; padding: 10px 12px; font-size: 11px; color: var(--slate-600); margin-top: 10px;">
-                <strong>Classification:</strong> This observation represents the initial spark of inquiry. It highlighted that document management at application time deserves systematic investigation.
-              </div>
-            </div>
-            
-            <!-- Right: The 3 Underlying Realities -->
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-              <div class="card" style="padding: 12px 14px;">
-                <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-bottom: 3px;">
-                  1. Multiple Professional Stories
-                </div>
-                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
-                  A single resume cannot optimally emphasize technical depth, analytical frameworks, and product leadership simultaneously.
-                </div>
-              </div>
-              
-              <div class="card" style="padding: 12px 14px;">
-                <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-bottom: 3px;">
-                  2. Role-Specific Job Matching
-                </div>
-                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
-                  Recruiters look for specific keyword alignments and relevant project highlights tailored to their specific job description.
-                </div>
-              </div>
-              
-              <div class="card" style="padding: 12px 14px;">
-                <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-bottom: 3px;">
-                  3. Moment-of-Apply Friction
-                </div>
-                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
-                  When an active job posting requires an alternate version, having to leave the flow or replace active profile documents risks abandonment or confusion.
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div style="background: var(--amber-light); border: 1px solid var(--amber-border); padding: 8px 14px; border-radius: 4px; font-size: 11px; color: #92400E; display: flex; align-items: center; justify-content: space-between;">
-            <span><strong>Research Boundary:</strong> A personal observation is a hypothesis, not proof of platform-wide defect. This prompted our exploratory user survey to see if other candidates experience similar needs.</span>
-            <span class="evidence-tag evidence-tag-obs">Signal Origin</span>
-          </div>
-        </div>
-        """,
-        "speakerNotes": """
-        <h4>Slide 4 — Problem Identification & Personal Observation</h4>
-        <p>Every genuine product investigation starts with an authentic observation. Here is how this project began:</p>
-        <ul>
-          <li>During my own job search across placement season, I prepared distinct resumes tailored to APM, Consulting, and Technical roles.</li>
-          <li>When applying for a specific job that required an alternate resume, navigating away to update the profile-attached file felt like an unnecessary interruption.</li>
-          <li>However, in professional Product Management, one person's experience is merely an anecdote. It cannot be presented as a universal defect or proof of widespread platform failure.</li>
-          <li>Therefore, this firsthand experience served as the catalyst to design an exploratory survey and investigate competitor paradigms.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's define who experiences this problem and inspect a representative candidate scenario.</div>
-        """
-    },
-
-    # SLIDE 05: WHO EXPERIENCES THE PROBLEM?
-    {
-        "id": "slide-5",
-        "number": "05",
         "stage": "Define",
-        "tag": "Target Cohort",
-        "evidenceType": "Survey Finding",
-        "title": "Understanding the Candidate Context",
-        "subtitle": "Multi-track job seekers, early-career candidates, and cross-functional role seekers",
-        "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1;">
-            <!-- Left: Primary Target Segment -->
-            <div class="card" style="border-left: 4px solid var(--naukri-blue); padding: 14px 18px; display: flex; flex-direction: column;">
-              <div class="card-header-sm">
-                <span>Primary Segment (Survey-Supported)</span>
-                <span class="evidence-tag evidence-tag-survey">N=45 Cohort</span>
-              </div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--navy-dark); margin-bottom: 6px;">
-                College Students & Early-Career Multi-Track Seekers
-              </div>
-              <p class="card-text" style="font-size: 11.5px; margin-bottom: 10px;">
-                Candidates entering placement seasons or early job searches who actively explore several functional career paths concurrently:
-              </p>
-              
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px;">
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px; font-size: 11px;">
-                  💼 <strong>Product Management</strong>
-                  <div style="font-size: 9.5px; color: var(--slate-500);">APM, Tech Analyst</div>
-                </div>
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px; font-size: 11px;">
-                  📊 <strong>Strategy & Consulting</strong>
-                  <div style="font-size: 9.5px; color: var(--slate-500);">Analyst, Research</div>
-                </div>
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px; font-size: 11px;">
-                  ⚙️ <strong>Business Operations</strong>
-                  <div style="font-size: 9.5px; color: var(--slate-500);">Supply Chain, Ops</div>
-                </div>
-                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); padding: 6px 8px; border-radius: 4px; font-size: 11px;">
-                  💻 <strong>Core Engineering</strong>
-                  <div style="font-size: 9.5px; color: var(--slate-500);">Software, Data Eng</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: auto; background: var(--naukri-blue-light); padding: 8px 10px; border-radius: 4px; font-size: 10.5px; color: var(--navy-dark);">
-                <strong>Behavioral Reality:</strong> 80% of our surveyed student cohort reported applying across 3 or more distinct role types simultaneously.
-              </div>
-            </div>
-            
-            <!-- Right: Candidate Scenario & Secondary Segment Note -->
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-              <!-- Realistic Candidate Scenario -->
-              <div class="card card-tinted" style="padding: 12px 14px; flex: 1;">
-                <div class="card-header-sm">
-                  <span>Illustrative Candidate Scenario</span>
-                  <span class="badge badge-gray">Demo Persona</span>
-                </div>
-                <div style="font-size: 12.5px; font-weight: 700; color: var(--navy-dark); margin-bottom: 2px;">
-                  Sample Candidate • Final-Year Engineering & Analytics Student
-                </div>
-                <div style="font-size: 11px; color: var(--slate-600); line-height: 1.45; margin-top: 4px;">
-                  <em>"I am open to Associate Product Manager roles, Business Analyst roles at consulting firms, and Business Operations positions. I have 3 polished resumes tailored with specific keywords and projects. When I see a great APM job on Naukri, I want to submit my PM resume immediately without altering my profile's default document."</em>
-                </div>
-              </div>
-              
-              <!-- Secondary Segment (Hypothesis) -->
-              <div class="card" style="border-left: 3px solid var(--slate-400); padding: 10px 14px;">
-                <div class="card-header-sm">
-                  <span>Secondary Segment (Potential)</span>
-                  <span class="evidence-tag evidence-tag-hypo">Requires Validation</span>
-                </div>
-                <div style="font-weight: 700; font-size: 11.5px; color: var(--slate-700);">
-                  Mid-Career Professionals Across Functions
-                </div>
-                <div style="font-size: 10.5px; color: var(--slate-500); line-height: 1.35; margin-top: 2px;">
-                  Experienced candidates seeking cross-functional moves (e.g. Technical Program Manager vs. Strategy Director). <em>Note: Not represented in our 45-student survey; requires distinct professional cohort validation.</em>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        """,
-        "speakerNotes": """
-        <h4>Slide 5 — Target Users & Candidate Context</h4>
-        <p>Who experiences this problem?</p>
-        <ul>
-          <li>Our exploratory research directly captures college students and early-career seekers. 80% of respondents in our sample were looking for placement or full-time roles, and 20% for internships.</li>
-          <li>Early-career job seekers often apply broadly across Product, Consulting, Operations, and Core Tech to maximize employment opportunities.</li>
-          <li>We present a realistic candidate persona based on this scenario.</li>
-          <li>Importantly, we note that mid-career working professionals may also experience this need, but we strictly classify that as a hypothesis requiring separate research.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's define the exact Job-to-be-Done and formal problem statement.</div>
-        """
-    },
-
-    # SLIDE 06: PROBLEM DEFINITION
-    {
-        "id": "slide-6",
-        "number": "06",
-        "stage": "Define",
-        "tag": "Problem Scoping",
+        "tag": "Problem Definition & JTBD",
         "evidenceType": "Proposed Solution",
         "title": "Defining the Actual Candidate Problem",
-        "subtitle": "Establishing the Job-to-be-Done (JTBD), core problem statement, and scope boundaries",
+        "subtitle": "Framing candidate friction through a structured Job-to-be-Done and formal problem boundary",
         "content": """
-        <div style="display: flex; flex-direction: column; height: 100%; gap: 14px;">
-          <!-- Top: Job-to-be-Done Anchor -->
-          <div class="card card-blue" style="padding: 14px 18px; border-left: 4px solid var(--naukri-blue);">
-            <div style="font-size: 10.5px; font-weight: 800; text-transform: uppercase; color: var(--naukri-blue); letter-spacing: 0.8px; margin-bottom: 4px;">
-              The Job-to-be-Done (JTBD)
+        <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
+          <!-- Prominent JTBD Callout Banner -->
+          <div style="background: linear-gradient(135deg, #1E3A8A 0%, #1856EA 100%); color: white; border-radius: 10px; padding: 14px 20px; box-shadow: 0 4px 14px rgba(24,86,234,0.2);">
+            <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #93C5FD; margin-bottom: 4px;">
+              Core Job-to-be-Done (JTBD)
             </div>
-            <div style="font-size: 15px; font-weight: 700; color: var(--navy-dark); line-height: 1.45;">
-              "When I apply to different types of roles, I want to choose the resume that best represents my relevant experience while keeping my other versions intact, so I can submit the document I intend without repeatedly managing profile files."
-            </div>
-          </div>
-          
-          <!-- Middle: Formal Problem Statement & 4-Box Framing -->
-          <div class="grid-4" style="flex: 1; gap: 10px;">
-            <div class="card card-tinted" style="padding: 10px 12px;">
-              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--slate-500);">1. Target User</div>
-              <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-top: 3px;">Multi-Track Applicant</div>
-              <p style="font-size: 11px; color: var(--slate-600); margin-top: 4px; line-height: 1.35;">
-                Candidates who maintain multiple role-specific resume documents.
-              </p>
-            </div>
-            
-            <div class="card card-tinted" style="padding: 10px 12px;">
-              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--slate-500);">2. Trigger Situation</div>
-              <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-top: 3px;">Active Job Discovery</div>
-              <p style="font-size: 11px; color: var(--slate-600); margin-top: 4px; line-height: 1.35;">
-                Finding an attractive role on Naukri that requires an alternate resume version.
-              </p>
-            </div>
-            
-            <div class="card card-tinted" style="padding: 10px 12px;">
-              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--slate-500);">3. Core Need</div>
-              <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-top: 3px;">In-Flow Selection</div>
-              <p style="font-size: 11px; color: var(--slate-600); margin-top: 4px; line-height: 1.35;">
-                Selecting or uploading the right document without leaving the application.
-              </p>
-            </div>
-            
-            <div class="card card-tinted" style="padding: 10px 12px;">
-              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--slate-500);">4. Desired Outcome</div>
-              <div style="font-weight: 700; font-size: 12px; color: var(--navy-dark); margin-top: 3px;">Confident Submission</div>
-              <p style="font-size: 11px; color: var(--slate-600); margin-top: 4px; line-height: 1.35;">
-                Submitting the intended file with zero accidental overwriting and full traceability.
-              </p>
+            <div style="font-size: 15.5px; font-weight: 600; line-height: 1.5; color: #FFFFFF;">
+              <em>"When I apply to different types of roles, I want to choose the resume that best represents my relevant experience while keeping my other versions intact, so I can submit the document I intend without repeatedly managing profile files."</em>
             </div>
           </div>
-          
-          <!-- Bottom: Problem Statement & Explicit Boundary -->
-          <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px;">
-            <div class="card" style="padding: 10px 14px; border-left: 3px solid var(--emerald-accent);">
-              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #166534; margin-bottom: 2px;">
+
+          <!-- 4-Box Framing Matrix -->
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+            
+            <div class="card card-blue" style="padding: 12px 14px;">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                <span class="badge badge-blue">User</span>
+              </div>
+              <div style="font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 4px;">Who is struggling?</div>
+              <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                Candidates who actively maintain multiple role-specific resumes (e.g. students, multi-track applicants).
+              </div>
+            </div>
+
+            <div class="card card-indigo" style="padding: 12px 14px;">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                <span class="badge" style="background:#EDE9FE; color:#4F46E5;">Situation</span>
+              </div>
+              <div style="font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 4px;">When does it happen?</div>
+              <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                During job application flows where the intended submission file is not the current profile resume.
+              </div>
+            </div>
+
+            <div class="card card-amber" style="padding: 12px 14px;">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                <span class="badge badge-amber">Need</span>
+              </div>
+              <div style="font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 4px;">What do they need?</div>
+              <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                To pick the right resume easily in-flow, without overwriting other saved files or leaving the application.
+              </div>
+            </div>
+
+            <div class="card card-emerald" style="padding: 12px 14px;">
+              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                <span class="badge badge-teal">Outcome</span>
+              </div>
+              <div style="font-size: 14px; font-weight: 800; color: var(--navy-dark); margin-bottom: 4px;">Desired Result</div>
+              <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
+                Faster application completion, higher submission accuracy, and peace of mind about historical records.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom: Formal Problem Statement & Scope Distinction -->
+          <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px;">
+            <div style="background: #FFFFFF; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 12px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--naukri-blue); letter-spacing: 0.6px; margin-bottom: 4px;">
                 Formal Problem Statement
               </div>
-              <div style="font-size: 11.5px; color: var(--slate-800); line-height: 1.4;">
+              <div style="font-size: 13px; color: var(--navy-dark); font-weight: 600; line-height: 1.5;">
                 "Candidates who maintain multiple role-specific resumes need a simple and reliable way to select the intended document during supported job application flows, without repeatedly replacing or losing access to other versions."
               </div>
             </div>
-            
-            <div class="card card-tinted" style="padding: 10px 14px;">
-              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--rose-accent); margin-bottom: 2px;">
-                Explicit Problem Scope Boundary
+
+            <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 12px 14px;">
+              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--slate-600); letter-spacing: 0.6px; margin-bottom: 4px;">
+                Scope Boundary: Management vs Writing
               </div>
-              <div style="font-size: 10.5px; color: var(--slate-600); line-height: 1.35;">
-                This investigation solves <strong>document storage, versioning, and selection</strong>. It explicitly excludes AI resume writing, automated bullet rewriting, and automated matching.
+              <div style="font-size: 11.5px; color: var(--slate-600); line-height: 1.45;">
+                <span style="color: var(--emerald-accent); font-weight: 700;">✓ IN SCOPE:</span> Document storage, in-flow selection, conditional saving, version naming.<br>
+                <span style="color: var(--rose-accent); font-weight: 700;">✕ OUT OF SCOPE:</span> AI resume drafting, formatting templates, or keyword stuffing.
               </div>
             </div>
           </div>
         </div>
         """,
         "speakerNotes": """
-        <h4>Slide 6 — Problem Definition & Scoping</h4>
-        <p>Clear problem definition is essential before designing any product solution:</p>
-        <ul>
-          <li><strong>Job-to-be-Done:</strong> The candidate wants to choose the resume that best represents their experience while keeping other versions intact.</li>
-          <li><strong>The Problem Statement:</strong> Focuses specifically on having a reliable way to select the intended resume during supported application flows without repeatedly replacing profile documents.</li>
-          <li><strong>Scope Discipline:</strong> We draw a sharp line here. This is NOT an AI resume writer or automated bullet generator. Confusing document management with content generation leads to bloated scope.</li>
-        </ul>
-        <div class='cue-box'><strong>Transition:</strong> Let's look at how we designed our exploratory research to investigate this candidate need.</div>
+        <h4>Slide 04 — Problem Definition & JTBD (Suggested Duration: ~60 seconds)</h4>
+        <p><strong>Speaker Script:</strong> "To prevent solution bias, we formalize the candidate's actual need using the Job-to-be-Done framework:</p>
+        <p><em>'When I apply to different types of roles, I want to choose the resume that best represents my relevant experience while keeping my other versions intact, so I can submit the document I intend without repeatedly managing profile files.'</em></p>
+        <p>Notice the four-box breakdown: the user is a multi-role applicant; the situation is applying on Naukri; the need is choosing without overwriting; and the desired outcome is fast, confident submission.</p>
+        <p>Crucially, we define a clear scope boundary: this proposal addresses <strong>resume management</strong>—storage, selection, and document retention. It is not a resume writing tool, AI template generator, or keyword builder."</p>
+        <div class='cue-box'><strong>Transition:</strong> Now let's examine the empirical survey evidence collected from 45 job seekers to test this problem definition.</div>
         """
     }
 ]

@@ -4,7 +4,7 @@
 [![Live Presentation](https://img.shields.io/badge/Live_Presentation-GitHub_Pages-1856EA?style=for-the-badge&logo=github)](https://gopalmahere.github.io/Naukri.com-Resume-Library-Application-Experience-Enhancement/)
 [![Author](https://img.shields.io/badge/Prepared_by-Aditya_Sharma-0B1B3D?style=for-the-badge)](https://github.com/GopalMahere)
 [![Project](https://img.shields.io/badge/Type-Independent_PM_Investigation-059669?style=for-the-badge)](#)
-[![Deck](https://img.shields.io/badge/Slides-23_Interactive_Screens-D97706?style=for-the-badge)](#)
+[![Deck](https://img.shields.io/badge/Slides-16_Interactive_Screens-D97706?style=for-the-badge)](#)
 
 ---
 
@@ -30,27 +30,35 @@ Rather than jumping directly to an assumed solution, this project follows an **i
 
 ## 🔄 Product Management Process Followed
 
-The investigation follows an iterative 9-stage Product Management lifecycle:
+The presentation communicates the complete product argument in **10–12 minutes** across **13 core slides + 3 comprehensive appendices (16 total slides)**:
 
 ```
 [Discover]  ──▶  [Define]    ──▶  [Research]  ──▶  [Validate]  ──▶  [Diagnose]
 Problem Signal   JTBD & Scope     N=45 Survey     Evidence Audit   Root Causes
       │
       ▼
-  [Assess]   ──▶  [Design]    ──▶  [Test]      ──▶  [Deliver]
-5 Options         3 Pillars        Controlled A/B   Risks, Stages
-Competitors       PRD & Prototype  Metrics Hierarchy & Feedback Request
+   [Assess]  ──▶  [Design]    ──▶  [Test]      ──▶  [Deliver]
+5 Options         3 Pillars        Prototype        MVP Scope, Controlled A/B
+Competitors       Workflow Gate    Simulation       Metrics & Feedback Request
 ```
 
-1. **Problem Discovery:** Capturing firsthand candidate observations during multi-track job applications.
-2. **Problem Definition:** Establishing the Job-to-be-Done (JTBD), user needs, and scoping boundaries.
-3. **User Research:** Formulating 7 research questions and running an exploratory survey (N=45).
-4. **Problem Validation:** Auditing supported evidence against unverified platform-side questions.
-5. **Root-Cause Diagnosis:** Separating surface symptoms from 5 underlying structural hypotheses.
-6. **Market & Competitor Analysis:** Benchmarking official documentation from Naukri, LinkedIn, and Indeed India.
-7. **Opportunity Assessment:** Evaluating 5 strategic alternatives (Options A–E) on feasibility and candidate control.
-8. **Solution Design & PRD:** Specifying the Resume Library, decision logic, MoSCoW requirements, and testable acceptance criteria.
-9. **Testing & Recommendation:** Designing a controlled A/B pilot, metric hierarchy, risk mitigations, and request for Naukri PM review.
+### 16-Slide Structure (13 Core + 3 Appendices)
+1. **Slide 01 (Cover):** *Naukri.com – Apply with the Right Resume* (Hero hook, Aditya Sharma metadata, conceptual flow illustration).
+2. **Slide 02 (Executive Summary):** *What This Investigation Is About* (6-part structured summary: Origin, Friction, Survey N=45, Validation limits, Opportunity, Recommendation).
+3. **Slide 03 (Origin & Target Users):** *Where the Idea Started — Understanding the Candidate* (`[PERSONAL OBSERVATION]` grounding, multi-role reality for PM/Consulting/Ops/Tech, student & career-changer segmentation).
+4. **Slide 04 (Problem Definition):** *Defining the Actual Candidate Problem* (Core JTBD, 4-box framing: User/Situation/Need/Outcome, Resume Management vs Writing boundary).
+5. **Slide 05 (User Research Findings):** *What We Learned from the Respondents* (N=45 survey data, role-category distribution chart, qualitative motivations & workarounds, explicit research limits).
+6. **Slide 06 (Current Journey):** *Where Resume Management Can Interrupt the Application Journey* (Common journey, Path A in-flow upload, Path B profile redirect friction, Path C external ATS).
+7. **Slide 07 (Validation & Root Causes):** *What the Evidence Supports — and What We Still Need to Investigate* (Section A: Evidence Audit [Supported vs Requires Validation]; Section B: 5 Root-Cause Hypotheses).
+8. **Slide 08 (Competitor Benchmarking):** *How Existing Platforms Handle Resume Selection* (Naukri FastForward CV vs builder nuances, LinkedIn 4 reusable CVs, Indeed India 1 stored CV + apply-time upload).
+9. **Slide 09 (Strategic Alternatives):** *Which Product Approach Best Addresses the Problem?* (Qualitative matrix of Options A–E; justification for Option D Resume Library; AI matching out of scope for MVP).
+10. **Slide 10 (Proposed Solution):** *A Resume Library Built Around Candidate Choice* (3 Pillars: Comprehensive Profile, Dedicated Library, Apply-Time Selector; 5 Principles: Control, Privacy, Independence, No Overwrite, History).
+11. **Slide 11 (Future Workflow & Logic):** *How the Proposed Experience Would Work* (11-step pipeline, prominent conditional save gate post-upload, quick-apply path, default preselection with review, duplicate filename handling).
+12. **Slide 12 (UX Design & Interactive Prototype):** *From Product Concept to Candidate Experience* (6 desktop UI screens, embedded interactive candidate simulator with 4 scenario presets, set default, reset, and sanitized demo data).
+13. **Slide 13 (MVP, Experimentation & Recommendation):** *From Product Proposal to Product Validation* (Consolidated closing slide: A. Compact MVP Must vs Future; B. Controlled A/B Experiment & Completion Rate formula; C. 5-Stage Rollout Plan; Closing recommendation & PM feedback invitation).
+14. **Appendix A (Slide 14):** *Appendix A: Complete User Research & Methodology* (Full Q1–Q13 survey data catalog, respondent profile, motivations, workarounds, stated preferences, limitations).
+15. **Appendix B (Slide 15):** *Appendix B: Official Competitor Documentation & Links* (Naukri, LinkedIn, Indeed India official URLs, verified retrieval dates, supported claims, scope limitations).
+16. **Appendix C (Slide 16):** *Appendix C: Product Specification & Technical Considerations* (Detailed functional requirements, Must/Should/Could priorities, Given/When/Then acceptance criteria, conditional save logic, duplicate filename handling, upload failure behaviour, privacy/security, technical dependencies, terms & assumptions glossary).
 
 ---
 
@@ -141,14 +149,14 @@ The proposed solution consists of three complementary pillars:
 
 ## 🛠️ Interactive Prototype & Scenarios
 
-Slide 16 embeds a complete client-side candidate simulator testing six key flows:
+Slide 12 embeds a complete client-side candidate simulator testing key candidate flows:
 
-* **Flow A (One Saved Resume):** Preserves existing quick-apply speed by pre-attaching the single resume, with inline "Change Resume" and "+ Upload New Resume" options.
-* **Flow B (Multiple Resumes):** Displays saved documents with custom names, dates, and preselects the designated default. *Strictly requires explicit candidate review before submission.*
-* **Flow C (Apply-Only Upload):** Candidate uploads a new document. The save checkbox appears **only post-upload**. Left unchecked, it applies to this job only; library count remains at 4.
-* **Flow D (Upload & Save):** Candidate checks the save box. Mandatory custom name validation is enforced. Saved as a 5th independent entry without modifying existing files.
-* **Flow E (Duplicate Filenames):** Two files named `Resume.pdf` receive distinct internal UUIDs; duplicate filenames never trigger silent overwrites.
-* **Flow F (Submitted History):** The *Application History Log* retains an immutable version snapshot independently of future library edits or deletions.
+* **Single-Resume Quick Apply:** Preserves existing quick-apply speed by pre-attaching the single resume, with inline "Change Resume" and "+ Upload New Resume" options.
+* **Multi-Resume Selector:** Displays saved documents with custom names, dates, and preselects the designated default. *Strictly requires explicit candidate review before submission.*
+* **Scenario A (Apply-Only Upload):** Candidate uploads a new document. The save checkbox appears **only post-upload**. Left unchecked, it applies to this job only; library count remains at 4.
+* **Scenario B (Upload & Save):** Candidate checks the save box. Mandatory custom name validation is enforced. Saved as a 5th independent entry without modifying existing files.
+* **Duplicate Filenames:** Two files named `Resume.pdf` receive distinct internal UUIDs; duplicate filenames never trigger silent overwrites.
+* **Submitted History:** The *Application History Log* retains an immutable version snapshot independently of future library edits or deletions.
 
 ---
 
@@ -167,14 +175,15 @@ To establish whether the feature improves candidate conversion:
 ## 📂 Repository File Structure
 
 ```
-├── index.html           # Compiled, self-contained 23-slide interactive presentation
+├── index.html           # Compiled, self-contained 16-slide interactive presentation (13 core + 3 appendices)
 ├── build_deck.py        # Python build script compiling modular source files into index.html
-├── styles.py            # CSS design system, responsive breakpoints, lifecycle tracks & badges
-├── slides_discovery.py  # Slides 01–06: Cover, Overview, PM Approach, Origin, Users, JTBD/Definition
-├── slides_research.py   # Slides 07–12: Research Methodology, Survey Data, Journey, Validation, Root Causes, Competitors
-├── slides_solution.py   # Slides 13–17: Alternatives, 3 Pillars, 11-Step Logic, Interactive Prototype, PRD & MVP
-├── slides_strategy.py   # Slides 18–23: A/B Testing, Risks/Roadmap, Recommendation, Appendices A, B & C
+├── styles.py            # CSS design system, responsive breakpoints, lifecycle tracks, cards & badges
+├── slides_discovery.py  # Slides 01–04: Cover, Executive Summary, Origin & Target Users, Problem Definition & JTBD
+├── slides_research.py   # Slides 05–08: User Research (N=45), Current Journey, Validation & Root Causes, Competitors
+├── slides_solution.py   # Slides 09–12: Alternatives, Solution Pillars, Workflow & Logic, UX & Interactive Prototype
+├── slides_strategy.py   # Slides 13–16: MVP & Validation, Appendix A, Appendix B, Appendix C
 ├── scripts_js.py        # Presentation controls, keyboard navigation & interactive prototype engine
+├── test_verify.py       # Automated QA verification script
 ├── .gitignore           # Git ignore rules for build artifacts
 └── README.md            # Investigation documentation and product proposal
 ```
@@ -191,8 +200,8 @@ python build_deck.py
 
 * **`→` / `Space` / `Page Down`**: Next slide
 * **`←` / `Page Up`**: Previous slide
-* **`N`**: Toggle Speaker Notes drawer (detailed speaking guidance)
-* **`G`**: Open Slide Overview Grid (jump to any of the 23 slides)
+* **`N`**: Toggle Speaker Notes drawer (detailed speaking guidance & suggested times)
+* **`G`**: Open Slide Overview Grid (jump to any of the 16 slides)
 * **`O` / `E`**: Open Evaluator Guide & Executive Brief
 * **`F`**: Toggle Fullscreen presentation mode
 * **`Esc`**: Close active modals
