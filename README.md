@@ -1,57 +1,114 @@
-# One Profile, Multiple Resumes
-### A Candidate-Controlled Resume Library for Naukri.com
+# Naukri.com – Apply with the Right Resume
+### A candidate-controlled Resume Library proposal for improving the job application experience.
 
 [![Live Presentation](https://img.shields.io/badge/Live_Presentation-GitHub_Pages-1856EA?style=for-the-badge&logo=github)](https://gopalmahere.github.io/Naukri.com-Resume-Library-Application-Experience-Enhancement/)
 [![Author](https://img.shields.io/badge/Prepared_by-Aditya_Sharma-0B1B3D?style=for-the-badge)](https://github.com/GopalMahere)
-[![Format](https://img.shields.io/badge/Format-Interactive_Digital_Presentation-059669?style=for-the-badge)](#)
-[![Deck](https://img.shields.io/badge/Slides-15_Interactive_Screens-D97706?style=for-the-badge)](#)
+[![Project](https://img.shields.io/badge/Type-Independent_PM_Investigation-059669?style=for-the-badge)](#)
+[![Deck](https://img.shields.io/badge/Slides-23_Interactive_Screens-D97706?style=for-the-badge)](#)
 
 ---
 
 ## 🌐 Live Presentation & Shareable Link
 
-> **View the Live Interactive Deck:**  
+> **Open the Interactive Presentation:**  
 > 🔗 **[https://gopalmahere.github.io/Naukri.com-Resume-Library-Application-Experience-Enhancement/](https://gopalmahere.github.io/Naukri.com-Resume-Library-Application-Experience-Enhancement/)**
 
-*Tip: You can also clone this repository and open `index.html` directly in any desktop or mobile browser. It is 100% self-contained with zero external dependencies.*
+*This presentation is self-contained in `index.html`. It runs directly in any modern desktop, laptop, tablet, or mobile browser with zero external framework dependencies.*
 
 ---
 
-## 📌 Executive Summary
+## 📌 Project Overview & Origin
 
-Candidates frequently apply across diverse career paths (e.g., Product Management, Consulting, Operations, and Core Tech). Today, candidates maintain different tailored resumes, but switching or managing them during the portal application journey can introduce friction: candidates often have to leave an active application flow, navigate to profile settings, and overwrite their current profile document.
+This project began with a candidate-side problem encountered during job applications. While applying across different role categories (such as Product Management, Consulting, Operations, and Core Tech), the author maintained tailored resume versions for different opportunities. However, when the document to be submitted differed from the resume associated with the candidate's profile, managing that change could add extra steps or disrupt the application flow.
 
-**"One Profile, Multiple Resumes"** solves this by establishing a dedicated, candidate-controlled **Resume Library** inside Naukri.com:
-1. **One Central Profile:** Preserves the candidate's single structured profile as the master source of truth for recruiter search (Resdex).
-2. **Dedicated Resume Library:** Stores independent, user-named resume versions (e.g., *Product Management CV*, *Consulting CV*).
-3. **Application-Time Selection:** Job seekers can pick an existing resume or upload a new one at the moment of application.
-4. **Non-Destructive Saving:** An optional save checkbox appears **only after** an upload succeeds, allowing candidates to save the document as an independent library entry without overwriting existing files.
-5. **Candidate Agency:** The system preselects the candidate's designated default resume for convenience, but **never submits without explicit review and confirmation**.
+Rather than jumping directly to an assumed solution, this project follows an **investigation-first Product Management lifecycle**: examining candidate behaviour, collecting exploratory survey data, auditing competitor capabilities, separating established facts from unanswered questions, evaluating alternatives, and developing a structured product proposal for Naukri.com.
+
+> **Independent Project Disclaimer:**  
+> This is an independent Product Management case study prepared by Aditya Sharma. It is not an official Naukri.com project, and Info Edge / Naukri.com has neither endorsed nor validated this proposal. The proposed solution is designed as a candidate-side improvement for discussion with Naukri's product team.
 
 ---
 
-## 🔍 Problem Discovery & Research Signals
+## 🔄 Product Management Process Followed
 
-* **Multi-Role Job Search Reality:** Based on our exploratory survey of **45 college students**:
-  * **90%** applied for jobs, internships, or placements in the last 90 days.
-  * **80%** were looking for placements/full-time roles; **20%** were looking for internships.
-  * **80%** applied across **3 or more distinct role types** simultaneously (60% applied to 4+ role tracks).
-  * **90%** actively maintain multiple resume versions.
-  * **90%** frequently need a resume different from their current profile document when applying.
-* **Observed User Friction:** When a candidate clicks *Apply* and realizes an alternate resume is needed, they are forced to leave the flow or risk overwriting active profile files.
-* **Competitive Benchmarking:**
-  * **Naukri.com:** Official FastForward FAQ documents up to 5 profiles per username (1 resume per profile) for text/visual CV packages. Separate tools have specific limits (AI maker: 1 CV; online builder FAQ: up to 50 drafts).
-  * **LinkedIn:** Stores up to 4 recently uploaded reusable resumes for *Easy Apply* flows; allows viewing submitted versions in history.
-  * **Indeed India:** Stores 1 profile resume file on the account (replacing previous uploads), while allowing candidates to upload an alternate file during the application process.
+The investigation follows an iterative 9-stage Product Management lifecycle:
+
+```
+[Discover]  ──▶  [Define]    ──▶  [Research]  ──▶  [Validate]  ──▶  [Diagnose]
+Problem Signal   JTBD & Scope     N=45 Survey     Evidence Audit   Root Causes
+      │
+      ▼
+  [Assess]   ──▶  [Design]    ──▶  [Test]      ──▶  [Deliver]
+5 Options         3 Pillars        Controlled A/B   Risks, Stages
+Competitors       PRD & Prototype  Metrics Hierarchy & Feedback Request
+```
+
+1. **Problem Discovery:** Capturing firsthand candidate observations during multi-track job applications.
+2. **Problem Definition:** Establishing the Job-to-be-Done (JTBD), user needs, and scoping boundaries.
+3. **User Research:** Formulating 7 research questions and running an exploratory survey (N=45).
+4. **Problem Validation:** Auditing supported evidence against unverified platform-side questions.
+5. **Root-Cause Diagnosis:** Separating surface symptoms from 5 underlying structural hypotheses.
+6. **Market & Competitor Analysis:** Benchmarking official documentation from Naukri, LinkedIn, and Indeed India.
+7. **Opportunity Assessment:** Evaluating 5 strategic alternatives (Options A–E) on feasibility and candidate control.
+8. **Solution Design & PRD:** Specifying the Resume Library, decision logic, MoSCoW requirements, and testable acceptance criteria.
+9. **Testing & Recommendation:** Designing a controlled A/B pilot, metric hierarchy, risk mitigations, and request for Naukri PM review.
 
 ---
 
-## 💡 The Proposed Architecture
+## 🎯 Candidate Problem & Job-to-be-Done (JTBD)
+
+### The Job-to-be-Done
+> *"When I apply to different types of roles, I want to choose the resume that best represents my relevant experience while keeping my other versions intact, so I can submit the document I intend without repeatedly managing profile files."*
+
+### Formal Problem Statement
+> *"Candidates who maintain multiple role-specific resumes need a simple and reliable way to select the intended document during supported job application flows, without repeatedly replacing or losing access to other versions."*
+
+* **In Scope:** Document management, custom version naming, apply-time selection, post-upload conditional saving, and immutable submitted history tracking.
+* **Explicitly Out of Scope:** AI resume generation, automated bullet point rewriting, and algorithmic matching.
+
+---
+
+## 📊 Exploratory User Research (N=45)
+
+We conducted an exploratory survey of **45 college students** to investigate candidate habits:
+
+| Research Signal | Reported Survey Finding | Context & Limitations |
+| :--- | :--- | :--- |
+| **Recent Activity (Q1)** | **90%** applied for jobs/internships in last 90 days | Active applicant pool |
+| **Cohort Profile (Q2)** | **80%** full-time / placements; **20%** internships | Student-focused sample; does not represent working professionals |
+| **Role Breadth (Q3)** | **80%** apply across $\ge 3$ distinct role categories | 60% apply to 4+ roles; 20% to 3 roles; 15% to 2 roles; 5% to 1 role |
+| **Multiple Versions (Q4)** | **90%** maintain tailored resume versions | High prevalence of role-specific documents |
+| **Friction Frequency (Q7)** | **90%** frequently need alternate CV while applying | Demonstrates frequent divergence between profile CV and job target |
+| **Feature Valuation (Q11)** | **90%** rated the concept *"Extremely useful"* | Stated candidate preference (exploratory indicator, not observed adoption) |
+| **Adoption Likelihood (Q12)** | **90%** reported being *"Very likely"* to use it | Stated intent |
+
+* **Research Integrity Note:** These percentages reflect the exploratory student cohort. They do not prove platform-wide demand, nor do they establish that 90% of all Naukri users experience this problem.
+
+---
+
+## ⚖️ Evidence Audit: Established vs. Unverified
+
+| Supported by Current Evidence | Requires Naukri Validation |
+| :--- | :--- |
+| • Multiple resume versions are common in surveyed student cohort (90%).<br>• Candidates frequently need an alternate resume when applying (90%).<br>• Multi-category job searching is high (80% apply to 3+ roles).<br>• Competitor platforms document resume reuse and apply-time uploading.<br>• Firsthand observation confirmed application-time friction in studied flows. | • Exactly how widespread this problem is across Naukri's full candidate base.<br>• What proportion of applications on Naukri follow direct vs. external redirect flows.<br>• Which specific application types already support alternate file uploads.<br>• Whether candidates actually abandon applications due to this issue.<br>• Whether a Resume Library measurably lifts application completion rates.<br>• Technical constraints governing document versioning in Naukri's backend. |
+
+---
+
+## 🔍 Competitor Benchmarking (Official Documentation)
+
+* **Naukri.com:** FastForward FAQ documents up to 5 profiles per username (1 resume per profile) specifically for text/visual CV packages. Separate tools have specific limits (AI maker creates 1 CV; Online Builder FAQ notes up to 50). *We do not treat tool-specific limits as universal application profile rules.*
+* **LinkedIn:** Official documentation confirms storing up to 4 recently uploaded reusable resumes for *Easy Apply* flows, and viewing submitted resumes in history. *Does not carry over to external employer redirects.*
+* **Indeed India:** Official documentation confirms storing 1 resume file on an account (uploading replaces existing), but allows uploading an alternate resume during the application process.
+
+---
+
+## 💡 The Proposed Feature: Resume Library
+
+The proposed solution consists of three complementary pillars:
 
 ```
                   ┌──────────────────────────────────────────────┐
                   │          Comprehensive Naukri Profile        │
-                  │   (Single Master Record: Education, Skills)  │
+                  │       (Education, Experience, Skills)        │
                   └──────────────────────┬───────────────────────┘
                                          │
                                          ▼
@@ -77,64 +134,56 @@ Candidates frequently apply across diverse career paths (e.g., Product Managemen
               Zero changes to library          Saved as new independent entry
 ```
 
+> **Data Architecture Note:**  
+> The proposed design keeps the candidate's structured profile conceptually separate from independently managed resume documents. Integration with Naukri's recruiter-search architecture requires product and engineering validation.
+
 ---
 
 ## 🛠️ Interactive Prototype & Scenarios
 
-The presentation includes an embedded, client-side interactive prototype (Slide 11) demonstrating end-to-end user flows with zero backend required:
+Slide 16 embeds a complete client-side candidate simulator testing six key flows:
 
-| Preset Scenario | Key User Experience Tested |
-| :--- | :--- |
-| **1. Single-Resume Quick Apply** | If a candidate has only 1 saved resume, the interface preserves existing streamlined quick-apply with an inline "Upload New Resume" option. |
-| **2. Multi-Resume Selector** | When multiple resumes exist, dynamically displays saved CVs with their custom names, filenames, update timestamps, and designated default preselection. |
-| **3. Scenario A: Apply-Only Upload** | Candidate uploads a new file (`Product_Analyst_v2.pdf`). The save checkbox appears only post-upload. Left **unchecked**, it applies to the current job only; the library count remains at 4. |
-| **4. Scenario B: Upload & Save** | Candidate checks the save box. Mandatory custom naming validation is enforced. Upon submission, the document is saved as a 5th independent entry without overwriting existing files. |
-| **⭐ Default Preference & History** | Candidates can designate any library item as default. The simulated *Application History Log* records immutable version snapshots. |
+* **Flow A (One Saved Resume):** Preserves existing quick-apply speed by pre-attaching the single resume, with inline "Change Resume" and "+ Upload New Resume" options.
+* **Flow B (Multiple Resumes):** Displays saved documents with custom names, dates, and preselects the designated default. *Strictly requires explicit candidate review before submission.*
+* **Flow C (Apply-Only Upload):** Candidate uploads a new document. The save checkbox appears **only post-upload**. Left unchecked, it applies to this job only; library count remains at 4.
+* **Flow D (Upload & Save):** Candidate checks the save box. Mandatory custom name validation is enforced. Saved as a 5th independent entry without modifying existing files.
+* **Flow E (Duplicate Filenames):** Two files named `Resume.pdf` receive distinct internal UUIDs; duplicate filenames never trigger silent overwrites.
+* **Flow F (Submitted History):** The *Application History Log* retains an immutable version snapshot independently of future library edits or deletions.
 
 ---
 
-## 📊 Experimentation & Measurement Framework
+## 📈 Experimentation & Metrics Framework
 
-To validate whether reducing resume-switching friction improves application conversion without compromising user trust:
+To establish whether the feature improves candidate conversion:
 
-* **Primary Success Metric:**
+* **Primary Metric:**
   $$\text{Application Completion Rate} = \frac{\text{Completed Applications}}{\text{Application Starts}}$$
-* **Secondary Diagnostic Metrics:**
-  * Multi-resume adoption (% managing $\ge 2$ resumes)
-  * Selection distribution (existing vs. on-the-fly upload)
-  * Save adoption rate (% saving new uploads)
-  * Funnel abandonment rate & Time-to-apply
-* **Guardrail Metrics:**
-  * Accidental overwrite incidents (**strictly zero tolerance**)
-  * Wrong-resume submission support tickets
-  * Upload failure rates & external redirect drop-off
-* **Rollout Roadmap:**
-  * **Phase 1:** Internal Alpha & Document Reference QA
-  * **Phase 2:** Limited Closed Beta (eligible multi-track applicants)
-  * **Phase 3:** Controlled A/B Experiment
-  * **Phase 4 & 5:** Iteration & Gradual Production Scale
+* **Secondary Diagnostic Metrics:** Resume Library adoption (% managing $\ge 2$ CVs), selection distribution (existing vs. new upload), save adoption rate, time-to-apply, abandonment rate, CSAT.
+* **Guardrail Metrics:** Accidental overwrite incidents (**strictly zero tolerance**), wrong-resume support tickets, technical upload failures, funnel deterioration.
+* **Statistical Parameters:** Minimum Detectable Effect (MDE), statistical power, required sample size, and duration must be defined by internal analytics based on baseline traffic and variance.
 
 ---
 
 ## 📂 Repository File Structure
 
 ```
-├── index.html          # Compiled, single-file interactive HTML presentation
-├── build_deck.py       # Python compiler script assembling modules into index.html
-├── styles.py           # CSS styling system, responsive grid & prototype UI styles
-├── slides_part1.py     # Slides 01–05: Cover, Exec Summary, Problem, Journey, Survey
-├── slides_part2.py     # Slides 06–10: Benchmarking, Solution, Workflow, UI Mockups, PRD
-├── slides_part3.py     # Slides 11–15: Prototype, Experimentation, Business Model, Closing, Appendix
-├── scripts_js.py       # Client-side presentation controls & interactive prototype logic
-├── .gitignore          # Git ignore rules for temporary build artifacts
-└── README.md           # Project documentation and product overview
+├── index.html           # Compiled, self-contained 23-slide interactive presentation
+├── build_deck.py        # Python build script compiling modular source files into index.html
+├── styles.py            # CSS design system, responsive breakpoints, lifecycle tracks & badges
+├── slides_discovery.py  # Slides 01–06: Cover, Overview, PM Approach, Origin, Users, JTBD/Definition
+├── slides_research.py   # Slides 07–12: Research Methodology, Survey Data, Journey, Validation, Root Causes, Competitors
+├── slides_solution.py   # Slides 13–17: Alternatives, 3 Pillars, 11-Step Logic, Interactive Prototype, PRD & MVP
+├── slides_strategy.py   # Slides 18–23: A/B Testing, Risks/Roadmap, Recommendation, Appendices A, B & C
+├── scripts_js.py        # Presentation controls, keyboard navigation & interactive prototype engine
+├── .gitignore           # Git ignore rules for build artifacts
+└── README.md            # Investigation documentation and product proposal
 ```
 
 ### 💻 Running Locally
 
-Simply double-click `index.html` or open it in your browser:
+Simply open `index.html` in your web browser:
 ```bash
-# Optional: recompile the deck from source files
+# Optional: recompile the deck from source Python modules
 python build_deck.py
 ```
 
@@ -142,17 +191,18 @@ python build_deck.py
 
 * **`→` / `Space` / `Page Down`**: Next slide
 * **`←` / `Page Up`**: Previous slide
-* **`N`**: Toggle Speaker Notes panel
-* **`G`**: Open Slide Grid modal (jump to any slide)
-* **`O` / `E`**: Open Evaluator & Review Guide
-* **`F`**: Toggle Fullscreen
-* **`Esc`**: Close any active modal
+* **`N`**: Toggle Speaker Notes drawer (detailed speaking guidance)
+* **`G`**: Open Slide Overview Grid (jump to any of the 23 slides)
+* **`O` / `E`**: Open Evaluator Guide & Executive Brief
+* **`F`**: Toggle Fullscreen presentation mode
+* **`Esc`**: Close active modals
 
 ---
 
-## 👤 Author & Project Scope
+## 👤 Author & Invitation for Product Review
 
 * **Prepared by:** Aditya Sharma
-* **Format:** Independent Product Management Case Study
-* **Scope:** Problem Discovery, Primary Survey Analysis (N=45), Competitive Benchmarking, UX/UI Specifications, Product Requirements Document (PRD), Interactive Prototype & Controlled Experiment Design.
-* **Target Platform:** Naukri.com (Desktop Web & Mobile Web)
+* **Project Type:** Independent Product Discovery & Improvement Proposal
+* **Platform:** Naukri.com — Candidate Experience
+* **Contact & Feedback:**  
+  *"I would welcome feedback from Naukri's Product Management team on the problem definition, current application behaviour, and suitability of this proposed improvement."*

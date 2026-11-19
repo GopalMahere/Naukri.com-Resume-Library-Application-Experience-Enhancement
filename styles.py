@@ -698,6 +698,116 @@ footer.deck-footer {
   font-weight: 700;
 }
 
+/* EVIDENCE TAG CLASSIFICATIONS */
+.evidence-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.evidence-tag-obs {
+  background: #F1F5F9;
+  color: #334155;
+  border-color: #CBD5E1;
+}
+
+.evidence-tag-survey {
+  background: #FEF3C7;
+  color: #92400E;
+  border-color: #FCD34D;
+}
+
+.evidence-tag-docs {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border-color: #BFDBFE;
+}
+
+.evidence-tag-hypo {
+  background: #F3E8FF;
+  color: #6B21A8;
+  border-color: #D8B4FE;
+}
+
+.evidence-tag-sol {
+  background: #ECFDF5;
+  color: #065F46;
+  border-color: #A7F3D0;
+}
+
+.evidence-tag-val {
+  background: #FFF1F2;
+  color: #9F1239;
+  border-color: #FECDD3;
+}
+
+/* PM LIFECYCLE MINI TRACK IN SLIDE TOP META */
+.stage-track {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--slate-400);
+  font-weight: 600;
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.stage-step {
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.stage-step.active {
+  background: var(--naukri-blue);
+  color: white;
+  font-weight: 700;
+}
+
+.stage-arrow {
+  color: var(--slate-300);
+  font-size: 9px;
+}
+
+/* COVER SLIDE COMPOSITION */
+.cover-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  height: 100%;
+  align-items: center;
+}
+
+.cover-hero-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cover-illustration-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+  border: 1.5px solid var(--naukri-blue-border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
 /* STAT CALLOUT BOX */
 .stat-box {
   background: var(--pure-white);
@@ -1406,6 +1516,12 @@ footer.deck-footer {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
     width: 100% !important;
+  }
+  
+  .cover-layout {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    height: auto !important;
   }
   
   .flow-row {

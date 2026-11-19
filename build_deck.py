@@ -3,14 +3,59 @@
 import os
 import json
 from styles import CSS_STYLES
-from slides_part1 import SLIDES_PART1
-from slides_part2 import SLIDES_PART2
-from slides_part3 import SLIDES_PART3
+from slides_discovery import SLIDES_DISCOVERY
+from slides_research import SLIDES_RESEARCH
+from slides_solution import SLIDES_SOLUTION
+from slides_strategy import SLIDES_STRATEGY
 from scripts_js import SCRIPTS_JS
 
+STAGES_ORDER = [
+    "Discover",
+    "Define",
+    "Research",
+    "Validate",
+    "Diagnose",
+    "Assess",
+    "Design",
+    "Test",
+    "Deliver"
+]
+
+def get_evidence_badge(evidence_type):
+    if not evidence_type:
+        return ""
+    t = evidence_type.lower()
+    if "personal" in t or "observation" in t:
+        cls = "evidence-tag-obs"
+    elif "survey" in t:
+        cls = "evidence-tag-survey"
+    elif "official" in t or "public" in t or "documentation" in t:
+        cls = "evidence-tag-docs"
+    elif "hypothesis" in t:
+        cls = "evidence-tag-hypo"
+    elif "validation" in t or "requires" in t:
+        cls = "evidence-tag-val"
+    else:
+        cls = "evidence-tag-sol"
+    return f'<span class="evidence-tag {cls}">[{evidence_type.upper()}]</span>'
+
+def render_stage_track(current_stage):
+    if current_stage not in STAGES_ORDER:
+        return f'<div class="stage-track"><span class="stage-step active">{current_stage}</span></div>'
+    
+    steps_html = []
+    for idx, stg in enumerate(STAGES_ORDER):
+        is_active = (stg == current_stage)
+        active_class = "active" if is_active else ""
+        steps_html.append(f'<span class="stage-step {active_class}">{stg}</span>')
+        if idx < len(STAGES_ORDER) - 1:
+            steps_html.append('<span class="stage-arrow">›</span>')
+            
+    return f'<div class="stage-track">{" ".join(steps_html)}</div>'
+
 def build_presentation():
-    # 15 Core Slides starting directly with Title Cover!
-    all_slides = SLIDES_PART1 + SLIDES_PART2 + SLIDES_PART3
+    # 23 Slides: 20 Core Lifecycle Slides + 3 Appendices
+    all_slides = SLIDES_DISCOVERY + SLIDES_RESEARCH + SLIDES_SOLUTION + SLIDES_STRATEGY
     total_slides = len(all_slides)
     
     # Generate Slide Registry for JavaScript
@@ -18,6 +63,7 @@ def build_presentation():
         {
             "id": slide["id"],
             "num": f"{idx + 1:02d}",
+            "stage": slide.get("stage", "Discover"),
             "tag": slide["tag"],
             "title": slide["title"]
         }
@@ -33,13 +79,16 @@ def build_presentation():
         is_first = (idx == 0)
         active_class = "active" if is_first else ""
         slide_num = f"{idx + 1:02d}"
+        slide_stage = slide.get("stage", "Discover")
+        evidence_badge_html = get_evidence_badge(slide.get("evidenceType", ""))
+        stage_track_html = render_stage_track(slide_stage)
         
         # Grid Card HTML
         grid_cards_list.append(f"""
           <div class="grid-card {'active' if is_first else ''}" onclick="goToSlide({idx}); closeAllModals();">
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <span class="grid-card-num">SLIDE {slide_num}</span>
-              <span class="grid-card-tag">{slide['tag']}</span>
+              <span class="grid-card-tag">{slide_stage} • {slide['tag']}</span>
             </div>
             <div class="grid-card-title">{slide['title']}</div>
           </div>
@@ -49,12 +98,18 @@ def build_presentation():
         slide_html = f"""
         <section class="slide {active_class}" id="{slide['id']}">
           <div class="slide-top-meta">
-            <div class="slide-breadcrumb">
-              <span style="color: var(--naukri-blue); font-weight:800;">NAUKRI PRODUCT PROPOSAL</span>
-              <span>›</span>
-              <span>{slide['tag']}</span>
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <div class="slide-breadcrumb">
+                <span style="color: var(--naukri-blue); font-weight:800;">NAUKRI INVESTIGATION</span>
+                <span>›</span>
+                <span>{slide['tag']}</span>
+              </div>
+              {stage_track_html}
             </div>
-            <div class="slide-number-pill">Slide {slide_num} / {total_slides:02d}</div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              {evidence_badge_html}
+              <div class="slide-number-pill">Slide {slide_num} / {total_slides:02d}</div>
+            </div>
           </div>
           
           <div class="slide-heading-row">
@@ -82,7 +137,7 @@ def build_presentation():
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Profile, Multiple Resumes | Naukri.com Product Strategy Proposal</title>
+  <title>Naukri.com – Apply with the Right Resume | Candidate Experience Investigation & Product Improvement Proposal</title>
   <style>
 {CSS_STYLES}
   </style>
@@ -100,7 +155,7 @@ def build_presentation():
           </svg>
           <span>naukri<span style="color:#60A5FA;">.com</span></span>
         </div>
-        <span class="brand-badge">Product Strategy Case Study</span>
+        <span class="brand-badge">Candidate Experience Investigation</span>
       </div>
       
       <div class="deck-title-center">
@@ -200,48 +255,48 @@ def build_presentation():
         <div class="grid-modal-title">Proposal Overview & Evaluator Guide</div>
         <button class="header-btn" onclick="toggleEvaluatorGuide()">Close ✕</button>
       </div>
-      <div style="background: var(--navy-dark); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-md); padding: 24px; color: var(--slate-200); overflow-y: auto; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
-        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
-          <span class="badge badge-blue" style="font-size: 11px; margin-bottom: 6px;">Independent Product Management Case Study</span>
-          <h2 style="font-size: 20px; font-weight: 800; color: white;">One Profile, Multiple Resumes for Naukri.com</h2>
-          <div style="font-size: 12.5px; color: var(--slate-300); margin-top: 4px;">
-            <strong>Prepared by:</strong> Aditya Sharma &nbsp;•&nbsp; <strong>Scope:</strong> User Research, Product Discovery, UX Design, PRD, and Interactive Prototype
+      <div style="background: var(--navy-dark); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-md); padding: 22px; color: var(--slate-200); overflow-y: auto; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px;">
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+          <span class="badge badge-blue" style="font-size: 11px; margin-bottom: 4px;">Independent Product Management Investigation</span>
+          <h2 style="font-size: 20px; font-weight: 800; color: white;">Naukri.com – Apply with the Right Resume</h2>
+          <div style="font-size: 12px; color: var(--slate-300); margin-top: 2px;">
+            <strong>Prepared by:</strong> Aditya Sharma &nbsp;•&nbsp; <strong>Scope:</strong> Problem Discovery, Survey (N=45), Journey Mapping, Root-Cause Diagnosis, PRD & Prototype
           </div>
         </div>
         
         <div>
-          <h4 style="font-size: 13px; text-transform: uppercase; color: #60A5FA; letter-spacing: 0.5px; margin-bottom: 6px;">Core Hypothesis & Problem Statement</h4>
-          <p style="font-size: 12.5px; line-height: 1.5; color: var(--slate-200);">
-            Candidates who apply across multiple job categories often maintain different resume versions, but managing and switching between those documents during the application journey can create unnecessary friction. This deck proposes giving candidates a centralized, candidate-controlled resume library that allows them to select the right resume at the moment of application, without repeatedly replacing their primary resume or maintaining multiple profiles.
+          <h4 style="font-size: 12px; text-transform: uppercase; color: #60A5FA; letter-spacing: 0.5px; margin-bottom: 4px;">Investigation Context & Intent</h4>
+          <p style="font-size: 12px; line-height: 1.5; color: var(--slate-200);">
+            This project began with a candidate-side problem encountered during job applications. We investigated how candidates manage multiple resume versions, collected exploratory user research, examined platform capabilities, assessed the product opportunity, and developed a practical improvement proposal for Naukri.com.
           </p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-          <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 6px; border-left: 3px solid var(--naukri-blue);">
-            <strong style="color: white; font-size: 12px;">Deck Structure (15 Slides):</strong>
-            <ul style="font-size: 11.5px; margin-top: 6px; padding-left: 18px; line-height: 1.45; color: var(--slate-300);">
-              <li>Slides 1–5: Problem Discovery & 45-Candidate Survey</li>
-              <li>Slide 6: Competitor Benchmarking (Naukri, LinkedIn, Indeed)</li>
-              <li>Slides 7–10: 3 Pillars, 8-Step Flow, Desktop Screens, PRD</li>
-              <li>Slide 11: Live Interactive Candidate Simulator</li>
-              <li>Slides 12–15: A/B Testing, Funnel Model, Roadmap & Appendix</li>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="background: rgba(255,255,255,0.05); padding: 10px 12px; border-radius: 6px; border-left: 3px solid var(--naukri-blue);">
+            <strong style="color: white; font-size: 11.5px;">Deck Structure (23 Slides):</strong>
+            <ul style="font-size: 11px; margin-top: 4px; padding-left: 16px; line-height: 1.4; color: var(--slate-300);">
+              <li>Slides 01–06: Problem Discovery, PM Approach, Origin & Definition</li>
+              <li>Slides 07–12: Survey Evidence (N=45), Journey Map, Validation, Root Causes & Benchmarks</li>
+              <li>Slides 13–17: Alternatives, 3 Pillars, 11-Step Logic, Interactive Prototype & PRD</li>
+              <li>Slides 18–20: A/B Testing, Governance, Roadmap & Final Recommendation</li>
+              <li>Slides 21–23: Appendices A, B & C (Full survey data, citations, glossary)</li>
             </ul>
           </div>
           
-          <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 6px; border-left: 3px solid var(--emerald-accent);">
-            <strong style="color: white; font-size: 12px;">Navigation Quick Reference:</strong>
-            <ul style="font-size: 11.5px; margin-top: 6px; padding-left: 18px; line-height: 1.45; color: var(--slate-300);">
+          <div style="background: rgba(255,255,255,0.05); padding: 10px 12px; border-radius: 6px; border-left: 3px solid var(--emerald-accent);">
+            <strong style="color: white; font-size: 11.5px;">Navigation Keyboard Shortcuts:</strong>
+            <ul style="font-size: 11px; margin-top: 4px; padding-left: 16px; line-height: 1.4; color: var(--slate-300);">
               <li><kbd class="key-pill">←</kbd> / <kbd class="key-pill">→</kbd> or <kbd class="key-pill">Space</kbd>: Step through slides</li>
               <li><kbd class="key-pill">N</kbd>: Open Speaker Notes (detailed talking points)</li>
               <li><kbd class="key-pill">G</kbd>: Slide Overview Grid (jump to any slide)</li>
-              <li><kbd class="key-pill">O</kbd>: Toggle this Evaluator Guide</li>
+              <li><kbd class="key-pill">O</kbd> / <kbd class="key-pill">E</kbd>: Toggle this Evaluator Guide</li>
               <li><kbd class="key-pill">F</kbd>: Fullscreen Mode</li>
             </ul>
           </div>
         </div>
         
-        <div style="text-align: right; margin-top: 6px;">
-          <button class="nav-btn" style="background: var(--naukri-blue); padding: 8px 20px;" onclick="toggleEvaluatorGuide()">
+        <div style="text-align: right; margin-top: 4px;">
+          <button class="nav-btn" style="background: var(--naukri-blue); padding: 6px 16px;" onclick="toggleEvaluatorGuide()">
             Resume Presentation →
           </button>
         </div>
@@ -262,7 +317,7 @@ const totalSlides = slideRegistry.length;
     output_path = os.path.join(os.path.dirname(__file__), "index.html")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(full_html)
-        
+    
     print(f"Successfully compiled presentation to: {output_path} ({len(full_html)} bytes)")
 
 if __name__ == "__main__":

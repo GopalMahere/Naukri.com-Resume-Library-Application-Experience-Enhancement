@@ -36,7 +36,7 @@ let protoUploadState = {
 // SLIDE DATA REGISTRY (Dynamically provided by build template)
 if (typeof slideRegistry === 'undefined') {
   window.slideRegistry = [];
-  window.totalSlides = document.querySelectorAll('.slide').length || 15;
+  window.totalSlides = document.querySelectorAll('.slide').length || 23;
 }
 
 // INITIALIZATION
@@ -829,8 +829,8 @@ function submitProtoApplication(e) {
   // Record into simulated immutable application history
   protoApplications.unshift({
     id: `app-${Date.now()}`,
-    company: 'Example Technologies',
-    role: 'Product Manager Intern',
+    company: 'Example Technologies (Sample Employer)',
+    role: 'Product Manager Intern [Demo Job]',
     date: 'Just Now',
     resumeName: finalResumeName,
     filename: finalFilename,
@@ -853,18 +853,18 @@ function getApplySubmittedSubStepHTML() {
       
       <h2 style="font-size: 20px; font-weight: 800; color: var(--navy-dark);">Application Submitted Successfully!</h2>
       <p style="font-size: 12px; color: var(--slate-600);">
-        Your application for <strong>Product Manager Intern</strong> at <strong>Example Technologies</strong> has been received.
+        Your application for <strong>Product Manager Intern [Demo Job]</strong> at <strong>Example Technologies (Sample Employer)</strong> has been received.
       </p>
       
       <div class="card card-tinted" style="padding: 14px; text-align: left; margin: 6px 0;">
         <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--slate-500); margin-bottom: 4px;">Confirmation Details</div>
         <div style="display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0;">
           <span style="color: var(--slate-500);">Company:</span>
-          <strong>Example Technologies</strong>
+          <strong>Example Technologies (Sample Employer)</strong>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0;">
           <span style="color: var(--slate-500);">Role:</span>
-          <span>Product Manager Intern</span>
+          <span>Product Manager Intern [Demo Job]</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0;">
           <span style="color: var(--slate-500);">Submitted Resume:</span>
