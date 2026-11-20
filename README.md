@@ -91,7 +91,7 @@ We conducted an exploratory survey of **100+ college students in India** via per
 | **Q8: Workarounds When Alternate Needed** | Replacing files, uploading another, leaving/pausing flow and returning, skipping | Qualitative theme (*exact counts unavailable*) |
 | **Q9: Application Friction / Drop-off** | Responses suggested inconvenience and friction | Qualitative theme (*no reliable numerical result*) |
 | **Q10: Specific Application Incident** | No sufficiently detailed written examples provided | Qualitative theme |
-| **Q11: Feature Usefulness Rating** | **90%** rated the concept *"Extremely useful"* (4 or 5 out of 5) | Quantitative tally |
+| **Q11: Feature Usefulness Rating** | **90%** rated 4 or 5 out of 5 for potential usefulness | Quantitative tally |
 | **Q12: Likelihood to Adopt** | **90%** reported being *"Very likely"* to use it | Quantitative tally |
 | **Q13: Desired Feature Capabilities** | Multiple resumes, custom naming, apply-time selector, history, management | Qualitative theme (*exact counts unavailable*) |
 
@@ -109,11 +109,11 @@ We conducted an exploratory survey of **100+ college students in India** via per
 
 ## 🔍 Competitor Benchmarking (Official Documentation)
 
-* **Naukri.com:** FastForward FAQ documents up to 5 profiles per username (1 resume per profile) specifically for text/visual CV packages. Standard direct application flows attach the single master resume associated with the candidate's profile.
+* **Naukri.com:** FastForward FAQ documents up to 5 profiles per username (1 resume per profile) specifically for text/visual CV packages. In core applications, the author encountered a profile-associated resume workflow; the availability of alternate resume selection across Naukri's application types requires further validation.
   * Source: [https://resume.naukri.com/faqs](https://resume.naukri.com/faqs)
-* **LinkedIn:** Official documentation confirms storing up to 4 recently uploaded reusable resumes for *Easy Apply* flows, and viewing submitted resumes in application history.
+* **LinkedIn:** Official documentation confirms storing up to 4 recently uploaded reusable resumes for *Easy Apply* flows; LinkedIn allows candidates to view the resume submitted for an Easy Apply application through Job Tracker.
   * Sources: [Four-Resume Reuse FAQ](https://www.linkedin.com/help/linkedin/answer/a512405) | [Submitted Resume History FAQ](https://www.linkedin.com/help/linkedin/answer/a506680)
-* **Indeed India:** Official documentation confirms storing 1 resume file on an account profile, while application instructions state that candidates can upload a different resume file while applying. Public documentation does not establish whether uploading an alternate resume during an application updates the candidate's stored resume file on their profile.
+* **Indeed India:** Official documentation confirms storing 1 resume file on an account profile. Documented capability: Candidates can upload a different resume during an application. Its effect on the stored profile resume is not established by the cited documentation.
   * Sources: [Stored Resume File FAQ](https://in.indeed.com/help/job-seekers/articles/11314976176141-faqs-creating-uploading-and-managing-a-resume-file?co=IN&hl=en) | [Applying with Alternate Resume](https://in.indeed.com/help/job-seekers/articles/204652920-applying-for-a-job-on-indeed?co=IN&hl=en)
 
 ---

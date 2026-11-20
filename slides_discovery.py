@@ -323,7 +323,7 @@ SLIDES_DISCOVERY = [
                   One Candidate, Diverse Strengths
                 </div>
                 <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.45; margin-bottom: 10px;">
-                  Modern early-career candidates rarely apply to a single narrow job title. They tailor distinct resumes highlighting relevant projects:
+                  In our surveyed college-student sample, 80% reported applying across three or more role categories, while 90% maintained multiple resume versions. Candidates tailor distinct resumes highlighting relevant projects:
                 </div>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">

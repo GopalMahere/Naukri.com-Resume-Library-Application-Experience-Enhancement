@@ -727,7 +727,7 @@ SLIDES_SOLUTION = [
           <li><strong>Screen 4 — Review Before Submission:</strong> The candidate reviews exactly which resume is attached, with options to Preview or Change. Only then can they submit. Application history records this exact version."</li>
         </ul>
         <p>Click <strong>"Try Interactive Prototype"</strong> to explore all four scenarios live: single resume quick apply, multi-resume selector, apply-only upload, and upload-and-save.</p>
-        <div class='cue-box'><strong>Transition:</strong> With the UX validated, let's close with the MVP scope, experiment design, and recommendation on Slide 13.</div>
+        <div class='cue-box'><strong>Transition:</strong> With the proposed UX illustrated and the interactive prototype demonstrated, let's move to MVP scope and product validation.</div>
         """
     }
 ]

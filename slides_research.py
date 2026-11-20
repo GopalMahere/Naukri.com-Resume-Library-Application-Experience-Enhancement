@@ -32,10 +32,10 @@ SLIDES_RESEARCH = [
             </div>
 
             <div class="card card-amber" style="padding: 10px 12px; text-align: center;">
-              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--amber-accent); letter-spacing: 0.5px; margin-bottom: 2px;">Rate Feature Useful (Q11)</div>
+              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--amber-accent); letter-spacing: 0.5px; margin-bottom: 2px;">Rated 4 or 5 / 5 (Q11)</div>
               <div style="font-size: 34px; font-weight: 800; color: #92400E; line-height: 1.1; margin: 4px 0;">90%</div>
               <div style="font-size: 11px; color: var(--slate-700); line-height: 1.35;">
-                Rate the proposed feature extremely useful
+                Rated 4 or 5 out of 5 for potential usefulness
               </div>
             </div>
 
@@ -105,7 +105,7 @@ SLIDES_RESEARCH = [
               </div>
 
               <div style="font-size: 11px; color: var(--slate-500); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--slate-100);">
-                Key Insight: Only 5% of early-career applicants rely on a single narrow role category.
+                Key Insight: In our surveyed college-student sample, 80% reported applying across three or more role categories, while 90% maintained multiple resume versions (only 5% applied to a single role).
               </div>
             </div>
 
@@ -156,9 +156,9 @@ SLIDES_RESEARCH = [
         <p><strong>Speaker Script:</strong> "To investigate candidate behavior, I conducted an exploratory survey with 100+ college job seekers. Here are the core empirical findings:</p>
         <ul>
           <li><strong>90%</strong> were actively applying in the last 90 days—80% seeking full-time placements and 20% seeking internships.</li>
-          <li><strong>80%</strong> applied across three or more distinct role categories. In fact, 60% applied to four or more roles. Only 5% applied to a single role.</li>
+          <li>In our surveyed college-student sample, <strong>80%</strong> reported applying across three or more distinct role categories (with 60% applying to 4+ roles), while only 5% applied to a single role.</li>
           <li><strong>90%</strong> maintain multiple resume versions, frequently needing an alternate version during active applications.</li>
-          <li><strong>90%</strong> rated the proposed Resume Library extremely useful and expressed very high intent to use it.</li>
+          <li><strong>90%</strong> rated the proposed Resume Library 4 or 5 out of 5 for usefulness, and expressed very high intent to use it.</li>
         </ul>
         <p>Candidates reported tailoring documents to highlight relevant skills and projects across roles, and managing separate documents independently. We avoid treating rounded percentages as exact respondent counts and note that exact open-ended counts were not recorded.</p>
         <p>We clearly state the research boundary: this exploratory cohort is student-focused; complete Q1 to Q13 responses are cataloged in Appendix A."</p>
@@ -320,9 +320,8 @@ SLIDES_RESEARCH = [
                     <span>✓ SUPPORTED BY CURRENT EVIDENCE (N=100+)</span>
                   </div>
                   <ul style="font-size: 11.5px; color: #14532D; padding-left: 16px; line-height: 1.45; margin: 0;">
-                    <li>Multi-role applications are standard practice (80% across 3+ roles).</li>
-                    <li>Maintaining multiple resume versions is normal candidate behavior (90%).</li>
-                    <li>Strong candidate intent and appetite for a dedicated library (90%).</li>
+                    <li>In our surveyed college-student sample, 80% reported applying across three or more role categories, while 90% maintained multiple resume versions.</li>
+                    <li>High reported intent among surveyed respondents to use a dedicated library (90%).</li>
                     <li>Competitors offer different resume-management capabilities, including reusable resume storage on LinkedIn and alternate application-time uploads on Indeed.</li>
                   </ul>
                 </div>
@@ -410,7 +409,7 @@ SLIDES_RESEARCH = [
         "speakerNotes": """
         <h4>Slide 07 — Problem Validation & Root Causes (Suggested Duration: ~75 seconds)</h4>
         <p><strong>Speaker Script:</strong> "A disciplined PM distinguishes firmly between verified sample data and unverified hypotheses.</p>
-        <p>In <strong>Section A</strong>, our evidence confirms that multi-role applications are widespread (80%), multiple resumes are common (90%), and candidates express strong desire for a library. However, what <em>requires Naukri validation</em> is the internal telemetry: how many candidates abandon applications during resume edits, and what percentage of applications flow through Path A vs Path B vs Path C?</p>
+        <p>In <strong>Section A</strong>, in our surveyed college-student sample, 80% reported applying across three or more role categories, while 90% maintained multiple resume versions, and respondents expressed strong interest in a library. However, what <em>requires Naukri validation</em> is the internal telemetry: how many candidates abandon applications during resume edits, and what percentage of applications flow through Path A vs Path B vs Path C?</p>
         <p>In <strong>Section B</strong>, we examine five structural hypotheses behind the friction: decoupled selection in certain flows, lack of reusability, single-resume legacy profile models, version traceability questions, and recruiter indexing considerations. We explicitly frame these as hypotheses for engineering evaluation rather than known internal facts."</p>
         <div class='cue-box'><strong>Transition:</strong> How do other leading talent platforms solve this multi-resume challenge? Let's benchmark the competition.</div>
         """
@@ -445,7 +444,7 @@ SLIDES_RESEARCH = [
                     <strong>• FastForward Documented Limit:</strong> FastForward FAQ specifically documents creating up to 5 profiles per username with 1 resume per profile in text/visual CV packages.
                   </div>
                   <div>
-                    <strong>• Application Experience:</strong> The author encountered a profile-associated resume workflow in the application journey. Whether alternate resume selection is supported across other direct application flows requires hands-on and internal Naukri validation.
+                    <strong>• Application Experience:</strong> The author encountered a profile-associated resume workflow. The availability of alternate resume selection across Naukri's application types requires further validation.
                   </div>
                   <div>
                     <strong>• Builder Capabilities:</strong> Standalone resume builder tools exist with tool-specific limits distinct from general profile applications.
@@ -475,7 +474,7 @@ SLIDES_RESEARCH = [
                     <strong>• In-Flow Selection:</strong> Allows candidate to select from stored resumes inside the application modal.
                   </div>
                   <div>
-                    <strong>• Document History:</strong> Logs which specific resume was submitted to past Easy Apply applications.
+                    <strong>• Document History:</strong> LinkedIn allows candidates to view the resume submitted for an Easy Apply application through Job Tracker.
                   </div>
                 </div>
               </div>
@@ -507,7 +506,7 @@ SLIDES_RESEARCH = [
                 </div>
               </div>
               <div style="background: #F0FDFA; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: var(--teal-accent); margin-top: 8px; font-weight: 600;">
-                Validated model: Separation of apply-time upload capability.
+                Documented capability: Candidates can upload a different resume during an application. Its effect on the stored profile resume is not established by the cited documentation.
               </div>
             </div>
 
@@ -534,9 +533,9 @@ SLIDES_RESEARCH = [
         <h4>Slide 08 — Competitor Benchmarking (Suggested Duration: ~60 seconds)</h4>
         <p><strong>Speaker Script:</strong> "To understand market norms, we benchmarked official documentation across Naukri, LinkedIn, and Indeed India:</p>
         <ul>
-          <li><strong>Naukri.com:</strong> We do not describe Naukri universally as a single-resume platform. Its cited FastForward FAQ specifically documents creating up to 5 profiles per username with 1 resume per profile in text/visual CV packages. However, in standard candidate job applications, candidates typically reference their active profile resume without an in-flow library selector.</li>
-          <li><strong>LinkedIn:</strong> Offers up to 4 reusable uploaded resumes directly accessible in Easy Apply, and logs submitted versions in application history.</li>
-          <li><strong>Indeed India:</strong> Maintains 1 stored profile CV, and application instructions permit uploading a different document from device during an application. The documentation does not explicitly establish whether that upload overwrites the stored file.</li>
+          <li><strong>Naukri.com:</strong> FastForward FAQs document creating up to 5 profiles per username with 1 resume per profile in text/visual CV packages. In core applications, the author encountered a profile-associated resume workflow; the availability of alternate resume selection across Naukri's application types requires further validation.</li>
+          <li><strong>LinkedIn:</strong> Offers up to 4 reusable uploaded resumes directly accessible in Easy Apply; LinkedIn allows candidates to view the resume submitted for an Easy Apply application through Job Tracker.</li>
+          <li><strong>Indeed India:</strong> Documented capability: Candidates can upload a different resume during an application. Its effect on the stored profile resume is not established by the cited documentation.</li>
         </ul>
         <p>The strategic takeaway: the opportunity is exploring a <strong>persistent, candidate-controlled Resume Library inside a single profile</strong>, with application-time selection and non-destructive saving."</p>
         <div class='cue-box'><strong>Transition:</strong> Which product approach best solves this challenge? Let's evaluate five strategic alternatives.</div>

@@ -308,7 +308,7 @@ SLIDES_STRATEGY = [
               <!-- Q11 -->
               <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 5px; padding: 5px 7px;">
                 <div style="font-weight: 700; color: var(--navy-dark); margin-bottom: 2px;">Q11: Feature Usefulness Rating</div>
-                <div style="color: #1E3A8A; font-weight: 700;">90% rated feature extremely useful</div>
+                <div style="color: #1E3A8A; font-weight: 700;">90% rated 4 or 5 out of 5</div>
                 <div style="color: var(--slate-500); font-size: 9.5px; margin-top: 1px;">Rated 4 or 5 out of 5 for potential value to job search.</div>
               </div>
 
@@ -339,7 +339,7 @@ SLIDES_STRATEGY = [
         <p><strong>Note for Presenter:</strong> This slide serves as supporting evidence during Q&A when evaluators inquire about sample size, question wording, or methodology:</p>
         <ul>
           <li><strong>Sample & Outreach:</strong> 100+ college-student respondents in India reached via personal outreach during active recruitment and internship cycles.</li>
-          <li><strong>Verified Quantitative Findings:</strong> 90% recent applicants (Q1), 80% full-time/placements vs 20% internships (Q2), 80% applying across 3+ roles (Q3), 90% maintain multiple resumes (Q4), 90% frequently need alternate resume in-flow (Q7), 90% rated feature extremely useful (Q11), and 90% reported very likely to adopt (Q12).</li>
+          <li><strong>Verified Quantitative Findings:</strong> 90% recent applicants (Q1), 80% full-time/placements vs 20% internships (Q2), 80% applying across 3+ roles (Q3), 90% maintain multiple resumes (Q4), 90% frequently need alternate resume in-flow (Q7), 90% rated feature 4 or 5 out of 5 (Q11), and 90% reported very likely to adopt (Q12).</li>
           <li><strong>Qualitative Scope (Exact Counts Unavailable):</strong> Q5 (skills/industries/JD tailoring reasons), Q6 (external storage and pre-application editing methods), Q8 (leaving/pausing flows or uploading alternate files), Q9 (reported friction without reliable numerical tallies), Q10 (no detailed written examples), and Q13 (feature desires: multiple CVs, custom naming, selector, history).</li>
           <li><strong>Methodological Caveats:</strong> We transparently note the exploratory nature and student demographic boundaries. This data justifies pilot experimentation rather than immediate platform-wide assumptions.</li>
         </ul>
@@ -372,7 +372,7 @@ SLIDES_STRATEGY = [
                 </div>
                 <div style="font-size: 11px; color: var(--slate-700); line-height: 1.45;">
                   • <strong>FastForward Resume Service FAQs:</strong> Naukri's FastForward documentation specifies that a single username can hold up to 5 profiles, with 1 resume attached per profile (in the context of visual/text CV packages).<br>
-                  • <strong>General Application Flow:</strong> In standard direct native application flows, applications default to the single master resume attached to the candidate profile.<br>
+                  • <strong>General Application Flow:</strong> The author encountered a profile-associated resume workflow. The availability of alternate resume selection across Naukri's application types requires further validation.<br>
                   • <strong>Service Boundary:</strong> Paid FastForward profile packages represent a distinct service from the core free job application experience.
                 </div>
               </div>
@@ -394,7 +394,7 @@ SLIDES_STRATEGY = [
                 </div>
                 <div style="font-size: 11px; color: var(--slate-700); line-height: 1.45;">
                   • <strong>Easy Apply Four-Resume Reuse:</strong> LinkedIn allows job seekers to store up to 4 recently uploaded resumes within Easy Apply settings for immediate selection and reuse.<br>
-                  • <strong>Submitted Resume History:</strong> LinkedIn stores an exact copy/reference of the submitted resume in the candidate's application history, keeping past applications intact.<br>
+                  • <strong>Submitted Resume History:</strong> LinkedIn allows candidates to view the resume submitted for an Easy Apply application through Job Tracker.<br>
                   • <strong>Scope Boundary:</strong> Applies to native Easy Apply applications; external ATS redirects bypass LinkedIn's resume selector.
                 </div>
               </div>
@@ -432,7 +432,7 @@ SLIDES_STRATEGY = [
 
           <!-- Bottom: Analytical Commentary -->
           <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 10px 16px; font-size: 11px; color: var(--slate-700); line-height: 1.45;">
-            <strong style="color: var(--navy-dark);">Benchmarking Synthesis & Documentation Boundaries:</strong> Public help documentation from LinkedIn confirms support for up to 4 reusable resumes in native Easy Apply and submitted application history preservation. Indeed India confirms application-time upload capability, though public documentation does not establish whether uploading an alternate file updates the candidate's stored profile resume. Naukri FastForward FAQs establish multi-profile packages (up to 5 profiles, 1 resume each), while standard native application flows attach a single profile resume.
+            <strong style="color: var(--navy-dark);">Benchmarking Synthesis & Documentation Boundaries:</strong> Public help documentation from LinkedIn confirms support for up to 4 reusable resumes in native Easy Apply and allows candidates to view the resume submitted for an Easy Apply application through Job Tracker. Indeed India confirms application-time upload capability, though public documentation does not establish whether uploading an alternate file updates the candidate's stored profile resume. Naukri FastForward FAQs establish multi-profile packages (up to 5 profiles, 1 resume each in the documented text/visual CV context), while the availability of alternate resume selection across Naukri's application types requires further validation.
           </div>
         </div>
         """,
@@ -440,9 +440,9 @@ SLIDES_STRATEGY = [
         <h4>Slide 15 — Appendix B: Competitor Evidence (Reference Material)</h4>
         <p><strong>Note for Presenter:</strong> Use this slide if the evaluator questions competitor citations or asks for verified source URLs:</p>
         <ul>
-          <li><strong>Naukri FastForward:</strong> Documents up to 5 profiles per username with 1 resume per profile (<a href='https://resume.naukri.com/faqs' target='_blank'>resume.naukri.com/faqs</a>). This is distinct from core job search direct applications.</li>
-          <li><strong>LinkedIn:</strong> Verified 4-resume reuse capability in Easy Apply (<a href='https://www.linkedin.com/help/linkedin/answer/a512405' target='_blank'>a512405</a>) and submitted resume history tracking (<a href='https://www.linkedin.com/help/linkedin/answer/a506680' target='_blank'>a506680</a>).</li>
-          <li><strong>Indeed India:</strong> Confirmed 1-stored profile resume (<a href='https://in.indeed.com/help/job-seekers/articles/11314976176141-faqs-creating-uploading-and-managing-a-resume-file?co=IN&hl=en' target='_blank'>article 11314976176141</a>) and alternate application upload (<a href='https://in.indeed.com/help/job-seekers/articles/204652920-applying-for-a-job-on-indeed?co=IN&hl=en' target='_blank'>article 204652920</a>). Explicitly note that public documentation does not establish if alternate uploads update stored profile files.</li>
+          <li><strong>Naukri.com:</strong> FastForward FAQs document up to 5 profiles per username with 1 resume per profile in text/visual CV packages (<a href='https://resume.naukri.com/faqs' target='_blank'>resume.naukri.com/faqs</a>). In core job search applications, the author encountered a profile-associated resume workflow; the availability of alternate resume selection across Naukri's application types requires further validation.</li>
+          <li><strong>LinkedIn:</strong> Verified 4-resume reuse capability in Easy Apply (<a href='https://www.linkedin.com/help/linkedin/answer/a512405' target='_blank'>a512405</a>); LinkedIn allows candidates to view the resume submitted for an Easy Apply application through Job Tracker (<a href='https://www.linkedin.com/help/linkedin/answer/a506680' target='_blank'>a506680</a>).</li>
+          <li><strong>Indeed India:</strong> Confirmed 1-stored profile resume (<a href='https://in.indeed.com/help/job-seekers/articles/11314976176141-faqs-creating-uploading-and-managing-a-resume-file?co=IN&hl=en' target='_blank'>article 11314976176141</a>) and alternate application upload (<a href='https://in.indeed.com/help/job-seekers/articles/204652920-applying-for-a-job-on-indeed?co=IN&hl=en' target='_blank'>article 204652920</a>). Documented capability allows uploading a different resume during an application, though public documentation does not establish its effect on stored profile files.</li>
         </ul>
         """
     },
