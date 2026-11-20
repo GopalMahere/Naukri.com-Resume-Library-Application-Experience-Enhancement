@@ -7,7 +7,7 @@ SLIDES_DISCOVERY = [
         "number": "01",
         "stage": "Discover",
         "tag": "Product Investigation",
-        "evidenceType": "Proposed Solution",
+        "evidenceType": "Project Introduction",
         "title": "Naukri.com – Apply with the Right Resume",
         "subtitle": "A candidate-controlled Resume Library for a simpler job application experience.",
         "content": """
@@ -15,7 +15,7 @@ SLIDES_DISCOVERY = [
           <!-- Left: Hero Header & Project Metadata -->
           <div class="cover-hero-box">
             <div>
-              <span class="evidence-tag evidence-tag-sol" style="margin-bottom: 8px;">Independent Product Improvement Proposal</span>
+              <span class="evidence-tag evidence-tag-intro" style="margin-bottom: 8px;">[PROJECT INTRODUCTION]</span>
               <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--naukri-blue); margin-top: 4px;">
                 NAUKRI.COM • CANDIDATE EXPERIENCE INVESTIGATION
               </div>
@@ -80,7 +80,7 @@ SLIDES_DISCOVERY = [
                 <span style="font-size: 12px; font-weight: 800; color: var(--navy-dark); display: flex; align-items: center; gap: 6px;">
                   📁 Dedicated Resume Library
                 </span>
-                <span class="badge badge-blue" style="font-size: 10px;">Up to 5 Role-Specific Files</span>
+                <span class="badge badge-blue" style="font-size: 10px;">Proposed Capacity: Up to 5 Resumes*</span>
               </div>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
                 <div style="background: #EFF6FF; border: 1.5px solid var(--naukri-blue); border-radius: 6px; padding: 8px 10px;">
@@ -118,8 +118,8 @@ SLIDES_DISCOVERY = [
               </div>
             </div>
             
-            <div style="text-align: center; font-size: 11px; color: var(--slate-500); margin-top: 10px; font-weight: 600;">
-              Candidate Control • Transparent Selection • Non-Destructive Saving
+            <div style="text-align: center; font-size: 10.5px; color: var(--slate-500); margin-top: 8px;">
+              *Proposed MVP capacity assumption: up to 5 resumes, subject to technical validation.
             </div>
           </div>
         </div>
@@ -188,9 +188,9 @@ SLIDES_DISCOVERY = [
                   <span class="badge badge-teal">3. Research</span>
                   <div style="width: 28px; height: 28px; border-radius: 50%; background: #F0FDFA; color: var(--teal-accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">📊</div>
                 </div>
-                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Exploratory Survey (N=45)</div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Exploratory Survey (N=100+)</div>
                 <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
-                  Survey of 45 college job seekers showed 80% applied across 3+ role types, 90% maintain multiple resumes, and 90% expressed high intent to use a resume library.
+                  Survey of 100+ college job seekers showed 80% applied across 3+ role types, 90% maintain multiple resumes, and 90% expressed high intent to use a resume library.
                 </div>
               </div>
               <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #99F6E4; font-size: 11px; font-weight: 700; color: var(--teal-accent);">
@@ -224,7 +224,7 @@ SLIDES_DISCOVERY = [
                 </div>
                 <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Resume Library</div>
                 <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
-                  A persistent library of up to 5 role-specific resumes with application-time selection, conditional saving post-upload, and non-destructive version storage.
+                  A persistent library of role-specific resumes (proposed MVP capacity assumption: up to 5) with application-time selection, conditional saving post-upload, and non-destructive storage.
                 </div>
               </div>
               <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #DDD6FE; font-size: 11px; font-weight: 700; color: #7C3AED;">
@@ -266,7 +266,7 @@ SLIDES_DISCOVERY = [
         <ul>
           <li><strong>1. Problem Origin:</strong> The idea originated from personal job-search experience applying across distinct functional roles.</li>
           <li><strong>2. Candidate Friction:</strong> Switching resume versions in certain application journeys requires manual profile updates or re-uploading, adding cognitive friction and drop-off risk.</li>
-          <li><strong>3. Research:</strong> An exploratory survey with 45 college students confirmed that 80% apply across 3 or more role types and 90% maintain multiple resumes.</li>
+          <li><strong>3. Research:</strong> An exploratory survey with 100+ college students confirmed that 80% apply across 3 or more role types and 90% maintain multiple resumes.</li>
           <li><strong>4. Validation Boundaries:</strong> We acknowledge research boundaries upfront—this survey shows early-career candidate demand, but Naukri's internal telemetry is needed to quantify platform-wide impact.</li>
           <li><strong>5. Opportunity:</strong> A candidate-controlled Resume Library with conditional saving and application-time selection.</li>
           <li><strong>6. Recommendation:</strong> Conduct an internal telemetry audit followed by a controlled A/B experiment measuring application completion rates."</li>
@@ -481,7 +481,7 @@ SLIDES_DISCOVERY = [
         <p><em>'When I apply to different types of roles, I want to choose the resume that best represents my relevant experience while keeping my other versions intact, so I can submit the document I intend without repeatedly managing profile files.'</em></p>
         <p>Notice the four-box breakdown: the user is a multi-role applicant; the situation is applying on Naukri; the need is choosing without overwriting; and the desired outcome is fast, confident submission.</p>
         <p>Crucially, we define a clear scope boundary: this proposal addresses <strong>resume management</strong>—storage, selection, and document retention. It is not a resume writing tool, AI template generator, or keyword builder."</p>
-        <div class='cue-box'><strong>Transition:</strong> Now let's examine the empirical survey evidence collected from 45 job seekers to test this problem definition.</div>
+        <div class='cue-box'><strong>Transition:</strong> Now let's examine the empirical survey evidence collected from 100+ job seekers to test this problem definition.</div>
         """
     }
 ]

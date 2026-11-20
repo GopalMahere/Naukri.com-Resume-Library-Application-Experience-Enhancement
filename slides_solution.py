@@ -9,7 +9,7 @@ SLIDES_SOLUTION = [
         "tag": "Strategic Alternatives",
         "evidenceType": "Proposed Solution",
         "title": "Which Product Approach Best Addresses the Problem?",
-        "subtitle": "Qualitative evaluation of five product options across candidate control, reusability, and feasibility",
+        "subtitle": "Qualitative product assessment of five strategic alternatives across candidate control, reusability, and feasibility",
         "content": """
         <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
           <!-- 5 Options Qualitative Comparison Table -->
@@ -42,13 +42,13 @@ SLIDES_SOLUTION = [
                   <tr style="border-bottom: 1px solid var(--slate-100);">
                     <td style="padding: 10px 14px;">
                       <strong>Option B: Multiple Profiles</strong><br>
-                      <span style="font-size: 10px; color: var(--slate-500);">Separate logins/profiles</span>
+                      <span style="font-size: 10px; color: var(--slate-500);">Multiple profiles under 1 username</span>
                     </td>
-                    <td style="color: #B45309;">Medium (account hopping)</td>
+                    <td style="color: #B45309;">Medium (profile switching)</td>
                     <td style="color: #B45309;">Medium (profile-bound)</td>
-                    <td style="color: #9F1239;">Low (high login friction)</td>
-                    <td style="color: var(--slate-700);">Separate records</td>
-                    <td style="color: #9F1239;">High complexity & fragmentation</td>
+                    <td style="color: #9F1239;">Low (switch profile per role)</td>
+                    <td style="color: var(--slate-700);">Separate profiles</td>
+                    <td style="color: #9F1239;">Profile fragmentation overhead</td>
                   </tr>
 
                   <tr style="border-bottom: 1px solid var(--slate-100);">
@@ -95,10 +95,10 @@ SLIDES_SOLUTION = [
           <div style="display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 14px;">
             <div class="card card-blue" style="padding: 12px 16px;">
               <div style="font-weight: 800; font-size: 13px; color: var(--navy-dark); margin-bottom: 3px;">
-                Why Option D (Resume Library) is the Optimal Product Solution
+                Qualitative Product Assessment: Why Option D is the Optimal Choice
               </div>
               <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
-                Option D provides a persistent home for role-specific documents within the candidate's existing single profile. It eliminates repeated uploading (Option C), avoids account fragmentation (Option B), and avoids candidate distrust of black-box AI algorithms (Option E).
+                Option D provides a persistent home for role-specific documents within the candidate's existing single profile. It eliminates repeated uploading (Option C), avoids the overhead of managing multiple profiles under one username (Option B), and avoids candidate mistrust of black-box AI algorithms (Option E).
               </div>
             </div>
 
@@ -107,7 +107,7 @@ SLIDES_SOLUTION = [
                 Out of Scope: AI Auto-Matching
               </div>
               <div style="font-size: 11.5px; color: #78350F; line-height: 1.4;">
-                AI-based document matching is not required to solve the immediate file management problem and introduces candidate agency concerns. Excluded from MVP.
+                AI-based document matching is not required to solve the immediate document management problem and introduces candidate agency concerns. Excluded from MVP scope.
               </div>
             </div>
           </div>
@@ -115,15 +115,15 @@ SLIDES_SOLUTION = [
         """,
         "speakerNotes": """
         <h4>Slide 09 — Strategic Alternatives (Suggested Duration: ~60 seconds)</h4>
-        <p><strong>Speaker Script:</strong> "To assess the opportunity objectively, we evaluated five distinct architectural approaches:</p>
+        <p><strong>Speaker Script:</strong> "To assess the opportunity objectively, we conducted a qualitative product evaluation of five distinct architectural approaches:</p>
         <ul>
           <li><strong>Option A (Status Quo):</strong> Retains friction and forces candidates to navigate away to change CVs.</li>
-          <li><strong>Option B (Multiple Profiles):</strong> Fragments candidate identities, creates duplicate records, and introduces heavy context-switching.</li>
-          <li><strong>Option C (Upload-Only):</strong> Easy to implement, but provides zero reusability, forcing candidates to repeatedly re-upload files on their phones or laptops.</li>
-          <li><strong>Option D (Resume Library - Proposed):</strong> The sweet spot. Delivers persistent candidate control, 1-click apply-time selection, and non-destructive storage within one unified master profile.</li>
-          <li><strong>Option E (AI Auto-Matching):</strong> Premature for MVP. Candidates insist on explicit agency over what recruiters see, and automated selection introduces hallucination and trust issues.</li>
+          <li><strong>Option B (Multiple Profiles under One Username):</strong> Naukri's FastForward FAQ documents creating up to 5 profiles under one username for CV services; however, managing multiple profiles fragments candidate history and adds context-switching overhead across applications.</li>
+          <li><strong>Option C (Upload-Only):</strong> Easy to implement, but provides zero reusability, forcing candidates to repeatedly re-upload files across devices.</li>
+          <li><strong>Option D (Resume Library - Proposed):</strong> Offers the best qualitative balance: candidate control, persistent organization, and non-destructive saving within a single unified profile.</li>
+          <li><strong>Option E (AI Auto-Matching):</strong> Premature for MVP. Candidates insist on explicit agency over what recruiters receive, and automated selection introduces trust issues.</li>
         </ul>
-        <p>We deliberately choose Option D for our product proposal."</p>
+        <p>This comparison represents a qualitative product assessment rather than empirical performance proof."</p>
         <div class='cue-box'><strong>Transition:</strong> Let's look at the three architectural pillars and design principles of the Resume Library.</div>
         """
     },
@@ -166,7 +166,7 @@ SLIDES_SOLUTION = [
                 Dedicated Resume Library
               </div>
               <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
-                Dedicated workspace storing up to 5 role-specific resumes. Each document receives a custom label (e.g. <em>PM CV, Consulting CV, Ops CV</em>) and independent version management.
+                Dedicated candidate workspace storing role-specific resumes (proposed MVP capacity assumption: up to 5 resumes, subject to validation). Each document receives a custom label (e.g. <em>PM CV, Consulting CV</em>).
               </div>
             </div>
 
@@ -225,7 +225,7 @@ SLIDES_SOLUTION = [
               <div style="background: #F8FAFC; border: 1px solid var(--slate-200); border-radius: 6px; padding: 10px 12px;">
                 <div style="font-size: 12px; font-weight: 700; color: #059669; margin-bottom: 3px;">5. Transparent History</div>
                 <div style="font-size: 11px; color: var(--slate-600); line-height: 1.4;">
-                  Application history preserves an exact immutable snapshot of the document submitted to each employer.
+                  Application history preserves an exact document reference of what was submitted to each employer.
                 </div>
               </div>
 
@@ -238,10 +238,10 @@ SLIDES_SOLUTION = [
         <p><strong>Speaker Script:</strong> "Our proposed feature, <strong>Resume Library</strong>, rests on three clear product pillars:</p>
         <ul>
           <li><strong>1. One Comprehensive Profile:</strong> A single source of truth for the candidate's career data—education, skills, work history. No secondary accounts.</li>
-          <li><strong>2. Dedicated Resume Library:</strong> A clean management area for up to 5 role-specific resumes, with custom names like 'Product Management CV' or 'Consulting CV'.</li>
+          <li><strong>2. Dedicated Resume Library:</strong> A clean management area with a proposed MVP capacity of up to 5 resumes (subject to technical and user testing validation), with custom names like 'Product Management CV' or 'Consulting CV'.</li>
           <li><strong>3. Application-Time Selection:</strong> An interactive selector inside the apply modal, allowing candidates to pick an existing resume or upload a new one.</li>
         </ul>
-        <p>This is guided by five foundational principles: candidate control, privacy by default (unselected resumes are never exposed to recruiters), independent files, zero silent overwriting, and immutable application history logs."</p>
+        <p>This is guided by five foundational principles: candidate control, privacy by default (unselected resumes are never exposed to recruiters), independent files, zero silent overwriting, and transparent application history tracking."</p>
         <div class='cue-box'><strong>Transition:</strong> How does this workflow function step-by-step, especially when uploading a new document? Let's trace the decision logic.</div>
         """
     },
@@ -363,7 +363,7 @@ SLIDES_SOLUTION = [
                     <div style="font-size: 11px; color: var(--slate-600); margin-top: 3px; line-height: 1.4;">
                       • Submitted to <strong>this job only</strong><br>
                       • Not added to library<br>
-                      • Existing 4 resumes untouched
+                      • Existing library resumes untouched
                     </div>
                   </div>
 
@@ -371,15 +371,15 @@ SLIDES_SOLUTION = [
                     <div style="font-size: 11.5px; font-weight: 700; color: #166534;">Case B: Checked by User</div>
                     <div style="font-size: 11px; color: #14532D; margin-top: 3px; line-height: 1.4;">
                       • Mandatory custom label required<br>
-                      • Saved as <strong>5th independent file</strong><br>
-                      • Never overwrites older files
+                      • Saved as <strong>new independent file</strong><br>
+                      • Never silently overwrites older files
                     </div>
                   </div>
                 </div>
               </div>
 
               <div style="font-size: 10.5px; color: #92400E; margin-top: 6px; font-weight: 600;">
-                Protects candidates against accidental profile loss while supporting one-off tailored CVs.
+                Protects candidates against accidental file loss while supporting one-off tailored CVs.
               </div>
             </div>
 
@@ -418,7 +418,7 @@ SLIDES_SOLUTION = [
 
           <!-- Bottom: Status Banner -->
           <div style="background: #F8FAFC; border: 1.5px solid var(--slate-200); border-radius: 8px; padding: 8px 16px; font-size: 11.5px; color: var(--slate-700);">
-            <strong style="color: var(--navy-dark);">Data Integrity Guarantee:</strong> Historical application records store an immutable snapshot ID of the exact document version submitted, ensuring complete legal and audit transparency.
+            <strong style="color: var(--navy-dark);">Proposed Capacity Assumption:</strong> The feature proposes a capacity of up to 5 stored resumes for MVP testing. Document retention and deletion rules require engineering and policy review.
           </div>
         </div>
         """,
@@ -431,7 +431,7 @@ SLIDES_SOLUTION = [
           <li><strong>If left unchecked (Case A):</strong> The resume is used for this specific job application only. It is not saved to the library, and existing files remain untouched.</li>
           <li><strong>If checked (Case B):</strong> The system mandates a custom name, and saves it as a new independent resume entry. It never overwrites previous files.</li>
         </ul>
-        <p>We also preserve single-resume quick apply speed, honor default preselection with explicit confirmation, isolate duplicate filenames via UUIDs, and preserve immutable application history."</p>
+        <p>We also preserve single-resume quick apply speed, honor default preselection with explicit confirmation, isolate duplicate filenames via UUIDs, and establish clear document references in application history."</p>
         <div class='cue-box'><strong>Transition:</strong> Now let's see how these interactions look and feel in our interactive candidate prototype.</div>
         """
     },
@@ -512,7 +512,7 @@ SLIDES_SOLUTION = [
           
           <!-- Prototype Footer Clarification Note -->
           <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--slate-500); padding: 0 4px;">
-            <span>*Client-side simulated interactive prototype. Implements dynamic default preselection, conditional save gates, mandatory custom naming, and immutable audit logs.</span>
+            <span>*Client-side simulated interactive prototype. Implements dynamic default preselection, conditional save gates, mandatory custom naming, and application history logging.</span>
             <span style="color: var(--naukri-blue); font-weight: 600;">Full UX Specifications in Appendix C →</span>
           </div>
         </div>
@@ -523,11 +523,11 @@ SLIDES_SOLUTION = [
         <p>You can test four primary scenarios using the top preset buttons:</p>
         <ul>
           <li><strong>Preset 1 (Single-Resume Quick Apply):</strong> Demonstrates how a candidate with only one resume retains the fast, frictionless experience with pre-attached CV.</li>
-          <li><strong>Preset 2 (Multi-Resume Selector):</strong> Lets a candidate easily choose between their Product Management CV, Consulting CV, or Operations CV. Notice how setting a default updates preselection dynamically.</li>
+          <li><strong>Preset 2 (Multi-Resume Selector):</strong> Lets a candidate easily choose between their Product Management CV, Consulting CV, or Operations CV. Setting a default resume updates preselection dynamically.</li>
           <li><strong>Preset 3 (Scenario A - Apply-Only Upload):</strong> The candidate uploads a fresh file, leaves the save checkbox unchecked, and applies. The existing library remains exactly at 4 resumes.</li>
-          <li><strong>Preset 4 (Scenario B - Upload & Save):</strong> The candidate checks 'Save to Resume Library'. Notice that a custom name becomes mandatory, and upon submission, the library expands to 5 independent files without overwriting any existing resumes.</li>
+          <li><strong>Preset 4 (Scenario B - Upload & Save):</strong> The candidate checks 'Save to Resume Library'. Notice that a custom name becomes mandatory, and upon submission, the library saves it as an additional independent file without overwriting any existing resumes.</li>
         </ul>
-        <p>Finally, the 'Application History' tab shows how every submission permanently logs the exact document version submitted."</p>
+        <p>Finally, the 'Application History' tab shows how every submission records the exact document version submitted."</p>
         <div class='cue-box'><strong>Transition:</strong> With the solution validated in prototype, how should Naukri prioritize MVP delivery and measure business success? Let's look at Slide 13.</div>
         """
     }

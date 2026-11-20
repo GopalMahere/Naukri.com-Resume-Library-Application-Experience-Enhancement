@@ -35,6 +35,8 @@ def get_evidence_badge(evidence_type):
         cls = "evidence-tag-hypo"
     elif "validation" in t or "requires" in t:
         cls = "evidence-tag-val"
+    elif "intro" in t:
+        cls = "evidence-tag-intro"
     else:
         cls = "evidence-tag-sol"
     return f'<span class="evidence-tag {cls}">[{evidence_type.upper()}]</span>'
@@ -274,14 +276,14 @@ def build_presentation():
           <span class="badge badge-blue" style="font-size: 11px; margin-bottom: 4px;">Independent Product Management Investigation</span>
           <h2 style="font-size: 20px; font-weight: 800; color: white;">Naukri.com – Apply with the Right Resume</h2>
           <div style="font-size: 12px; color: var(--slate-300); margin-top: 2px;">
-            <strong>Prepared by:</strong> Aditya Sharma &nbsp;•&nbsp; <strong>Scope:</strong> Problem Discovery, Survey (N=45), Journey Mapping, Root-Cause Diagnosis, PRD & Prototype
+            <strong>Prepared by:</strong> Aditya Sharma &nbsp;•&nbsp; <strong>Scope:</strong> Problem Discovery, Survey (N=100+), Journey Mapping, Root-Cause Diagnosis, PRD & Prototype
           </div>
         </div>
         
         <div>
           <h4 style="font-size: 12px; text-transform: uppercase; color: #60A5FA; letter-spacing: 0.5px; margin-bottom: 4px;">Investigation Context & Intent</h4>
           <p style="font-size: 12px; line-height: 1.5; color: var(--slate-200);">
-            This project began with a candidate-side problem encountered during job applications across multiple role tracks. We investigated how candidates manage multiple resume versions, collected exploratory user research (N=45), examined competitor platform capabilities (Naukri, LinkedIn, Indeed), assessed strategic alternatives, and developed a practical improvement proposal for Naukri.com featuring a candidate-controlled Resume Library.
+            This project began with a candidate-side problem encountered during job applications across multiple role tracks. We investigated how candidates manage multiple resume versions, collected exploratory user research (N=100+), examined competitor platform capabilities (Naukri, LinkedIn, Indeed), assessed strategic alternatives, and developed a practical improvement proposal for Naukri.com featuring a candidate-controlled Resume Library.
           </p>
         </div>
         
@@ -290,7 +292,7 @@ def build_presentation():
             <strong style="color: white; font-size: 11.5px;">Deck Structure (16 Slides):</strong>
             <ul style="font-size: 11px; margin-top: 4px; padding-left: 16px; line-height: 1.4; color: var(--slate-300);">
               <li>Slides 01–04: Discovery, Origin & Problem Definition (JTBD & Scope)</li>
-              <li>Slides 05–08: Research Findings (N=45), Journey Map, Validation & Benchmarks</li>
+              <li>Slides 05–08: Research Findings (N=100+), Journey Map, Validation & Benchmarks</li>
               <li>Slides 09–12: Alternatives, 3 Pillars, 11-Step Logic & Interactive Prototype</li>
               <li>Slide 13: MVP Prioritization, Experimentation & Final Recommendation</li>
               <li>Slides 14–16: Appendices A, B & C (Full survey data, citations, PRD glossary)</li>

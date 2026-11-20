@@ -788,6 +788,12 @@ footer.deck-footer {
   border-color: #FECDD3;
 }
 
+.evidence-tag-intro {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border-color: #93C5FD;
+}
+
 /* PM LIFECYCLE MINI TRACK IN SLIDE TOP META */
 .stage-track {
   display: flex;
