@@ -1,7 +1,6 @@
+.DS_Store
+Thumbs.db
 __pycache__/
-*.py[cod]
-*$py.class
-verify_*.py
+*.pyc
 .vscode/
 .idea/
-.DS_Store
