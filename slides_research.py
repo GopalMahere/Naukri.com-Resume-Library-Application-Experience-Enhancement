@@ -12,42 +12,38 @@ SLIDES_RESEARCH = [
         "subtitle": "Exploratory survey findings from 100+ college students applying across role categories",
         "content": """
         <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;">
-          <!-- Top Row: 4 Key Quantitative Stat Cards -->
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+          <!-- Top Row: 4 Separate Key Survey Finding Cards -->
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
             
-            <div class="card card-blue" style="padding: 12px 14px; text-align: center;">
-              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--naukri-blue); letter-spacing: 0.5px;">Active Job Seekers</div>
+            <div class="card card-blue" style="padding: 10px 12px; text-align: center;">
+              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--naukri-blue); letter-spacing: 0.5px; margin-bottom: 2px;">Maintain Multiple Resumes (Q4)</div>
               <div style="font-size: 34px; font-weight: 800; color: #1E3A8A; line-height: 1.1; margin: 4px 0;">90%</div>
-              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
-                Applied in last 90 days<br>
-                <span style="font-size: 10.5px; color: var(--slate-500);">(80% placements, 20% internships)</span>
+              <div style="font-size: 11px; color: var(--slate-700); line-height: 1.35;">
+                Maintain multiple tailored resume versions
               </div>
             </div>
 
-            <div class="card card-indigo" style="padding: 12px 14px; text-align: center;">
-              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #4F46E5; letter-spacing: 0.5px;">Multi-Role Volume</div>
-              <div style="font-size: 34px; font-weight: 800; color: #3730A3; line-height: 1.1; margin: 4px 0;">80%</div>
-              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
-                Applied across <strong>3+ role categories</strong><br>
-                <span style="font-size: 10.5px; color: var(--slate-500);">(60% applied to 4+ roles)</span>
+            <div class="card card-indigo" style="padding: 10px 12px; text-align: center;">
+              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: #4F46E5; letter-spacing: 0.5px; margin-bottom: 2px;">Frequently Need Alternate (Q7)</div>
+              <div style="font-size: 34px; font-weight: 800; color: #3730A3; line-height: 1.1; margin: 4px 0;">90%</div>
+              <div style="font-size: 11px; color: var(--slate-700); line-height: 1.35;">
+                Frequently need a different resume while applying
               </div>
             </div>
 
-            <div class="card card-amber" style="padding: 12px 14px; text-align: center;">
-              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--amber-accent); letter-spacing: 0.5px;">Resume Variation</div>
+            <div class="card card-amber" style="padding: 10px 12px; text-align: center;">
+              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--amber-accent); letter-spacing: 0.5px; margin-bottom: 2px;">Rate Feature Useful (Q11)</div>
               <div style="font-size: 34px; font-weight: 800; color: #92400E; line-height: 1.1; margin: 4px 0;">90%</div>
-              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
-                Maintain multiple resume versions<br>
-                <span style="font-size: 10.5px; color: var(--slate-500);">(Frequent alternate CV need)</span>
+              <div style="font-size: 11px; color: var(--slate-700); line-height: 1.35;">
+                Rate the proposed feature extremely useful
               </div>
             </div>
 
-            <div class="card card-emerald" style="padding: 12px 14px; text-align: center;">
-              <div style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--emerald-accent); letter-spacing: 0.5px;">Feature Intent</div>
+            <div class="card card-emerald" style="padding: 10px 12px; text-align: center;">
+              <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--emerald-accent); letter-spacing: 0.5px; margin-bottom: 2px;">Very Likely to Use (Q12)</div>
               <div style="font-size: 34px; font-weight: 800; color: #065F46; line-height: 1.1; margin: 4px 0;">90%</div>
-              <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.35;">
-                Rated feature extremely useful<br>
-                <span style="font-size: 10.5px; color: var(--slate-500);">(90% reported very likely to use)</span>
+              <div style="font-size: 11px; color: var(--slate-700); line-height: 1.35;">
+                Report being very likely to adopt the feature
               </div>
             </div>
 
@@ -117,19 +113,27 @@ SLIDES_RESEARCH = [
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <div class="card card-teal" style="padding: 10px 14px; flex: 1;">
                 <div style="font-size: 11.5px; font-weight: 700; color: #115E59; margin-bottom: 4px;">
-                  💡 Reported Candidate Motivations
+                  💡 Reported Candidate Motivations (Q5)
                 </div>
-                <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
-                  Candidates tailor distinct CVs to highlight relevant coursework, specific projects, and technical skills across diverse role categories and industry paths.
+                <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.4;">
+                  Candidates report maintaining multiple resumes to:<br>
+                  • Highlight <strong>different skills</strong> relevant to each role<br>
+                  • Apply to <strong>different industries</strong> simultaneously<br>
+                  • Pursue <strong>different career paths</strong> in parallel<br>
+                  • Tailor documents to <strong>specific job descriptions</strong>
                 </div>
               </div>
 
               <div class="card card-amber" style="padding: 10px 14px; flex: 1;">
                 <div style="font-size: 11.5px; font-weight: 700; color: #92400E; margin-bottom: 4px;">
-                  📁 Current Workarounds & Friction
+                  📁 Reported Workarounds (Q6, Q8)
                 </div>
-                <div style="font-size: 12px; color: var(--slate-700); line-height: 1.45;">
-                  Managing separate files across storage locations, manual checking before submission, and experiencing friction when needing an alternate resume during applications.
+                <div style="font-size: 11.5px; color: var(--slate-700); line-height: 1.4;">
+                  Reported behaviors when a different resume is needed:<br>
+                  • Maintaining separate storage locations (drives, local folders)<br>
+                  • Uploading a different document within the portal<br>
+                  • Leaving or pausing the application and returning later<br>
+                  • Skipping the application or postponing submission
                 </div>
               </div>
             </div>
@@ -319,7 +323,7 @@ SLIDES_RESEARCH = [
                     <li>Multi-role applications are standard practice (80% across 3+ roles).</li>
                     <li>Maintaining multiple resume versions is normal candidate behavior (90%).</li>
                     <li>Strong candidate intent and appetite for a dedicated library (90%).</li>
-                    <li>Competitors have deployed multi-resume handling (LinkedIn, Indeed).</li>
+                    <li>Competitors offer different resume-management capabilities, including reusable resume storage on LinkedIn and alternate application-time uploads on Indeed.</li>
                   </ul>
                 </div>
 
@@ -441,7 +445,7 @@ SLIDES_RESEARCH = [
                     <strong>• FastForward Documented Limit:</strong> FastForward FAQ specifically documents creating up to 5 profiles per username with 1 resume per profile in text/visual CV packages.
                   </div>
                   <div>
-                    <strong>• Application Experience:</strong> In standard direct job applications, the candidate's active profile resume is typically referenced, without an in-flow multi-resume library selector.
+                    <strong>• Application Experience:</strong> The author encountered a profile-associated resume workflow in the application journey. Whether alternate resume selection is supported across other direct application flows requires hands-on and internal Naukri validation.
                   </div>
                   <div>
                     <strong>• Builder Capabilities:</strong> Standalone resume builder tools exist with tool-specific limits distinct from general profile applications.

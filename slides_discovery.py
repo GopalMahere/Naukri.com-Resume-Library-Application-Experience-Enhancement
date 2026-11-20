@@ -173,7 +173,7 @@ SLIDES_DISCOVERY = [
                 </div>
                 <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Application Friction</div>
                 <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
-                  When a job requires a resume different from the profile-attached file, candidates may have to navigate away, update their profile resume, and re-enter the flow, risking drop-off.
+                  When a job requires a resume different from the profile-associated file, in some application flows candidates may need to leave or pause the application to change the resume associated with their profile before returning to complete the application.
                 </div>
               </div>
               <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #FECDD3; font-size: 11px; font-weight: 700; color: var(--rose-accent);">
@@ -207,7 +207,7 @@ SLIDES_DISCOVERY = [
                 </div>
                 <div style="font-size: 15px; font-weight: 800; color: var(--navy-dark); margin-bottom: 6px;">Validation Limits</div>
                 <div style="font-size: 12.5px; color: var(--slate-700); line-height: 1.5;">
-                  Evidence supports deeper investigation, but does not prove a platform-wide defect. Naukri's internal telemetry is required to verify actual drop-off rates and ATS splits.
+                  Evidence supports deeper investigation, but does not prove a platform-wide defect. Naukri's internal telemetry is required to verify actual drop-off rates and the distribution of on-platform and external application flows.
                 </div>
               </div>
               <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #FDE68A; font-size: 11px; font-weight: 700; color: var(--amber-accent);">

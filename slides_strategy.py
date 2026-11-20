@@ -75,7 +75,7 @@ SLIDES_STRATEGY = [
                 <!-- A/B Experiment Setup -->
                 <div style="background: white; border: 1.5px solid #99F6E4; border-radius: 6px; padding: 8px 10px; margin-bottom: 6px;">
                   <div style="display: flex; justify-content: space-between; font-size: 10.5px; font-weight: 700; margin-bottom: 3px;">
-                    <span style="color: var(--slate-600);">Control: Existing Flow</span>
+                    <span style="color: var(--slate-600);">Control: Current Application Flow (incl. any existing alternate-upload options)</span>
                     <span style="color: #0F766E;">Test: Resume Library Flow</span>
                   </div>
                   <div style="font-size: 11px; font-weight: 800; color: #115E59; margin-top: 2px;">

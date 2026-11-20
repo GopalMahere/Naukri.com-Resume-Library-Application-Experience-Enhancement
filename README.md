@@ -53,8 +53,8 @@ Competitors       Workflow Gate    Simulation       Metrics & Feedback Request
 8. **Slide 08 (Competitor Benchmarking):** *How Existing Platforms Handle Resume Selection* (Naukri FastForward multi-profile packages vs core apply, LinkedIn 4 reusable CVs, Indeed India 1 stored CV + apply-time upload).
 9. **Slide 09 (Strategic Alternatives):** *Which Product Approach Best Addresses the Problem?* (Qualitative product assessment matrix of Options A–E; Option B FastForward multi-profile FAQ clarification; justification for Option D Resume Library; AI matching out of scope for MVP).
 10. **Slide 10 (Proposed Solution):** *A Resume Library Built Around Candidate Choice* (3 Pillars: Comprehensive Profile, Dedicated Library [5-resume proposed MVP capacity assumption], Apply-Time Selector; 5 Principles: Control, Privacy, Independence, No Overwrite, History).
-11. **Slide 11 (Future Workflow & Logic):** *How the Proposed Experience Would Work* (11-step pipeline, prominent conditional save gate post-upload, quick-apply path, default preselection with review, duplicate filename handling).
-12. **Slide 12 (UX Design & Interactive Prototype):** *From Product Concept to Candidate Experience* (6 desktop UI screens, embedded interactive candidate simulator with 4 scenario presets, set default, reset, and sanitized demo data).
+11. **Slide 11 (Future Workflow & Logic):** *How the Proposed Experience Would Work* (Two distinct paths: Path A direct selection of saved resume with review, Path B fresh upload with conditional save gate appearing strictly after 100% upload, default-preference future scope, duplicate filename safety).
+12. **Slide 12 (UI/UX Walkthrough & Interactive Prototype):** *Application Experience: How Candidates Select and Save a Resume* (4 high-fidelity desktop UI mockup screens illustrating the complete journey: Screen 01 Choose Resume, Screen 02 Upload New Resume, Screen 03 Conditional Save Gate with unchecked and checked states, Screen 04 Review & Submit; plus interactive candidate simulator with 4 scenario presets).
 13. **Slide 13 (MVP, Experimentation & Recommendation):** *From Product Proposal to Product Validation* (Consolidated closing slide: A. Compact MVP Must vs Future [5-resume proposed capacity assumption]; B. Controlled A/B Experiment & Completion Rate formula; C. 5-Stage Rollout Plan [illustrative 10–15 candidate usability test & 5% pilot proposals]; Closing recommendation & PM feedback invitation).
 14. **Appendix A (Slide 14):** *Appendix A: Complete User Research & Methodology* (Full restored Q1–Q13 survey data catalog, N=100+ college-student respondents, personal outreach, qualitative scopes with exact counts unavailable, methodology boundaries).
 15. **Appendix B (Slide 15):** *Appendix B: Official Competitor Documentation & Links* (Naukri, LinkedIn, Indeed India verified official URLs, verified retrieval dates, supported claims, documentation scope limitations).
@@ -157,16 +157,22 @@ The proposed solution consists of three complementary pillars:
 
 ---
 
-## 🛠️ Interactive Prototype & Scenarios
+## 🛠️ UI/UX Walkthrough & Interactive Prototype
 
-Slide 12 embeds a complete client-side candidate simulator testing key candidate flows:
+Slide 12 provides both a visual design walkthrough and an embedded interactive candidate simulator:
 
-* **Single-Resume Quick Apply:** Preserves existing quick-apply speed by pre-attaching the single resume, with inline "Change Resume" and "+ Upload New Resume" options.
-* **Multi-Resume Selector:** Displays saved documents with custom names, dates, and preselects the designated default. *Strictly requires explicit candidate review before submission.*
-* **Scenario A (Apply-Only Upload):** Candidate uploads a new document. The save checkbox appears **only post-upload**. Left unchecked, it applies to this job only; library count remains at 4.
-* **Scenario B (Upload & Save):** Candidate checks the save box. Mandatory custom name validation is enforced. Saved as a 5th independent entry without modifying existing files (subject to proposed 5-resume MVP capacity assumption).
-* **Duplicate Filenames:** Two files named `Resume.pdf` receive distinct internal identifiers; duplicate filenames never trigger silent overwrites.
-* **Submitted History:** The *Application History Log* retains a document reference independently of future library edits or deletions.
+* **UI Walkthrough (4 High-Fidelity Desktop Mockups):**
+  1. *Screen 01 — Choose Resume:* Displays saved resumes with custom names, dates, and radio selection, plus an "+ Upload a new resume" option.
+  2. *Screen 02 — Upload New Resume:* In-flight upload state with progress indicator; save checkbox is strictly hidden while uploading.
+  3. *Screen 03 — Conditional Save Gate:* Side-by-side comparison of unchecked state (apply for this job only, 0 changes to library) vs. checked state (prompts mandatory custom name, saved as new entry).
+  4. *Screen 04 — Review & Submit:* Explicit confirmation showing chosen document, job title, company, and single "Confirm & Submit" action.
+* **Interactive Prototype Simulator (Toggleable):**
+  * **Single-Resume Quick Apply:** Preserves existing quick-apply speed by pre-attaching the single resume, with inline "Change Resume" and "+ Upload New Resume" options.
+  * **Multi-Resume Selector:** Displays saved documents with custom names, dates, and preselects the designated default. *Strictly requires explicit candidate review before submission.*
+  * **Scenario A (Apply-Only Upload):** Candidate uploads a new document. The save checkbox appears **only post-upload**. Left unchecked, it applies to this job only; library count remains at 4.
+  * **Scenario B (Upload & Save):** Candidate checks the save box. Mandatory custom name validation is enforced. Saved as a 5th independent entry without modifying existing files (subject to proposed 5-resume MVP capacity assumption).
+  * **Duplicate Filenames:** Two files named `Resume.pdf` receive distinct internal identifiers; duplicate filenames never trigger silent overwrites.
+  * **Submitted History:** The *Application History Log* retains a document reference independently of future library edits or deletions.
 
 ---
 
