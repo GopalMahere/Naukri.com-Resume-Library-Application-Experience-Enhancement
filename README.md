@@ -1,4 +1,4 @@
-# Naukri.com — Resume Library & Smart Apply
+# Naukri.com Smart Apply: Multi-Resume Selection & Application Tracking
 ### Product Teardown, Primary User Research & Interactive UX Prototype
 
 🌐 **Live Interactive Presentation (GitHub Pages)**
